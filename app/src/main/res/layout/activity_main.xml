@@ -17,31 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="118dp" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="426dp"></LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="114dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="183dp"
-                android:layout_height="match_parent"></LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"
@@ -64,4 +43,204 @@
                 android:layout_height="match_parent"></LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/usa_color_map"
+            android:id="@+id/imageView5"
+            android:layout_weight="1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Denver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            android:layout_marginStart="150dp"
+            android:layout_alignTop="@+id/button2"
+            android:layout_toEndOf="@+id/button3"
+            android:layout_marginTop="39dp" />
+
+        <Button
+            android:text="Omaha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button5"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:text="HOU"
+            android:layout_height="wrap_content"
+            android:id="@+id/button8"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="67dp"
+            android:layout_below="@+id/button7"
+            android:layout_alignStart="@+id/button5"
+            android:layout_width="70dp" />
+
+        <Button
+            android:text="Dallas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button9"
+            android:layout_below="@+id/button7"
+            android:layout_alignStart="@+id/button5" />
+
+        <Button
+            android:text="ST. LOU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button10"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/button8" />
+
+        <Button
+            android:text="NEW ORL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button11"
+            android:layout_alignBaseline="@+id/button8"
+            android:layout_alignBottom="@+id/button8"
+            android:layout_toEndOf="@+id/button8"
+            android:layout_marginStart="15dp" />
+
+        <Button
+            android:text="MIAMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button15"
+            android:layout_alignTop="@+id/button11"
+            android:layout_toEndOf="@+id/button14"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="33dp" />
+
+        <Button
+            android:text="NYC"
+            android:layout_height="wrap_content"
+            android:id="@+id/button16"
+            android:layout_alignBaseline="@+id/button6"
+            android:layout_alignBottom="@+id/button6"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
+            android:layout_width="60dp" />
+
+        <Button
+            android:text="CHI"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button6"
+            android:layout_marginBottom="13dp"
+            android:layout_alignBottom="@+id/button5"
+            android:layout_toStartOf="@+id/button17" />
+
+        <Button
+            android:text="DET"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button17"
+            android:layout_marginBottom="21dp"
+            android:layout_marginStart="16dp"
+            android:layout_alignBottom="@+id/button6"
+            android:layout_toEndOf="@+id/button11" />
+
+        <Button
+            android:text="MEM"
+            android:layout_height="wrap_content"
+            android:id="@+id/button12"
+            android:layout_width="65dp"
+            android:layout_alignTop="@+id/button3"
+            android:layout_alignEnd="@+id/button10" />
+
+        <Button
+            android:text="ATL"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button14"
+            android:layout_marginTop="13dp"
+            android:layout_alignTop="@+id/button7"
+            android:layout_alignStart="@+id/button17" />
+
+        <Button
+            android:text="BOS"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button18"
+            android:layout_above="@+id/button16"
+            android:layout_alignStart="@+id/button16"
+            android:layout_marginStart="11dp" />
+
+        <Button
+            android:text="OKC"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button19"
+            android:layout_below="@+id/button10"
+            android:layout_alignEnd="@+id/button9"
+            android:layout_marginEnd="20dp" />
+
+        <Button
+            android:text="Sea"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="52dp"
+            android:elevation="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/button2" />
+
+        <Button
+            android:text="SF"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/button2"
+            android:layout_above="@+id/button10"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="14dp" />
+
+        <Button
+            android:text="BOISE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button20"
+            android:layout_above="@+id/button17"
+            android:layout_toEndOf="@+id/button" />
+
+        <Button
+            android:text="LA"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/button3"
+            android:layout_alignTop="@+id/button19"
+            android:layout_alignStart="@+id/button" />
+
+        <Button
+            android:text="PHX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button7"
+            android:layout_marginStart="25dp"
+            android:layout_alignTop="@+id/button3"
+            android:layout_toEndOf="@+id/button3"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:text="MISSOULA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button21"
+            android:layout_above="@+id/button20"
+            android:layout_alignStart="@+id/button7"
+            android:layout_marginStart="44dp" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

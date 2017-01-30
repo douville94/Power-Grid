@@ -1,2 +1,0 @@
-Action list for Power Grid:
-Buy power plant, confirm, bid, pass, buy coal, buy trash, buy oil, buy nuclear power, buy city, buy road, discard power plant, quit
