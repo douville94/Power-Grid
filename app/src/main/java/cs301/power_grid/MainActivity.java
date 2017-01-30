@@ -2,6 +2,8 @@ package cs301.power_grid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
+
 
 public class MainActivity extends AppCompatActivity {
 
