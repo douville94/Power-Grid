@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Power_Grid</string>
+
+    <string-array name="ResourceSpinner">
+        <item>Your Resources</item>
+        <item>Other Players Resources</item>
+    </string-array>
+
+    <string-array name="PowerPlantSpinner">
+        <item>Your Power Plants</item>
+        <item>Other Players Power Plants</item>
+    </string-array>
+
 </resources>
