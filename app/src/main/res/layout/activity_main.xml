@@ -733,16 +733,6 @@
                 android:layout_below="@+id/button7"
                 android:layout_alignEnd="@+id/button17" />
 
-            <Button
-                android:text="Dallas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button9"
-                android:layout_marginEnd="13dp"
-                android:layout_below="@+id/button19"
-                android:layout_toStartOf="@+id/button11"
-                android:layout_marginTop="21dp" />
-
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
@@ -986,25 +976,25 @@
                                     android:text="30"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/upp4cValue" />
+                                    android:id="@+id/upp2cValue" />
 
                                 <TextView
                                     android:text="Trash"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/upp4tValue" />
+                                    android:id="@+id/upp2tValue" />
 
                                 <TextView
                                     android:text="6"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/upp4nValue" />
+                                    android:id="@+id/upp2nValue" />
 
                                 <TextView
                                     android:text="10"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/upp4hValue" />
+                                    android:id="@+id/upp2hValue" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -1060,31 +1050,40 @@
                                     android:text="19"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/upp2cValue" />
+                                    android:id="@+id/upp4cValue" />
 
                                 <TextView
                                     android:text="Coal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/upp2tValue" />
+                                    android:id="@+id/upp4tValue" />
 
                                 <TextView
                                     android:text="7"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/upp2nValue" />
+                                    android:id="@+id/upp4nValue" />
 
                                 <TextView
                                     android:text="9"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:id="@+id/upp2hValue" />
+                                    android:id="@+id/upp4hValue" />
                             </LinearLayout>
                         </LinearLayout>
 
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
+
+            <Button
+                android:text="Dallas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button9"
+                android:layout_marginTop="18dp"
+                android:layout_below="@+id/button19"
+                android:layout_toEndOf="@+id/button4" />
 
         </RelativeLayout>
 
