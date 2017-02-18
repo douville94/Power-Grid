@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView trashNumView;
     private TextView nuclearNumView;
 
-    UserResources YourResources = new UserResources(50,0,0,0,0);;
-    UserResources OtherResources = new UserResources(50,0,0,0,0);;
+    UserResources YourResources = new UserResources(150,2,0,6,0);;
+    UserResources OtherResources = new UserResources(80,0,3,0,1);;
 
     private int basicGray = Color.rgb(214,215,215);
     private int prettyBlue = Color.rgb(0, 221, 255);
