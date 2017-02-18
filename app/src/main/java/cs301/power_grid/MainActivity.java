@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ImageButton;
 
-
+//
 public class MainActivity extends AppCompatActivity {
 
     private Spinner resourcesSpinner;
