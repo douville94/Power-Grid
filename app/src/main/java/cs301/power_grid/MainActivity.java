@@ -23,9 +23,28 @@ public class MainActivity extends AppCompatActivity {
     private TextView oilNumView;
     private TextView trashNumView;
     private TextView nuclearNumView;
+    private TextView costTextView1;
+    private TextView typeTextView1;
+    private TextView numberTextView1;
+    private TextView housesTextView1;
+    private TextView costTextView2;
+    private TextView typeTextView2;
+    private TextView numberTextView2;
+    private TextView housesTextView2;
+    private TextView costTextView3;
+    private TextView typeTextView3;
+    private TextView numberTextView3;
+    private TextView housesTextView3;
+    private TextView costTextView4;
+    private TextView typeTextView4;
+    private TextView numberTextView4;
+    private TextView housesTextView4;
 
     UserResources YourResources = new UserResources(150,2,0,6,0);;
     UserResources OtherResources = new UserResources(80,0,3,0,1);;
+
+    UserPowerPlants YourPowerPlants = new UserPowerPlants(80,"Coal",3,0);
+    UserPowerPlants OtherPlayersPowerPlants = new UserPowerPlants(10,"Oil",5,6);
 
     private int basicGray = Color.rgb(214,215,215);
     private int prettyBlue = Color.rgb(0, 221, 255);
@@ -104,6 +123,26 @@ public class MainActivity extends AppCompatActivity {
 
         powerPlantsSpinner =(Spinner)findViewById(R.id.userPowerPlantsSpinner);
         powerPlantsSpinner.setOnItemSelectedListener(new powerPlantsSpinListener());
+
+        costTextView1 = (TextView)findViewById(R.id.upp1cValue);
+        typeTextView1 = (TextView)findViewById(R.id.upp1tValue);
+        numberTextView1 = (TextView)findViewById(R.id.upp1nValue);
+        housesTextView1 = (TextView)findViewById(R.id.upp1hValue);
+
+        costTextView2 = (TextView)findViewById(R.id.upp2cValue);
+        typeTextView2 = (TextView)findViewById(R.id.upp2tValue);
+        numberTextView2 = (TextView)findViewById(R.id.upp2nValue);
+        housesTextView2 = (TextView)findViewById(R.id.upp2hValue);
+
+        costTextView3 = (TextView)findViewById(R.id.upp3cValue);
+        typeTextView3 = (TextView)findViewById(R.id.upp3tValue);
+        numberTextView3 = (TextView)findViewById(R.id.upp3nValue);
+        housesTextView3 = (TextView)findViewById(R.id.upp3hValue);
+
+        costTextView4 = (TextView)findViewById(R.id.upp4cValue);
+        typeTextView4 = (TextView)findViewById(R.id.upp4tValue);
+        numberTextView4 = (TextView)findViewById(R.id.upp4nValue);
+        housesTextView4 = (TextView)findViewById(R.id.upp4hValue);
 
         moneyTextView = (TextView)findViewById(R.id.moneyTextView);
         coalNumView =(TextView)findViewById(R.id.coalNumView);
@@ -204,16 +243,39 @@ public class MainActivity extends AppCompatActivity {
         nuclearNumView.setText("" + rsc.nuclear);
     }
 
+    private void setPowerPlants(UserPowerPlants upp)
+    {
+        costTextView1.setText(""+upp.cost);
+        typeTextView1.setText(""+upp.type);
+        numberTextView1.setText(""+upp.number);
+        housesTextView1.setText(""+upp.houses);
+
+        costTextView2.setText(""+upp.cost);
+        typeTextView2.setText(""+upp.type);
+        numberTextView2.setText(""+upp.number);
+        housesTextView2.setText(""+upp.houses);
+
+        costTextView3.setText(""+upp.cost);
+        typeTextView3.setText(""+upp.type);
+        numberTextView3.setText(""+upp.number);
+        housesTextView3.setText(""+upp.houses);
+
+        costTextView4.setText(""+upp.cost);
+        typeTextView4.setText(""+upp.type);
+        numberTextView4.setText(""+upp.number);
+        housesTextView4.setText(""+upp.houses);
+    }
+
     private class powerPlantsSpinListener implements AdapterView.OnItemSelectedListener {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             //String currVal = resourcesSpinner.getSelectedItem().toString();
             switch (position){
                 case 0:
-                    setResources(YourResources);
+                    setPowerPlants(YourPowerPlants);
                     break;
                 case 1:
-                    setResources(OtherResources);
+                    setPowerPlants(OtherPlayersPowerPlants);
                     break;
             }
         }
@@ -569,8 +631,37 @@ private class sfButListener implements View.OnClickListener {
         }
     }
 
+    public class UserResources//(int one, int two, int three, int four, int five)
+    {
+        int coal;
+        int oil;
+        int nuclear;
+        int money;
+        int trash;
 
+        public UserResources(int constructCoal, int constructOil, int constructNuclear, int constructMoney, int constructTrash)
+        {
+            coal = constructCoal;
+            oil = constructOil;
+            nuclear = constructNuclear;
+            money = constructMoney;
+            trash = constructTrash;
+        }
+    }
 
+    public class UserPowerPlants
+    {
+        int cost;
+        String type;
+        int number;
+        int houses;
 
-
+        public UserPowerPlants(int constructCost, String constructType, int constructNumber, int constructHouses)
+        {
+            cost = constructCost;
+            type = constructType;
+            number = constructNumber;
+            houses = constructHouses;
+        }
+    }
 }
