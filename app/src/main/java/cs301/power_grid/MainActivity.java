@@ -13,9 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ImageButton;
 
-//
 public class MainActivity extends AppCompatActivity {
 
+    //instance variables
     private Spinner resourcesSpinner;
     private Spinner powerPlantsSpinner;
     private TextView moneyTextView;
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView typeTextView4;
     private TextView numberTextView4;
     private TextView housesTextView4;
+
 
     UserResources YourResources = new UserResources(150,2,0,6,0);;
     UserResources OtherResources = new UserResources(80,0,3,0,1);;
@@ -112,6 +113,13 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton coalButton1;
 
 
+    /**
+     * onCreate
+     *
+     * initializes listeners and registers them
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -631,6 +639,10 @@ private class sfButListener implements View.OnClickListener {
         }
     }
 
+
+
+    //COULD GET RID OF USERRESOURCES AND USERPOWERPLANTS AND REPLACE WITH INVENTORY AND POWERPLANT
+    //USED IN SPINNERS
     public class UserResources//(int one, int two, int three, int four, int five)
     {
         int coal;
