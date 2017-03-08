@@ -11,7 +11,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
+import game.GameMainActivity;
+import game.GamePlayer;
+import game.LocalGame;
+import game.config.GameConfig;
+import game.config.GamePlayerType;
+
+public class MainActivity extends GameMainActivity {
 
     //instance variables
     private Spinner resourcesSpinner;
@@ -111,116 +117,126 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton coalButton1;
 
 
-    /**
-     * onCreate
-     *
-     * initializes listeners and registers them
-     *
-     * @param savedInstanceState
-     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        resourcesSpinner =(Spinner)findViewById(R.id.UserResourcesSpinner);
-        resourcesSpinner.setOnItemSelectedListener(new resourcesSpinListener());
-
-        powerPlantsSpinner =(Spinner)findViewById(R.id.userPowerPlantsSpinner);
-        powerPlantsSpinner.setOnItemSelectedListener(new powerPlantsSpinListener());
-
-        costTextView1 = (TextView)findViewById(R.id.upp1cValue);
-        typeTextView1 = (TextView)findViewById(R.id.upp1tValue);
-        numberTextView1 = (TextView)findViewById(R.id.upp1nValue);
-        housesTextView1 = (TextView)findViewById(R.id.upp1hValue);
-
-        costTextView2 = (TextView)findViewById(R.id.upp2cValue);
-        typeTextView2 = (TextView)findViewById(R.id.upp2tValue);
-        numberTextView2 = (TextView)findViewById(R.id.upp2nValue);
-        housesTextView2 = (TextView)findViewById(R.id.upp2hValue);
-
-        costTextView3 = (TextView)findViewById(R.id.upp3cValue);
-        typeTextView3 = (TextView)findViewById(R.id.upp3tValue);
-        numberTextView3 = (TextView)findViewById(R.id.upp3nValue);
-        housesTextView3 = (TextView)findViewById(R.id.upp3hValue);
-
-        costTextView4 = (TextView)findViewById(R.id.upp4cValue);
-        typeTextView4 = (TextView)findViewById(R.id.upp4tValue);
-        numberTextView4 = (TextView)findViewById(R.id.upp4nValue);
-        housesTextView4 = (TextView)findViewById(R.id.upp4hValue);
-
-        moneyTextView = (TextView)findViewById(R.id.moneyTextView);
-        coalNumView =(TextView)findViewById(R.id.coalNumView);
-        oilNumView =(TextView)findViewById(R.id.oilNumView);
-        trashNumView =(TextView)findViewById(R.id.trashNumView);
-        nuclearNumView=(TextView)findViewById(R.id.nuclearTextView);
-
-        coalButton1 = (ImageButton)findViewById(R.id.coalButton1);
-        coalButton1.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-
-        denverBut = (Button) findViewById(R.id.button4);
-        denverBut.setOnClickListener(new denverButListener());
-
-        seaBut = (Button) findViewById(R.id.button);
-        seaBut.setOnClickListener(new seaButListener());
-
-        sfBut = (Button) findViewById(R.id.button2);
-        sfBut.setOnClickListener(new sfButListener());
-
-        laBut = (Button) findViewById(R.id.button3);
-        laBut.setOnClickListener(new laButListener());
-
-        missoulaBut = (Button) findViewById(R.id.button21);
-        missoulaBut.setOnClickListener(new missoulaButListener());
-
-        boiseBut = (Button) findViewById(R.id.button20);
-        boiseBut.setOnClickListener(new boiseButListener());
-
-        phxBut = (Button) findViewById(R.id.button7);
-        phxBut.setOnClickListener(new phxButListener());
-
-        omahaBut = (Button) findViewById(R.id.button5);
-        omahaBut.setOnClickListener(new omahaButListener());
-
-        okcBut = (Button) findViewById(R.id.button19);
-        okcBut.setOnClickListener(new okcButListener());
-
-        dallasBut = (Button) findViewById(R.id.button9);
-        dallasBut.setOnClickListener(new dallasButListener());
-
-        houBut = (Button) findViewById(R.id.button8);
-        houBut.setOnClickListener(new houButListener());
-
-        stlouBut = (Button) findViewById(R.id.button10);
-        stlouBut.setOnClickListener(new stlouButListener());
-
-        chiBut = (Button) findViewById(R.id.button6);
-        chiBut.setOnClickListener(new chiButListener());
-
-        memBut = (Button) findViewById(R.id.button12);
-        memBut.setOnClickListener(new memButListener());
-
-        neworlBut = (Button) findViewById(R.id.button11);
-        neworlBut.setOnClickListener(new neworlButListener());
-
-        detBut = (Button) findViewById(R.id.button17);
-        detBut.setOnClickListener(new detButListener());
-
-        atlBut = (Button) findViewById(R.id.button14);
-        atlBut.setOnClickListener(new atlButListener());
-
-        miamiBut = (Button) findViewById(R.id.button15);
-        miamiBut.setOnClickListener(new miamiButListener());
-
-        nycBut = (Button) findViewById(R.id.button16);
-        nycBut.setOnClickListener(new nycButListener());
-
-        bosBut = (Button) findViewById(R.id.button18);
-        bosBut.setOnClickListener(new bosButListener());
-
-
+    public GameConfig createDefaultConfig() {
+        return null;
     }
+
+    @Override
+    public LocalGame createLocalGame() {
+        return null;
+    }
+
+//    /**
+//     * onCreate
+//     *
+//     * initializes listeners and registers them
+//     *
+//     * @param savedInstanceState
+//     *///////////********MAKE PROTECTED WHEN MOVE TO HUMAN PLAYER*******////////
+//    @Override
+//    public void onCreate(Bundle savedInstanceState) {
+//
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//
+//        resourcesSpinner =(Spinner)findViewById(R.id.UserResourcesSpinner);
+//        resourcesSpinner.setOnItemSelectedListener(new resourcesSpinListener());
+//
+//        powerPlantsSpinner =(Spinner)findViewById(R.id.userPowerPlantsSpinner);
+//        powerPlantsSpinner.setOnItemSelectedListener(new powerPlantsSpinListener());
+//
+//        costTextView1 = (TextView)findViewById(R.id.upp1cValue);
+//        typeTextView1 = (TextView)findViewById(R.id.upp1tValue);
+//        numberTextView1 = (TextView)findViewById(R.id.upp1nValue);
+//        housesTextView1 = (TextView)findViewById(R.id.upp1hValue);
+//
+//        costTextView2 = (TextView)findViewById(R.id.upp2cValue);
+//        typeTextView2 = (TextView)findViewById(R.id.upp2tValue);
+//        numberTextView2 = (TextView)findViewById(R.id.upp2nValue);
+//        housesTextView2 = (TextView)findViewById(R.id.upp2hValue);
+//
+//        costTextView3 = (TextView)findViewById(R.id.upp3cValue);
+//        typeTextView3 = (TextView)findViewById(R.id.upp3tValue);
+//        numberTextView3 = (TextView)findViewById(R.id.upp3nValue);
+//        housesTextView3 = (TextView)findViewById(R.id.upp3hValue);
+//
+//        costTextView4 = (TextView)findViewById(R.id.upp4cValue);
+//        typeTextView4 = (TextView)findViewById(R.id.upp4tValue);
+//        numberTextView4 = (TextView)findViewById(R.id.upp4nValue);
+//        housesTextView4 = (TextView)findViewById(R.id.upp4hValue);
+//
+//        moneyTextView = (TextView)findViewById(R.id.moneyTextView);
+//        coalNumView =(TextView)findViewById(R.id.coalNumView);
+//        oilNumView =(TextView)findViewById(R.id.oilNumView);
+//        trashNumView =(TextView)findViewById(R.id.trashNumView);
+//        nuclearNumView=(TextView)findViewById(R.id.nuclearTextView);
+//
+//        coalButton1 = (ImageButton)findViewById(R.id.coalButton1);
+//        coalButton1.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//
+//        denverBut = (Button) findViewById(R.id.button4);
+//        denverBut.setOnClickListener(new denverButListener());
+//
+//        seaBut = (Button) findViewById(R.id.button);
+//        seaBut.setOnClickListener(new seaButListener());
+//
+//        sfBut = (Button) findViewById(R.id.button2);
+//        sfBut.setOnClickListener(new sfButListener());
+//
+//        laBut = (Button) findViewById(R.id.button3);
+//        laBut.setOnClickListener(new laButListener());
+//
+//        missoulaBut = (Button) findViewById(R.id.button21);
+//        missoulaBut.setOnClickListener(new missoulaButListener());
+//
+//        boiseBut = (Button) findViewById(R.id.button20);
+//        boiseBut.setOnClickListener(new boiseButListener());
+//
+//        phxBut = (Button) findViewById(R.id.button7);
+//        phxBut.setOnClickListener(new phxButListener());
+//
+//        omahaBut = (Button) findViewById(R.id.button5);
+//        omahaBut.setOnClickListener(new omahaButListener());
+//
+//        okcBut = (Button) findViewById(R.id.button19);
+//        okcBut.setOnClickListener(new okcButListener());
+//
+//        dallasBut = (Button) findViewById(R.id.button9);
+//        dallasBut.setOnClickListener(new dallasButListener());
+//
+//        houBut = (Button) findViewById(R.id.button8);
+//        houBut.setOnClickListener(new houButListener());
+//
+//        stlouBut = (Button) findViewById(R.id.button10);
+//        stlouBut.setOnClickListener(new stlouButListener());
+//
+//        chiBut = (Button) findViewById(R.id.button6);
+//        chiBut.setOnClickListener(new chiButListener());
+//
+//        memBut = (Button) findViewById(R.id.button12);
+//        memBut.setOnClickListener(new memButListener());
+//
+//        neworlBut = (Button) findViewById(R.id.button11);
+//        neworlBut.setOnClickListener(new neworlButListener());
+//
+//        detBut = (Button) findViewById(R.id.button17);
+//        detBut.setOnClickListener(new detButListener());
+//
+//        atlBut = (Button) findViewById(R.id.button14);
+//        atlBut.setOnClickListener(new atlButListener());
+//
+//        miamiBut = (Button) findViewById(R.id.button15);
+//        miamiBut.setOnClickListener(new miamiButListener());
+//
+//        nycBut = (Button) findViewById(R.id.button16);
+//        nycBut.setOnClickListener(new nycButListener());
+//
+//        bosBut = (Button) findViewById(R.id.button18);
+//        bosBut.setOnClickListener(new bosButListener());
+//
+//
+//    }
 
     private class resourcesSpinListener implements AdapterView.OnItemSelectedListener {
         @Override

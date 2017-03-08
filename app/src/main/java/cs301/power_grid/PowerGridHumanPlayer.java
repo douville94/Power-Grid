@@ -1,4 +1,5 @@
 package cs301.power_grid;
+import android.os.Bundle;
 import android.view.View;
 
 import game.GameHumanPlayer;
@@ -30,4 +31,5 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     public void setAsGui(GameMainActivity activity) {
 
     }
+
 }
