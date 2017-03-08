@@ -5,12 +5,16 @@ import android.view.View;
 import game.GameHumanPlayer;
 import game.GameMainActivity;
 import game.infoMsg.GameInfo;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.view.View.OnClickListener;
 
 /**
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  */
 
-//will extend GameHumanPlayer
+
 public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     public PowerGridHumanPlayer(String name){

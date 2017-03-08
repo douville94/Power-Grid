@@ -6,7 +6,7 @@ import game.actionMsg.GameAction;
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  */
 
-//will extend GameAction
+
 public class PassAction extends GameAction{
     /**
      * constructor for GameAction

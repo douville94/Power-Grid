@@ -8,7 +8,7 @@ import game.actionMsg.GameAction;
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  */
 
-//will extend LocalGame
+
 public class PowerGridLocalGame extends LocalGame{
 
     @Override
