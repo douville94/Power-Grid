@@ -1,9 +1,18 @@
 package cs301.power_grid;
-
+import game.GamePlayer;
+import game.actionMsg.GameAction;
 /**
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  */
 
-//will extend GameAction
-public class BuyOilAction {
+
+public class BuyOilAction extends GameAction{
+    /**
+     * constructor for GameAction
+     *
+     * @param player the player who created the action
+     */
+    public BuyOilAction(GamePlayer player) {
+        super(player);
+    }
 }

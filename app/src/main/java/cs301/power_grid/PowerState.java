@@ -1,13 +1,14 @@
 package cs301.power_grid;
 
 import java.util.ArrayList;
+import game.infoMsg.GameState;
 
 /** @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  * Created by Computerz on 2/24/2017.
  */
 
 
-public class PowerState {
+public class PowerState extends GameState {
 
     private int phase;
 //    private int coal;
