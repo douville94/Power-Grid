@@ -1,7 +1,7 @@
 package cs301.power_grid;
 
 /**
- * Created by guilianluchini on 3/1/17.
+ * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  */
 
 public class ResourceStore {
