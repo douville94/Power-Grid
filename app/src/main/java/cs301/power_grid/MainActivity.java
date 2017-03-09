@@ -626,7 +626,8 @@ private class sfButListener implements View.OnClickListener {
         }
     }
 }
-    //implements the first coal button
+
+    //implements the coal buttons
     public class CoalButtonListener implements View.OnClickListener {
 
         public CoalButtonListener(TextView initTextView, TextView initCoalNumView) {
@@ -638,22 +639,343 @@ private class sfButListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             int viewId = view.getId();
-            int currMoneyVal =Integer.parseInt(moneyTextView.getText().toString());
+            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
             int currCoalVal = Integer.parseInt(coalNumView.getText().toString());
-            int newMoneyVal = currMoneyVal -5;
-            int newCoalVal = currCoalVal +1;
+            int newMoneyVal = currMoneyVal - 1;
+            int newCoalVal = currCoalVal + 1;
 
-            if (viewId == R.id.coalButton1){
+            if (viewId == R.id.cb1s1) {
                 moneyTextView.setText("" + newMoneyVal);
                 coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
             }
-            else{
+
+
+            if (viewId == R.id.cb2s1) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb3s1) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb1s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb2s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb3s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb1s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb2s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb3s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb1s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb2s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb3s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb1s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb2s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.cb3s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+        }
+    }
+
+    //implements the oil buttons
+    public class OilButtonListener implements View.OnClickListener {
+
+        public OilButtonListener(TextView initTextView, TextView initOilNumView) {
+            moneyTextView = initTextView;
+            oilNumView = initOilNumView;
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            int viewId = view.getId();
+            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
+            int currOilVal = Integer.parseInt(oilNumView.getText().toString());
+            int newMoneyVal = currMoneyVal - 3;
+            int newOilVal = currOilVal + 1;
+
+            if (viewId == R.id.ob1s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                oilNumView.setText("" + newOilVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ob2s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                oilNumView.setText("" + newOilVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ob1s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                oilNumView.setText("" + newOilVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ob2s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                oilNumView.setText("" + newOilVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ob1s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                oilNumView.setText("" + newOilVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ob2s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                oilNumView.setText("" + newOilVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ob1s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                oilNumView.setText("" + newOilVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ob2s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                oilNumView.setText("" + newOilVal);
+            } else {
                 return;
             }
         }
     }
 
+    //implements the trash buttons
+    public class TrashButtonListener implements View.OnClickListener {
 
+        public TrashButtonListener(TextView initTextView, TextView initTrashNumView) {
+            moneyTextView = initTextView;
+            trashNumView = initTrashNumView;
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            int viewId = view.getId();
+            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
+            int currTrashVal = Integer.parseInt(trashNumView.getText().toString());
+            int newMoneyVal = currMoneyVal - 7;
+            int newTrashVal = currTrashVal + 1;
+
+            if (viewId == R.id.gb1s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb2s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+            if (viewId == R.id.gb3s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb1s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb2s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb3s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb1s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb2s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb3s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb1s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb2s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.gb3s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                trashNumView.setText("" + newTrashVal);
+            } else {
+                return;
+            }
+        }
+    }
+
+    //implements the nuclear buttons
+    public class NuclearButtonListener implements View.OnClickListener {
+
+        public NuclearButtonListener(TextView initTextView, TextView initNuclearNumView) {
+            moneyTextView = initTextView;
+            nuclearNumView = initNuclearNumView;
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            int viewId = view.getId();
+            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
+            int currNuclearVal = Integer.parseInt(nuclearNumView.getText().toString());
+            int newMoneyVal = currMoneyVal - 14;
+            int newNucelarVal = currNuclearVal + 1;
+
+            if (viewId == R.id.ub1s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                nuclearNumView.setText("" + newNucelarVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ub1s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                nuclearNumView.setText("" + newNucelarVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ub1s4) {
+                moneyTextView.setText("" + newMoneyVal);
+                nuclearNumView.setText("" + newNucelarVal);
+            } else {
+                return;
+            }
+
+            if (viewId == R.id.ub1s5) {
+                moneyTextView.setText("" + newMoneyVal);
+                nuclearNumView.setText("" + newNucelarVal);
+            } else {
+                return;
+            }
+        }
+    }
 
     //COULD GET RID OF USERRESOURCES AND USERPOWERPLANTS AND REPLACE WITH INVENTORY AND POWERPLANT
     //USED IN SPINNERS
