@@ -5,9 +5,9 @@ package cs301.power_grid;
  */
 
 public class ResourceStore {
-    private boolean[] coal = new boolean[15];
-    private boolean[] oil = new boolean[10];
-    private boolean[] trash = new boolean[15];
-    private boolean[] uranium = new boolean[5];
+    public boolean[] coal = new boolean[15];
+    public boolean[] oil = new boolean[10];
+    public boolean[] trash = new boolean[15];
+    public boolean[] uranium = new boolean[5];
 
 }

@@ -13,7 +13,11 @@ public class BuyCityAction extends GameAction {
      *
      * @param player the player who created the action
      */
-    public BuyCityAction(GamePlayer player) {
+    City city;
+
+    public BuyCityAction(GamePlayer player,City initCity) {
         super(player);
+        city = initCity;
     }
+    public City getCity(){return city;}
 }

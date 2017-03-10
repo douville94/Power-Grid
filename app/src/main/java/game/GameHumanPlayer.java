@@ -16,6 +16,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -31,7 +32,7 @@ import android.view.View;
  * @version July 2013
  * 
  */
-public abstract class GameHumanPlayer implements GamePlayer, Tickable {
+public abstract class GameHumanPlayer extends AppCompatActivity implements GamePlayer, Tickable {
 	/**
 	 * instance variables
 	 */

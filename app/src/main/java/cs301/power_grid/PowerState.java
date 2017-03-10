@@ -1,20 +1,19 @@
 package cs301.power_grid;
 
 import java.util.ArrayList;
+
+import game.GamePlayer;
 import game.infoMsg.GameState;
 
 /** @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  * Created by Computerz on 2/24/2017.
  */
 
-
 public class PowerState extends GameState {
 
+    private int currentBid;
     private int phase;
-//    private int coal;
-//    private int oil;
-//    private int uranium;
-//    private int trash;
+    private int turn;
     private ArrayList<City> cities = new ArrayList<City>();
     private ArrayList<Powerplant> salePlants = new ArrayList<Powerplant>();
     private ArrayList<Inventory> gameInventories = new ArrayList<Inventory>(); //making an array list because we want to leave the option open for more than 2 players for later code
@@ -35,11 +34,6 @@ public class PowerState extends GameState {
     public PowerState(PowerState original){
 
         int i, j, k, m, n;
-        //phase = pha;
-//        coal = co;
-//        oil = oi;
-//        uranium = ur;
-//        trash = tra;
 
         //get the cities up and running
         for(i = 0; i < original.cities.size(); i++){
@@ -76,13 +70,26 @@ public class PowerState extends GameState {
             gameInventories.get(m).addMyCity(original.gameInventories.get(m).getMyCities().get(n));
         }
     }
+    public void performBidding(BidAction bA){
+        currentBid = bA.getBid();
+    }
+
+    public void performBuyCity(GamePlayer player, BuyCityAction bCA){
+        boolean didithappen = player.inventory.addMyCity(bCA.getCity());
+        if(!didithappen){} //vibrate screen
+    }
+
+    public void performBuyOil(GamePlayer player, BuyOilAction bOA, int index){
+        int price = (index/3+1);
+        if (availableResources.coal[index] && player.inventory.getMoney() >= price){
+            availableResources.coal[index] = false;
+            player.inventory.setMoney(player.inventory.getMoney()-price);
+            player.inventory.setOil(player.inventory.getOil()+1);
+
+        }
+    }
 
     //getters
-//    public int getGameCoal(){return coal;}
-//    public int getGameOil(){return oil;}
-//    public int getGameUranium(){return uranium;}
-//    public int getGameTrash(){return trash;}
-
     public int getGamePhase(){return phase;}
     public ArrayList<City> getAvailCities(){return cities;}
     public ArrayList<Powerplant> getAvailPowerplant(){return salePlants;}
@@ -90,14 +97,12 @@ public class PowerState extends GameState {
     public ResourceStore getAvailableResources(){return availableResources;}
 
     //setters
-//    public void setGameCoal(int refresh){coal = refresh;}
-//    public void setGameOil(int refresh){oil = refresh;}
-//    public void setGameUranium(int refresh){uranium = refresh;}
-//    public void setGameTrash(int refresh){trash = refresh;}
-
     public void setGamePhase(int refresh){phase = refresh;}
     public void setAvailCities(ArrayList<City> newCit){cities = newCit;}
     public void setSalePlants(ArrayList<Powerplant> newPlant){salePlants = newPlant;}
     public void setGameInventories(ArrayList<Inventory> newInventory){gameInventories = newInventory;}
     public void setAvailableResources(ResourceStore newResources){availableResources = newResources;}
+
+
+
 }

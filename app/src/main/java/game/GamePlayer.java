@@ -1,5 +1,6 @@
 package game;
 
+import cs301.power_grid.Inventory;
 import game.infoMsg.GameInfo;
 
 /**
@@ -12,7 +13,9 @@ import game.infoMsg.GameInfo;
  */
 
 public interface GamePlayer {
-	
+
+	Inventory inventory = new Inventory();
+
 	// sets this player as the GUI player (implemented as final in the
 	// major player classes)
 	public abstract void gameSetAsGui(GameMainActivity activity);
