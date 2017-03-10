@@ -7,13 +7,15 @@ import game.infoMsg.GameState;
 
 /** @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  * Created by Computerz on 2/24/2017.
+ *
+ * NOTE: Game logic is contained in the PowerGridLocalGame Class under the makeMove method
  */
 
 public class PowerState extends GameState {
 
+    private int playerId = 0;// 0 = human player, 1 = computer/network player
     private int currentBid;
     private int phase;
-    private int turn;
     private ArrayList<City> cities = new ArrayList<City>();
     private ArrayList<Powerplant> salePlants = new ArrayList<Powerplant>();
     private ArrayList<Inventory> gameInventories = new ArrayList<Inventory>(); //making an array list because we want to leave the option open for more than 2 players for later code
@@ -70,24 +72,6 @@ public class PowerState extends GameState {
             gameInventories.get(m).addMyCity(original.gameInventories.get(m).getMyCities().get(n));
         }
     }
-    public void performBidding(BidAction bA){
-        currentBid = bA.getBid();
-    }
-
-    public void performBuyCity(GamePlayer player, BuyCityAction bCA){
-        boolean didithappen = player.inventory.addMyCity(bCA.getCity());
-        if(!didithappen){} //vibrate screen
-    }
-
-    public void performBuyOil(GamePlayer player, BuyOilAction bOA, int index){
-        int price = (index/3+1);
-        if (availableResources.coal[index] && player.inventory.getMoney() >= price){
-            availableResources.coal[index] = false;
-            player.inventory.setMoney(player.inventory.getMoney()-price);
-            player.inventory.setOil(player.inventory.getOil()+1);
-
-        }
-    }
 
     //getters
     public int getGamePhase(){return phase;}
@@ -95,6 +79,8 @@ public class PowerState extends GameState {
     public ArrayList<Powerplant> getAvailPowerplant(){return salePlants;}
     public ArrayList<Inventory> getGameInventories(){return gameInventories;}
     public ResourceStore getAvailableResources(){return availableResources;}
+    public int getPlayerId(){return playerId;}
+    public int getCurrentBid(){return currentBid;}
 
     //setters
     public void setGamePhase(int refresh){phase = refresh;}
@@ -102,6 +88,8 @@ public class PowerState extends GameState {
     public void setSalePlants(ArrayList<Powerplant> newPlant){salePlants = newPlant;}
     public void setGameInventories(ArrayList<Inventory> newInventory){gameInventories = newInventory;}
     public void setAvailableResources(ResourceStore newResources){availableResources = newResources;}
+    public void setPlayerId(int newId){playerId = newId;}
+    public void setCurrentBid(int newBid){currentBid = newBid;}
 
 
 

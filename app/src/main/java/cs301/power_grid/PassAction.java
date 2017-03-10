@@ -8,12 +8,22 @@ import game.actionMsg.GameAction;
 
 
 public class PassAction extends GameAction{
+
+    private boolean pass;
+    private Powerplant powerplant;
     /**
      * constructor for GameAction
      *
      * @param player the player who created the action
      */
-    public PassAction(GamePlayer player) {
+    public PassAction(GamePlayer player, Powerplant initPowerPlant) {
         super(player);
+        pass = true;
+        powerplant = initPowerPlant;
+
+    }
+
+    public Powerplant getPowerplant() {
+        return powerplant;
     }
 }

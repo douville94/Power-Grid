@@ -7,12 +7,17 @@ import game.actionMsg.GameAction;
 
 
 public class BuyTrashAction extends GameAction{
+
+    private int trash;
+
     /**
      * constructor for GameAction
      *
      * @param player the player who created the action
      */
-    public BuyTrashAction(GamePlayer player) {
+    public BuyTrashAction(GamePlayer player, int initTrash) {
         super(player);
+        trash = initTrash;
     }
+    public int getTrash() {return trash;}
 }

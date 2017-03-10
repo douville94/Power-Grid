@@ -7,12 +7,20 @@ import game.actionMsg.GameAction;
 
 
 public class DiscardPowerPlantAction extends GameAction {
+
+    private Powerplant powerplant;
+
     /**
      * constructor for GameAction
      *
      * @param player the player who created the action
      */
-    public DiscardPowerPlantAction(GamePlayer player) {
+    public DiscardPowerPlantAction(GamePlayer player, Powerplant initPowerPlant) {
         super(player);
+        powerplant = initPowerPlant;
+    }
+
+    public Powerplant getPowerplant() {
+        return powerplant;
     }
 }

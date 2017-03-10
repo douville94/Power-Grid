@@ -8,12 +8,19 @@ import game.actionMsg.GameAction;
 
 
 public class BuyCoalAction extends GameAction {
+
+    int coal;
+
     /**
      * constructor for GameAction
      *
      * @param player the player who created the action
      */
-    public BuyCoalAction(GamePlayer player) {
+    public BuyCoalAction(GamePlayer player, int index)
+    {
         super(player);
+        coal = index;
     }
+
+    public int getCoal() {return coal;}
 }
