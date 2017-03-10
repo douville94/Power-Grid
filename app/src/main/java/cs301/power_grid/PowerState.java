@@ -21,9 +21,7 @@ public class PowerState extends GameState {
     private ArrayList<Inventory> gameInventories = new ArrayList<Inventory>(); //making an array list because we want to leave the option open for more than 2 players for later code
     private ResourceStore availableResources;
 
-
-
-    //Regular Constructor
+    //Regular Constructor - needs to have no arguments
     public PowerState(int initPhase, ArrayList<City> initCities, ArrayList<Powerplant> initSalePlants,ArrayList<Inventory> initGameInventories, ResourceStore initAvailableResources ){
         phase = initPhase;
         cities = initCities;
