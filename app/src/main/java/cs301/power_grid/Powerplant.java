@@ -21,6 +21,13 @@ public class Powerplant {
 
     }
 
+    public Powerplant(){
+        cost = -1;
+        priceToPower = -1;
+        housesPowered = -1;
+        kind = "";
+
+    }
     public int getCost(){return cost;}
     public int getPtP(){return priceToPower;}
     public int getHp(){return housesPowered;}

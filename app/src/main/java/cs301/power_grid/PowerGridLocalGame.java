@@ -13,14 +13,8 @@ import game.infoMsg.GameState;
  * Contains game logic in makeMove class
  */
 public class PowerGridLocalGame extends LocalGame{
-    //we need to make alterations to PowerState constructor so that it takes no arguments
-    ArrayList<City> initCities = new ArrayList<>();
-    java.util.ArrayList<Powerplant> initSalePlants = new ArrayList<>();
-    ArrayList<Inventory> initGameInventories = new ArrayList<>();
-    ResourceStore initAvailableResources = new ResourceStore();
-
     //instance variables
-    private PowerState powerGameState = new PowerState(0, initCities, initSalePlants, initGameInventories,initAvailableResources );
+    private PowerState powerGameState = new PowerState();
     private int price;
 
     @Override
@@ -201,7 +195,7 @@ public class PowerGridLocalGame extends LocalGame{
             Powerplant discard = ((DiscardPowerPlantAction) action).getPowerplant();
             int ppIndex = powerGameState.getGameInventories().get(0).getMyPlants().indexOf(discard);
             //remove indicated powerplant
-            powerGameState.getGameInventories().get(0).getMyPlants().remove(discard);
+            powerGameState.getGameInventories().get(0).getMyPlants().remove(ppIndex);
             return true;
         }
         else if(action instanceof DiscardPowerPlantAction && playerID == 1) {
@@ -209,7 +203,7 @@ public class PowerGridLocalGame extends LocalGame{
             Powerplant discard = ((DiscardPowerPlantAction) action).getPowerplant();
             int ppIndex = powerGameState.getGameInventories().get(1).getMyPlants().indexOf(discard);
             //remove indicated powerplant
-            powerGameState.getGameInventories().get(1).getMyPlants().remove(discard);
+            powerGameState.getGameInventories().get(1).getMyPlants().remove(ppIndex);
             return true;
         }
 
