@@ -23,10 +23,13 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
 
     //instance variables
-    private Inventory HumanPlayer;
-    private Inventory ComputerPlayer;
+    private Inventory HumanPlayer = new Inventory();
+    private Inventory OpponentPlayer = new Inventory();
+
+    //GUI features
     private Spinner resourcesSpinner;
     private Spinner powerPlantsSpinner;
+
     private TextView moneyTextView;
     private TextView coalNumView;
     private TextView oilNumView;
@@ -48,12 +51,6 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private TextView typeTextView4;
     private TextView numberTextView4;
     private TextView housesTextView4;
-
-//    MainActivity.UserResources YourResources = new MainActivity.UserResources(150,2,0,6,0);;
-//    MainActivity.UserResources OtherResources = new MainActivity.UserResources(80,0,3,0,1);;
-//
-//    MainActivity.UserPowerPlants YourPowerPlants = new MainActivity.UserPowerPlants(80,"Coal",3,0);
-//    MainActivity.UserPowerPlants OtherPlayersPowerPlants = new MainActivity.UserPowerPlants(10,"Oil",5,6);
 
     private int basicGray = Color.rgb(214,215,215);
     private int prettyBlue = Color.rgb(0, 221, 255);
@@ -120,6 +117,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     private ImageButton coalButton1;
 
+    //Constructor
     public PowerGridHumanPlayer(String name){
         super(name);
     }
@@ -139,13 +137,13 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     }
 
-        /**
+    /**************************
      * onCreate
      *
-     * initializes listeners and registers them
+     * initializes buttons and registers them to listeners
      *
      * @param savedInstanceState
-         * */
+     *************************/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -247,29 +245,15 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
         bosBut = (Button) findViewById(R.id.button18);
         bosBut.setOnClickListener(new bosButListener());
-
-
     }
 
-    private class resourcesSpinListener implements AdapterView.OnItemSelectedListener {
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            //String currVal = resourcesSpinner.getSelectedItem().toString();
-            switch (position){
-                case 0:
-                    setResources(HumanPlayer);
-                    break;
-                case 1:
-                    setResources(ComputerPlayer);
-                    break;
-            }
-        }
-        @Override
-        public void onNothingSelected(AdapterView<?> parentView) {
-            //do nothing
-        }
-    }
-
+    /**
+     * setResources
+     *
+     * to be used in the spinners methods, sets resources text on GUI
+     *
+     * @param rsc //resource
+     */
     private void setResources(Inventory rsc){
         moneyTextView.setText(""+ rsc.getMoney());
         coalNumView.setText(""+ rsc.getCoal());
@@ -278,6 +262,13 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         nuclearNumView.setText("" + rsc.getUranium());
     }
 
+    /**
+     * setPowerPlants
+     *
+     * to be used in the spinners methods, sets power plants text on GUI
+     *
+     * @param upp //userPowerPlant
+     */
     private void setPowerPlants(Inventory upp) {
         costTextView1.setText("");
         typeTextView1.setText("");
@@ -325,6 +316,37 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         }
     }
 
+    /**
+     * resourceSpinListener
+     *
+     * configures the spinner in the upper left of the GUI to display
+     * either Humanplayers resources or opponent
+     */
+    private class resourcesSpinListener implements AdapterView.OnItemSelectedListener {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            //String currVal = resourcesSpinner.getSelectedItem().toString();
+            switch (position){
+                case 0:
+                    setResources(HumanPlayer);
+                    break;
+                case 1:
+                    setResources(OpponentPlayer);
+                    break;
+            }
+        }
+        @Override
+        public void onNothingSelected(AdapterView<?> parentView) {
+            //do nothing
+        }
+    }
+
+    /**
+     * powerPlantsSpinListener
+     *
+     * configures the spinner on the map to display
+     * either Human Opponent's powerplants
+     */
     private class powerPlantsSpinListener implements AdapterView.OnItemSelectedListener {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -334,7 +356,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
                     setPowerPlants(HumanPlayer);
                     break;
                 case 1:
-                    setPowerPlants(ComputerPlayer);
+                    setPowerPlants(OpponentPlayer);
                     break;
             }
         }
@@ -343,6 +365,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             //do nothing
         }
     }
+
 
     private class denverButListener implements View.OnClickListener {
         public void onClick(View v) {
@@ -1014,39 +1037,5 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         }
     }
 
-    //COULD GET RID OF USERRESOURCES AND USERPOWERPLANTS AND REPLACE WITH INVENTORY AND POWERPLANT
-    //USED IN SPINNERS
-    public class UserResources//(int one, int two, int three, int four, int five)
-    {
-        int coal;
-        int oil;
-        int nuclear;
-        int money;
-        int trash;
 
-        public UserResources(int constructCoal, int constructOil, int constructNuclear, int constructMoney, int constructTrash)
-        {
-            coal = constructCoal;
-            oil = constructOil;
-            nuclear = constructNuclear;
-            money = constructMoney;
-            trash = constructTrash;
-        }
-    }
-
-    public class UserPowerPlants
-    {
-        int cost;
-        String type;
-        int number;
-        int houses;
-
-        public UserPowerPlants(int constructCost, String constructType, int constructNumber, int constructHouses)
-        {
-            cost = constructCost;
-            type = constructType;
-            number = constructNumber;
-            houses = constructHouses;
-        }
-    }
 }
