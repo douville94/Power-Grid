@@ -23,6 +23,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
 
     //instance variables
+    //Do we get rid of these and make an instance of the Game state here
     private Inventory HumanPlayer = new Inventory();
     private Inventory OpponentPlayer = new Inventory();
 
@@ -183,7 +184,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         trashNumView =(TextView)findViewById(R.id.trashNumView);
         nuclearNumView=(TextView)findViewById(R.id.nuclearTextView);
 
-        coalButton1 = (ImageButton)findViewById(R.id.coalButton1);
+        coalButton1 = (ImageButton)findViewById(R.id.cb1s1);
         coalButton1.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
 
         denverBut = (Button) findViewById(R.id.button4);

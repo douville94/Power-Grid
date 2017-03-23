@@ -16,6 +16,7 @@ public class PowerGridLocalGame extends LocalGame{
     //instance variables
     private PowerState powerGameState = new PowerState();
     private int price;
+    private int phase = powerGameState.getGamePhase();
 
     @Override
     //Sends copy of updated state to given player

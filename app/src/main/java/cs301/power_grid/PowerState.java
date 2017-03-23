@@ -11,6 +11,7 @@ import game.infoMsg.GameState;
  * NOTE: Game logic is contained in the PowerGridLocalGame Class under the makeMove method
  */
 
+
 public class PowerState extends GameState {
 
     private int phase;
