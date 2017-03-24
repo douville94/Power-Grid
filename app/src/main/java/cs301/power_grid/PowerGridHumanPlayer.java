@@ -27,6 +27,9 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private Inventory HumanPlayer = new Inventory();
     private Inventory OpponentPlayer = new Inventory();
 
+    //instance of android activity we are running
+    private GameMainActivity myActivity;
+
     //GUI features
     private Spinner resourcesSpinner;
     private Spinner powerPlantsSpinner;
@@ -136,6 +139,11 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     @Override
     public void setAsGui(GameMainActivity activity) {
 
+        // remember the activity
+        myActivity = activity;
+
+        // Load the layout resource for our GUI
+        activity.setContentView(R.layout.activity_main);
     }
 
     /**************************
