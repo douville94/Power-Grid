@@ -17,7 +17,7 @@ public class PowerState extends GameState {
     private int phase;
     private int currentBid;
     private int playerId;
-    private PowerGridHumanPlayer player1 = new PowerGridHumanPlayer(null);
+   // private PowerGridHumanPlayer player1 = new PowerGridHumanPlayer(null);
     private ArrayList<City> cities = new ArrayList<City>();
     private ArrayList<Powerplant> salePlants = new ArrayList<Powerplant>();
     private ArrayList<Inventory> gameInventories = new ArrayList<Inventory>(); //making an array list because we want to leave the option open for more than 2 players for later code
@@ -26,7 +26,7 @@ public class PowerState extends GameState {
     //Constructor
     public PowerState(){
         phase = 0;
-
+        playerId = 0;
         initiateCityScape();
         initiatePowerPlants();
         scramblePlants(); //at any given moment, Powerplants 0, 1, 2, 3 are for sale
@@ -401,6 +401,7 @@ public class PowerState extends GameState {
         salePlants.set(8, salePlants.get(10));
         salePlants.set(10, temp);
 
+        //don't shuffle first 9 plants
         for(i = 0; i < 9; i++){
             shuffledPlants[i] = salePlants.get(i);
         }
