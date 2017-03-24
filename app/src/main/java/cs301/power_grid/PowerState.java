@@ -17,7 +17,7 @@ public class PowerState extends GameState {
     private int phase;
     private int currentBid;
     private int playerId;
-   // private PowerGridHumanPlayer player1 = new PowerGridHumanPlayer(null);
+    private PowerGridHumanPlayer player1 = new PowerGridHumanPlayer(null);
     private ArrayList<City> cities = new ArrayList<City>();
     private ArrayList<Powerplant> salePlants = new ArrayList<Powerplant>();
     private ArrayList<Inventory> gameInventories = new ArrayList<Inventory>(); //making an array list because we want to leave the option open for more than 2 players for later code
