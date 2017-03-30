@@ -30,6 +30,10 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     //instance of android activity we are running
     private GameMainActivity myActivity;
 
+    //instance of the game state
+    private PowerState powerState;
+
+
     //GUI features
     private Spinner resourcesSpinner;
     private Spinner powerPlantsSpinner;
