@@ -1,4 +1,5 @@
 package cs301.power_grid;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -6,13 +7,12 @@ import android.view.View;
 import game.GameHumanPlayer;
 import game.GameMainActivity;
 import game.infoMsg.GameInfo;
-import android.view.View;
+
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 
 /**
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
@@ -20,7 +20,6 @@ import android.view.View.OnClickListener;
 
 
 public class PowerGridHumanPlayer extends GameHumanPlayer {
-
 
     //instance variables
     //Do we get rid of these and make an instance of the Game state here
@@ -31,7 +30,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private GameMainActivity myActivity;
 
     //instance of the game state
-    private PowerState powerState;
+    private PowerState powerState = new PowerState();
 
 
     //GUI features
