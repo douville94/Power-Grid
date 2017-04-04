@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
+import game.Game;
 import game.GameHumanPlayer;
 import game.GameMainActivity;
 import game.infoMsg.GameInfo;
@@ -11,6 +12,7 @@ import game.infoMsg.GameInfo;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -31,6 +33,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     //instance of the game state
     private PowerState powerState = new PowerState();
+    private Game game;
 
 
     //GUI features
@@ -131,12 +134,45 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     @Override
     public View getTopView() {
-        return null;
+        return (RelativeLayout)findViewById(R.id.activity_main);
     }
 
     @Override
     public void receiveInfo(GameInfo info) {
+        //if (powerState == null){return;}
 
+        //check if info is a gameState
+        if (info instanceof PowerState){
+            powerState = (PowerState) info;
+
+            //update GUI -
+            //look at what phase game is in then update accordingly
+            int phase = powerState.getGamePhase();
+            if(phase == 0){
+
+            }
+            else if (phase == 1 ){
+
+            }
+            else if (phase == 2 ){
+
+            }
+            else if (phase == 3 ){
+
+            }
+            else if (phase == 4 ){
+
+            }
+            else if (phase == 5 ){
+
+            }
+            else if (phase == 6 ){
+
+            }
+            else if (phase == 7 ){
+
+            }
+        }
     }
 
     @Override

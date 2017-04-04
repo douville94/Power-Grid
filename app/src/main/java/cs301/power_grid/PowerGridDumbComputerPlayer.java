@@ -8,7 +8,9 @@ import game.infoMsg.GameInfo;
  */
 
 
-public class PowerGridDumbComputerPlayer extends GameComputerPlayer{
+public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
+    PowerState powerState;
+
     /**
      * constructor
      *
@@ -19,7 +21,16 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer{
     }
 
     @Override
-    protected void receiveInfo(GameInfo info) {
+    public void receiveInfo(GameInfo info) {
+        //check if info is a gameState
+        if (info instanceof PowerState) {
+            powerState = (PowerState) info;
 
+            //look at what phase game is in then make a move
+            int phase = powerState.getGamePhase();
+            if (phase == 0) {
+                //do some shit
+            }
+        }
     }
 }
