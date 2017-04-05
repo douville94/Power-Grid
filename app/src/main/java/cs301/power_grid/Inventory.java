@@ -16,7 +16,7 @@ public class Inventory {
     private ArrayList<Powerplant> myPlants = new ArrayList<Powerplant>();
     private ArrayList<City> myCities = new ArrayList<City>();
 
-    public Inventory(){
+    public Inventory() {
         //initial game setup
         money = 50;
         coal = 0;
@@ -25,22 +25,22 @@ public class Inventory {
         trash = 0;
     }
 
-    public int getMoney(){return money;}
-    public int getCoal(){return coal;}
-    public int getOil(){return oil;}
-    public int getUranium(){return uranium;}
-    public int getTrash(){return trash;}
-    public ArrayList<Powerplant> getMyPlants(){return myPlants;}
-    public ArrayList<City> getMyCities(){return myCities;}
+    public int getMoney() {return money;}
+    public int getCoal() {return coal;}
+    public int getOil() {return oil;}
+    public int getUranium() {return uranium;}
+    public int getTrash() {return trash;}
+    public ArrayList<Powerplant> getMyPlants() {return myPlants;}
+    public ArrayList<City> getMyCities() {return myCities;}
 
-    public void setMoney(int restock){money = restock;}
-    public void setCoal(int restock){coal = restock;}
-    public void setOil(int restock){oil = restock;}
-    public void setUranium(int restock){uranium = restock;}
-    public void setTrash(int restock){trash = restock;}
+    public void setMoney(int restock) {money = restock;}
+    public void setCoal(int restock) {coal = restock;}
+    public void setOil(int restock) {oil = restock;}
+    public void setUranium(int restock) {uranium = restock;}
+    public void setTrash(int restock) {trash = restock;}
 
-    public boolean addMyPlants(Powerplant plantation){
-        if(myPlants.size() >= 4){
+    public boolean addMyPlants(Powerplant plantation) {
+        if(myPlants.size() >= 4) {
             return false; //failure, player may only have 4 plants
         }
 
@@ -48,16 +48,16 @@ public class Inventory {
         return true; //success
     }
 
-    public boolean addMyCity(City mcCity){
+    public boolean addMyCity(City mcCity) {
         int i, j, k;
 
-        if(myCities.size() == 0){
+        if(myCities.size() == 0) {
             myCities.add(mcCity);
             return true;
         }
 
-        for(k = 0; k < myCities.size(); k++){
-            if(mcCity.getName().equals(myCities.get(k).getName())){
+        for(k = 0; k < myCities.size(); k++) {
+            if(mcCity.getName().equals(myCities.get(k).getName())) {
                 return false; //mission failure because you already own that city
             }
 
@@ -66,17 +66,12 @@ public class Inventory {
         //goes through every neighbor in every city that you have
         for(j = 0; j < myCities.size(); j++) {
             for (i = 0; i < myCities.get(j).getNeighborhood().size(); i++) {
-                if (myCities.get(j).getNeighborhood().get(i).getName().equals(mcCity.getName())){
+                if (myCities.get(j).getNeighborhood().get(i).getName().equals(mcCity.getName())) {
                     myCities.add(mcCity);
                     return true;
                 }
             }
         }
-
         return false; //mission fails because the city you wish to add is not in the neighborhood
     }
-
-
-
-
 }

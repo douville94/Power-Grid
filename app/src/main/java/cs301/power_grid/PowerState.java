@@ -23,7 +23,7 @@ public class PowerState extends GameState {
     private ResourceStore availableResources;
 
     //Constructor
-    public PowerState(){
+    public PowerState() {
         phase = 0;
         playerId = 0;
         initiateCityScape();
@@ -32,12 +32,12 @@ public class PowerState extends GameState {
     }
 
     //Copy Constructor
-    public PowerState(PowerState original){
+    public PowerState(PowerState original) {
 
         int i, j, k, m, n;
 
         //get the cities up and running
-        for(i = 0; i < original.cities.size(); i++){
+        for(i = 0; i < original.cities.size(); i++) {
             //copies the city over and goes to the trouble of saving each city name
             cities.add(original.cities.get(i));
             cities.get(i).setName(original.cities.get(i).getName());
@@ -53,7 +53,7 @@ public class PowerState extends GameState {
         }
 
         //get the powerplants up and running
-        for(k = 0; k< original.salePlants.size(); k++){
+        for(k = 0; k< original.salePlants.size(); k++) {
             salePlants.add(original.salePlants.get(k));
             salePlants.get(k).setCost(original.salePlants.get(k).getCost());
             salePlants.get(k).setPtP(original.salePlants.get(k).getPtP());
@@ -62,7 +62,7 @@ public class PowerState extends GameState {
         }
 
         //lets save all the player data
-        for(m = 0; m < original.gameInventories.size(); m++){
+        for(m = 0; m < original.gameInventories.size(); m++) {
             gameInventories.add(original.gameInventories.get(m));
             gameInventories.get(m).setCoal(original.gameInventories.get(m).getCoal());
             gameInventories.get(m).setMoney(original.gameInventories.get(m).getMoney());
@@ -78,19 +78,19 @@ public class PowerState extends GameState {
 
     //getters
     public int getPlayerId() {return playerId;}
-    public int getGamePhase(){return phase;}
-    public ArrayList<City> getAvailCities(){return cities;}
-    public ArrayList<Powerplant> getAvailPowerplant(){return salePlants;}
-    public ArrayList<Inventory> getGameInventories(){return gameInventories;}
-    public ResourceStore getAvailableResources(){return availableResources;}
+    public int getGamePhase() {return phase;}
+    public ArrayList<City> getAvailCities() {return cities;}
+    public ArrayList<Powerplant> getAvailPowerplant() {return salePlants;}
+    public ArrayList<Inventory> getGameInventories() {return gameInventories;}
+    public ResourceStore getAvailableResources() {return availableResources;}
 
     //setters
     public void setPlayerId(int newPlayerId) {playerId = newPlayerId;}
-    public void setGamePhase(int refresh){phase = refresh;}
-    public void setAvailCities(ArrayList<City> newCit){cities = newCit;}
-    public void setSalePlants(ArrayList<Powerplant> newPlant){salePlants = newPlant;}
-    public void setGameInventories(ArrayList<Inventory> newInventory){gameInventories = newInventory;}
-    public void setAvailableResources(ResourceStore newResources){availableResources = newResources;}
+    public void setGamePhase(int refresh) {phase = refresh;}
+    public void setAvailCities(ArrayList<City> newCit) {cities = newCit;}
+    public void setSalePlants(ArrayList<Powerplant> newPlant) {salePlants = newPlant;}
+    public void setGameInventories(ArrayList<Inventory> newInventory) {gameInventories = newInventory;}
+    public void setAvailableResources(ResourceStore newResources) {availableResources = newResources;}
     public void setCurrentBid(int newCurrentBid) {currentBid = newCurrentBid;}
 
     /**
@@ -99,7 +99,7 @@ public class PowerState extends GameState {
      * method that initializes every city on the map
      * and their cost, then adds their neighbors
      */
-    public void initiateCityScape(){
+    public void initiateCityScape() {
 
         //initialize all the cities with their name
         //note that their neighbors are not involved
@@ -337,7 +337,7 @@ public class PowerState extends GameState {
      * initializes all possible powerPlants in the
      * game and adds them to the master list
      */
-    public void initiatePowerPlants(){
+    public void initiatePowerPlants() {
 
         salePlants.add(new Powerplant(3, 2, 1, "Oil")); //0
         salePlants.add(new Powerplant(4, 2, 1, "Coal")); //1
@@ -388,7 +388,7 @@ public class PowerState extends GameState {
      *
      * shuffles the powerPlants salePlants
      */
-    public void scramblePlants(){
+    public void scramblePlants() {
 
         Powerplant [] shuffledPlants = new Powerplant[42];
         Powerplant temp = new Powerplant();
@@ -406,7 +406,7 @@ public class PowerState extends GameState {
         }
 
         //shuffle the rest of the deck
-        for(i = 9; i< salePlants.size(); i++){
+        for(i = 9; i< salePlants.size(); i++) {
             //keep pulling random numbers until we can place the plant
             rando = (int) (Math.random() * (salePlants.size() - 9)) + 9;
             while(shuffledPlants[rando] != null) {
@@ -416,7 +416,7 @@ public class PowerState extends GameState {
         }
 
         //make sure that the salePlants is in the same order as the shuffled deck
-        for(i= 0; i < salePlants.size(); i++){
+        for(i= 0; i < salePlants.size(); i++) {
             salePlants.set(i,shuffledPlants[i]);
         }
     }//scramble plants

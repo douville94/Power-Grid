@@ -16,6 +16,8 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  */
@@ -33,6 +35,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     //instance of the game state
     private PowerState powerState = new PowerState();
+//    powerState.getAvailPowerplant();
+    /*^This works in onCreate and any other method, just not here.*/
     private Game game;
 
 
@@ -135,6 +139,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     @Override
     public View getTopView() {
         return (RelativeLayout)findViewById(R.id.activity_main);
+        //return null;
     }
 
     @Override
@@ -302,7 +307,10 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
      *
      * @param rsc //resource
      */
-    private void setResources(Inventory rsc){
+    private void setResources(Inventory rsc) {
+
+        ResourceStore rStore = powerState.getAvailableResources();
+
         moneyTextView.setText(""+ rsc.getMoney());
         coalNumView.setText(""+ rsc.getCoal());
         oilNumView.setText("" + rsc.getOil());
@@ -318,6 +326,11 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
      * @param upp //userPowerPlant
      */
     private void setPowerPlants(Inventory upp) {
+
+        Powerplant pPlant;
+        ArrayList<Powerplant> pPlantAL = powerState.getAvailPowerplant();
+        powerState.getAvailPowerplant().get(0).getCost();
+
         costTextView1.setText("");
         typeTextView1.setText("");
         numberTextView1.setText("");
@@ -338,6 +351,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         numberTextView4.setText("");
         housesTextView4.setText("");
 
+        /*This is for the power plants in the bottom-left corner of the GUI.*/
         if (upp.getMyPlants().size() > 0) {
             costTextView1.setText("" + upp.getMyPlants().get(0).getCost());
             typeTextView1.setText("" + upp.getMyPlants().get(0).getKind());
@@ -399,7 +413,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             //String currVal = resourcesSpinner.getSelectedItem().toString();
-            switch (position){
+            switch (position) {
                 case 0:
                     setPowerPlants(HumanPlayer);
                     break;
@@ -1084,6 +1098,4 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             }
         }
     }
-
-
 }

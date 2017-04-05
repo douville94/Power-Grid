@@ -7,12 +7,13 @@ import game.GamePlayer;
 import game.LocalGame;
 import game.config.GameConfig;
 import game.config.GamePlayerType;
+
 /**
- External Citation
- Date:     31 March 2017
- Problem:  setting up game configurations in MainActivity
- Resource: Moodle/Lab
- Solution: I used the example code from the pig lab for this class
+ * External Citation
+ * Date:     31 March 2017
+ * Problem:  setting up game configurations in MainActivity
+ * Resource: Moodle/Lab
+ * Solution: I used the example code from the pig lab for this class
  */
 public class MainActivity extends GameMainActivity {
     //port number to use over network play
@@ -36,12 +37,12 @@ public class MainActivity extends GameMainActivity {
                 return new PowerGridSmartComputerPlayer(name);}});
 
         //Create game configuration class for PowerGrid
-        GameConfig defaultConfig = new GameConfig(playerTypes,2,2,"Power Grid", PORT_NUMBER);
+        GameConfig defaultConfig = new GameConfig(playerTypes, 2, 2, "Power Grid", PORT_NUMBER);
         //add players
-        defaultConfig.addPlayer("Human",0);
-        defaultConfig.addPlayer("Easy Computer",1);
-        defaultConfig.addPlayer("Hard Computer",1);
-        defaultConfig.setRemoteData("Remote Human Player","",0);
+        defaultConfig.addPlayer("Human", 0);
+        defaultConfig.addPlayer("Easy Computer", 1);
+        defaultConfig.addPlayer("Hard Computer", 1);
+        defaultConfig.setRemoteData("Remote Human Player", "", 0);
 
         return defaultConfig;
     }
@@ -52,6 +53,4 @@ public class MainActivity extends GameMainActivity {
         PowerGridLocalGame plg = new PowerGridLocalGame();
         return plg;
     }
-
-
 }
