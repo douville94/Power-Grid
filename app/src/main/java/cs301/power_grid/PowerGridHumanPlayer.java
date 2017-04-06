@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     //instance variables
-    //Do we get rid of these and make an instance of the Game state here
+    //Do we get rid of these and make an instance of the Game state here?
     private Inventory HumanPlayer = new Inventory();
     private Inventory OpponentPlayer = new Inventory();
 
@@ -37,13 +37,29 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private PowerState powerState = new PowerState();
 //    powerState.getAvailPowerplant();
     /*^This works in onCreate and any other method, just not here.*/
-    private Game game;
+
+//    private Game game;
 
 
     //GUI features
     private Spinner resourcesSpinner;
     private Spinner powerPlantsSpinner;
-
+    private TextView powerPlant1Cost;
+    private TextView powerPlant1Type;
+    private TextView powerPlant1Number;
+    private TextView powerPlant1House;
+    private TextView powerPlant2Cost;
+    private TextView powerPlant2Type;
+    private TextView powerPlant2Number;
+    private TextView powerPlant2House;
+    private TextView powerPlant3Cost;
+    private TextView powerPlant3Type;
+    private TextView powerPlant3Number;
+    private TextView powerPlant3House;
+    private TextView powerPlant4Cost;
+    private TextView powerPlant4Type;
+    private TextView powerPlant4Number;
+    private TextView powerPlant4House;
     private TextView moneyTextView;
     private TextView coalNumView;
     private TextView oilNumView;
@@ -130,6 +146,53 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private boolean nycOn = false;
 
     private ImageButton coalButton1;
+    private ImageButton coalButton2;
+    private ImageButton coalButton3;
+    private ImageButton coalButton4;
+    private ImageButton coalButton5;
+    private ImageButton coalButton6;
+    private ImageButton coalButton7;
+    private ImageButton coalButton8;
+    private ImageButton coalButton9;
+    private ImageButton coalButton10;
+    private ImageButton coalButton11;
+    private ImageButton coalButton12;
+    private ImageButton coalButton13;
+    private ImageButton coalButton14;
+    private ImageButton coalButton15;
+
+    private ImageButton oilButton1;
+    private ImageButton oilButton2;
+    private ImageButton oilButton3;
+    private ImageButton oilButton4;
+    private ImageButton oilButton5;
+    private ImageButton oilButton6;
+    private ImageButton oilButton7;
+    private ImageButton oilButton8;
+    private ImageButton oilButton9;
+    private ImageButton oilButton10;
+
+    private ImageButton uraniumButton1;
+    private ImageButton uraniumButton2;
+    private ImageButton uraniumButton3;
+    private ImageButton uraniumButton4;
+    private ImageButton uraniumButton5;
+
+    private ImageButton trashButton1;
+    private ImageButton trashButton2;
+    private ImageButton trashButton3;
+    private ImageButton trashButton4;
+    private ImageButton trashButton5;
+    private ImageButton trashButton6;
+    private ImageButton trashButton7;
+    private ImageButton trashButton8;
+    private ImageButton trashButton9;
+    private ImageButton trashButton10;
+    private ImageButton trashButton11;
+    private ImageButton trashButton12;
+    private ImageButton trashButton13;
+    private ImageButton trashButton14;
+    private ImageButton trashButton15;
 
     //Constructor
     public PowerGridHumanPlayer(String name){
@@ -204,12 +267,42 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //spinners
         resourcesSpinner =(Spinner)findViewById(R.id.UserResourcesSpinner);
         resourcesSpinner.setOnItemSelectedListener(new resourcesSpinListener());
 
         powerPlantsSpinner =(Spinner)findViewById(R.id.userPowerPlantsSpinner);
         powerPlantsSpinner.setOnItemSelectedListener(new powerPlantsSpinListener());
 
+        //sale power plants
+        powerPlant1Cost = (TextView)findViewById(R.id.pp1cValue);
+        powerPlant1Type = (TextView)findViewById(R.id.pp1tValue);
+        powerPlant1Number = (TextView)findViewById(R.id.pp1nValue);
+        powerPlant1House = (TextView)findViewById(R.id.pp1hValue);
+
+        powerPlant2Cost = (TextView)findViewById(R.id.pp2cValue);
+        powerPlant2Type = (TextView)findViewById(R.id.pp2tValue);
+        powerPlant2Number = (TextView)findViewById(R.id.pp2nValue);
+        powerPlant2House = (TextView)findViewById(R.id.pp2hValue);
+
+        powerPlant3Cost = (TextView)findViewById(R.id.pp3cValue);
+        powerPlant3Type = (TextView)findViewById(R.id.pp3tValue);
+        powerPlant3Number = (TextView)findViewById(R.id.pp3nValue);
+        powerPlant3House = (TextView)findViewById(R.id.pp3hValue);
+
+        powerPlant4Cost = (TextView)findViewById(R.id.pp4cValue);
+        powerPlant4Type = (TextView)findViewById(R.id.pp4tValue);
+        powerPlant4Number = (TextView)findViewById(R.id.pp4nValue);
+        powerPlant4House = (TextView)findViewById(R.id.pp4hValue);
+
+        //owned resources and cash
+        moneyTextView = (TextView)findViewById(R.id.moneyTextView);
+        coalNumView =(TextView)findViewById(R.id.coalNumView);
+        oilNumView =(TextView)findViewById(R.id.oilNumView);
+        trashNumView =(TextView)findViewById(R.id.trashNumView);
+        nuclearNumView=(TextView)findViewById(R.id.nuclearTextView);
+
+        //owned power plant grid
         costTextView1 = (TextView)findViewById(R.id.upp1cValue);
         typeTextView1 = (TextView)findViewById(R.id.upp1tValue);
         numberTextView1 = (TextView)findViewById(R.id.upp1nValue);
@@ -230,15 +323,108 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         numberTextView4 = (TextView)findViewById(R.id.upp4nValue);
         housesTextView4 = (TextView)findViewById(R.id.upp4hValue);
 
-        moneyTextView = (TextView)findViewById(R.id.moneyTextView);
-        coalNumView =(TextView)findViewById(R.id.coalNumView);
-        oilNumView =(TextView)findViewById(R.id.oilNumView);
-        trashNumView =(TextView)findViewById(R.id.trashNumView);
-        nuclearNumView=(TextView)findViewById(R.id.nuclearTextView);
+        //resource buttons
+        coalButton1 = (ImageButton)findViewById(R.id.cb1);
+        coalButton2 = (ImageButton)findViewById(R.id.cb2);
+        coalButton3 = (ImageButton)findViewById(R.id.cb3);
+        coalButton4 = (ImageButton)findViewById(R.id.cb4);
+        coalButton5 = (ImageButton)findViewById(R.id.cb5);
+        coalButton6 = (ImageButton)findViewById(R.id.cb6);
+        coalButton7 = (ImageButton)findViewById(R.id.cb7);
+        coalButton8 = (ImageButton)findViewById(R.id.cb8);
+        coalButton9 = (ImageButton)findViewById(R.id.cb9);
+        coalButton10 = (ImageButton)findViewById(R.id.cb10);
+        coalButton11 = (ImageButton)findViewById(R.id.cb11);
+        coalButton12 = (ImageButton)findViewById(R.id.cb12);
+        coalButton13 = (ImageButton)findViewById(R.id.cb13);
+        coalButton14 = (ImageButton)findViewById(R.id.cb14);
+        coalButton15 = (ImageButton)findViewById(R.id.cb15);
 
-        coalButton1 = (ImageButton)findViewById(R.id.cb1s1);
         coalButton1.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton2.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton3.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton4.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton5.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton6.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton7.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton8.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton9.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton10.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton11.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton12.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton13.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton14.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+        coalButton15.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
 
+        oilButton1 = (ImageButton)findViewById(R.id.ob1);
+        oilButton2 = (ImageButton)findViewById(R.id.ob2);
+        oilButton3 = (ImageButton)findViewById(R.id.ob3);
+        oilButton4 = (ImageButton)findViewById(R.id.ob4);
+        oilButton5 = (ImageButton)findViewById(R.id.ob5);
+        oilButton6 = (ImageButton)findViewById(R.id.ob6);
+        oilButton7 = (ImageButton)findViewById(R.id.ob7);
+        oilButton8 = (ImageButton)findViewById(R.id.ob8);
+        oilButton9 = (ImageButton)findViewById(R.id.ob9);
+        oilButton10 = (ImageButton)findViewById(R.id.ob10);
+
+        oilButton1.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton2.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton3.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton4.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton5.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton6.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton7.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton8.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton9.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+        oilButton10.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+
+        uraniumButton1 = (ImageButton)findViewById(R.id.ub1);
+        uraniumButton2 = (ImageButton)findViewById(R.id.ub2);
+        uraniumButton3 = (ImageButton)findViewById(R.id.ub3);
+        uraniumButton4 = (ImageButton)findViewById(R.id.ub4);
+        uraniumButton5 = (ImageButton)findViewById(R.id.ub5);
+
+        uraniumButton1.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+        uraniumButton2.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+        uraniumButton3.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+        uraniumButton4.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+        uraniumButton5.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+
+        trashButton1 = (ImageButton)findViewById(R.id.tb1);
+        trashButton2 = (ImageButton)findViewById(R.id.tb2);
+        trashButton3 = (ImageButton)findViewById(R.id.tb3);
+        trashButton4 = (ImageButton)findViewById(R.id.tb4);
+        trashButton5 = (ImageButton)findViewById(R.id.tb5);
+        trashButton6 = (ImageButton)findViewById(R.id.tb6);
+        trashButton7 = (ImageButton)findViewById(R.id.tb7);
+        trashButton8 = (ImageButton)findViewById(R.id.tb8);
+        trashButton9 = (ImageButton)findViewById(R.id.tb9);
+        trashButton10 = (ImageButton)findViewById(R.id.tb10);
+        trashButton11 = (ImageButton)findViewById(R.id.tb11);
+        trashButton12 = (ImageButton)findViewById(R.id.tb12);
+        trashButton13 = (ImageButton)findViewById(R.id.tb13);
+        trashButton14 = (ImageButton)findViewById(R.id.tb14);
+        trashButton15 = (ImageButton)findViewById(R.id.tb15);
+
+        trashButton1.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton2.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton3.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton4.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton5.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton6.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton7.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton8.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton9.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton10.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton11.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton12.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton13.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton14.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+        trashButton15.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+
+
+
+        //city buttons
         denverBut = (Button) findViewById(R.id.button4);
         denverBut.setOnClickListener(new denverButListener());
 
@@ -390,10 +576,12 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             //String currVal = resourcesSpinner.getSelectedItem().toString();
             switch (position){
                 case 0:
-                    setResources(HumanPlayer);
+//                    setResources(HumanPlayer);
+                    setResources(powerState.getGameInventories().get(0));
                     break;
                 case 1:
-                    setResources(OpponentPlayer);
+//                    setResources(OpponentPlayer);
+                    setResources(powerState.getGameInventories().get(1));
                     break;
             }
         }
@@ -415,10 +603,12 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             //String currVal = resourcesSpinner.getSelectedItem().toString();
             switch (position) {
                 case 0:
-                    setPowerPlants(HumanPlayer);
+//                    setPowerPlants(HumanPlayer);
+                    setPowerPlants(powerState.getGameInventories().get(0));
                     break;
                 case 1:
-                    setPowerPlants(OpponentPlayer);
+//                    setPowerPlants(OpponentPlayer);
+                    setPowerPlants(powerState.getGameInventories().get(1));
                     break;
             }
         }
@@ -773,22 +963,24 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
                 return;
             }
 
-
-            if (viewId == R.id.cb2s1) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
-            if (viewId == R.id.cb3s1) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
+//            if (viewId == R.id.cb2s1) {
             if (viewId == R.id.cb1s2) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+//            if (viewId == R.id.cb3s1) {
+            if (viewId == R.id.cb1s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+//            if (viewId == R.id.cb1s2) {
+            if (viewId == R.id.cb2s1) {
                 moneyTextView.setText("" + newMoneyVal);
                 coalNumView.setText("" + newCoalVal);
             } else {
@@ -802,21 +994,24 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
                 return;
             }
 
-            if (viewId == R.id.cb3s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
-            if (viewId == R.id.cb1s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
+//            if (viewId == R.id.cb3s2) {
             if (viewId == R.id.cb2s3) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+//            if (viewId == R.id.cb1s3) {
+            if (viewId == R.id.cb3s1) {
+                moneyTextView.setText("" + newMoneyVal);
+                coalNumView.setText("" + newCoalVal);
+            } else {
+                return;
+            }
+
+//            if (viewId == R.id.cb2s3) {
+            if (viewId == R.id.cb3s1) {
                 moneyTextView.setText("" + newMoneyVal);
                 coalNumView.setText("" + newCoalVal);
             } else {

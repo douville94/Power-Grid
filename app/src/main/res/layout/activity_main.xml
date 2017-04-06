@@ -40,7 +40,7 @@
                     android:id="@+id/UserResources">
 
                     <GridLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <TextView
@@ -56,14 +56,14 @@
                             android:layout_width="132dp" />
 
                         <TextView
-                            android:text="  8 "
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/coalNumView"
                             android:layout_row="2"
                             android:layout_column="1"
                             android:layout_columnSpan="1"
                             android:textSize="14sp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:textColor="@android:color/black"
                             android:background="#FF996633" />
 
@@ -80,7 +80,7 @@
                             android:background="#FFa6a6a6" />
 
                         <TextView
-                            android:text="  4"
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/trashNumView"
                             android:layout_row="4"
@@ -92,7 +92,7 @@
                             android:layout_width="18dp" />
 
                         <TextView
-                            android:text="NUCLEAR"
+                            android:text="URANIUM"
                             android:layout_height="wrap_content"
                             android:id="@+id/nuclearTextView"
                             android:layout_row="5"
@@ -104,7 +104,7 @@
                             android:layout_width="132dp" />
 
                         <TextView
-                            android:text="  0"
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/nuclearNumView"
                             android:layout_row="5"
@@ -116,7 +116,7 @@
                             android:layout_width="18dp" />
 
                         <TextView
-                            android:text="155"
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/moneyTextView"
                             android:textSize="14sp"
@@ -140,14 +140,14 @@
                             android:layout_width="132dp" />
 
                         <TextView
-                            android:text="  2 "
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/oilNumView"
                             android:layout_row="3"
                             android:layout_column="1"
                             android:layout_columnSpan="1"
                             android:textSize="14sp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:textColor="@android:color/black"
                             android:background="#a6a6a6" />
 
@@ -217,25 +217,25 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:text="25"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp1cValue" />
 
                             <TextView
-                                android:text="Coal"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp1tValue" />
 
                             <TextView
-                                android:text="2"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp1nValue" />
 
                             <TextView
-                                android:text="5"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp1hValue" />
@@ -299,25 +299,25 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:text="29"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp2cValue" />
 
                             <TextView
-                                android:text="Oil"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp2tValue" />
 
                             <TextView
-                                android:text="1"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp2nValue" />
 
                             <TextView
-                                android:text="4"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp2hValue" />
@@ -381,25 +381,25 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:text="27"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp3cValue" />
 
                             <TextView
-                                android:text="Wind"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp3tValue" />
 
                             <TextView
-                                android:text="0"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp3nValue" />
 
                             <TextView
-                                android:text="3"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp3hValue" />
@@ -462,25 +462,25 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:text="38"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp4cValue" />
 
                             <TextView
-                                android:text="Garbage"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp4tValue" />
 
                             <TextView
-                                android:text="3"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp4nValue" />
 
                             <TextView
-                                android:text="7"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp4hValue" />
@@ -815,25 +815,25 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:text="13"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp1cValue" />
 
                                     <TextView
-                                        android:text="Oil"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp1tValue" />
 
                                     <TextView
-                                        android:text="4"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp1nValue" />
 
                                     <TextView
-                                        android:text="6"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp1hValue" />
@@ -888,25 +888,25 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:text="20"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp3cValue" />
 
                                     <TextView
-                                        android:text="Coal"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp3tValue" />
 
                                     <TextView
-                                        android:text="3"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp3nValue" />
 
                                     <TextView
-                                        android:text="2"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp3hValue" />
@@ -974,25 +974,25 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:text="30"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp2cValue" />
 
                                     <TextView
-                                        android:text="Trash"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp2tValue" />
 
                                     <TextView
-                                        android:text="6"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp2nValue" />
 
                                     <TextView
-                                        android:text="10"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp2hValue" />
@@ -1048,25 +1048,25 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:text="19"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp4cValue" />
 
                                     <TextView
-                                        android:text="Coal"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp4tValue" />
 
                                     <TextView
-                                        android:text="7"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp4nValue" />
 
                                     <TextView
-                                        android:text="9"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp4hValue" />
@@ -1128,7 +1128,7 @@
                             <ImageButton
                                 android:layout_width="39dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb1s1"
+                                android:id="@+id/cb1"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor"
                                 android:layout_weight="0.05" />
@@ -1136,7 +1136,7 @@
                             <ImageButton
                                 android:layout_width="39dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb1s2"
+                                android:id="@+id/cb2"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor"
                                 android:layout_weight="0.04" />
@@ -1144,7 +1144,7 @@
                             <ImageButton
                                 android:layout_width="39dp"
                                 android:layout_height="53dp"
-                                android:id="@+id/cb1s3"
+                                android:id="@+id/cb3"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor"
                                 android:layout_weight="0.03" />
@@ -1160,19 +1160,19 @@
                             <ImageButton
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageButton4"
+                                android:id="@+id/ob1"
                                 android:src="@drawable/abc_btn_check_to_on_mtrl_015" />
 
                             <ImageButton
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageButton5"
+                                android:id="@+id/ob2"
                                 android:src="@drawable/abc_btn_check_to_on_mtrl_015" />
 
                             <ImageButton
                                 android:layout_width="35dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageButton6"
+                                android:id="@+id/ub1"
                                 android:src="@drawable/abc_ic_clear_material" />
                         </LinearLayout>
 
@@ -1184,19 +1184,19 @@
                             <ImageButton
                                 android:layout_width="38dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageButton7"
+                                android:id="@+id/tb1"
                                 android:src="@android:drawable/btn_star_big_on" />
 
                             <ImageButton
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageButton8"
+                                android:id="@+id/tb2"
                                 android:src="@android:drawable/btn_star_big_on" />
 
                             <ImageButton
                                 android:layout_width="38dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/imageButton9"
+                                android:id="@+id/tb3"
                                 android:src="@android:drawable/btn_star_big_on" />
                         </LinearLayout>
                     </LinearLayout>
@@ -1236,21 +1236,21 @@
                             <ImageButton
                                 android:layout_width="51dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb2s1"
+                                android:id="@+id/cb4"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
 
                             <ImageButton
                                 android:layout_width="51dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb2s2"
+                                android:id="@+id/cb5"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
 
                             <ImageButton
                                 android:layout_width="49dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb2s3"
+                                android:id="@+id/cb6"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
                         </LinearLayout>
@@ -1264,7 +1264,7 @@
                             <ImageButton
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ob1s2"
+                                android:id="@+id/ob3"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/iconoil2"
                                 android:layout_weight="0.34" />
@@ -1272,7 +1272,7 @@
                             <ImageButton
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ob2s2"
+                                android:id="@+id/ob4"
                                 android:src="@android:drawable/menuitem_background"
                                 android:background="@drawable/iconoil2"
                                 android:layout_weight="0.50" />
@@ -1280,7 +1280,7 @@
                             <ImageButton
                                 android:layout_width="56dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/ub1s2"
+                                android:id="@+id/ub2"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/iconneuclear2" />
                         </LinearLayout>
@@ -1293,7 +1293,7 @@
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/gb1s2"
+                                android:id="@+id/tb4"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash2"
                                 android:layout_weight="0.23" />
@@ -1301,7 +1301,7 @@
                             <ImageButton
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/gb2s2"
+                                android:id="@+id/tb5"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash2"
                                 android:layout_weight="0.45" />
@@ -1309,7 +1309,7 @@
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/gb3s2"
+                                android:id="@+id/tb6"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash2"
                                 android:layout_weight="0.25" />
@@ -1345,7 +1345,7 @@
                             <ImageButton
                                 android:layout_width="46dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb3s1"
+                                android:id="@+id/cb7"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
 
@@ -1353,14 +1353,14 @@
                             <ImageButton
                                 android:layout_width="45dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb3s2"
+                                android:id="@+id/cb8"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
 
                             <ImageButton
                                 android:layout_width="49dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb3s3"
+                                android:id="@+id/cb9"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
                         </LinearLayout>
@@ -1374,7 +1374,7 @@
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/ob1s3"
+                                android:id="@+id/ob5"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/iconoil3"
                                 android:layout_weight="0.15" />
@@ -1382,7 +1382,7 @@
                             <ImageButton
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ob2s3"
+                                android:id="@+id/ob6"
                                 android:src="@android:drawable/menuitem_background"
                                 android:background="@drawable/iconoil3"
                                 android:layout_weight="0.24" />
@@ -1390,7 +1390,7 @@
                             <ImageButton
                                 android:layout_width="37dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ub1s3"
+                                android:id="@+id/ub3"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/iconneuclear3"
                                 android:layout_weight="0.62" />
@@ -1403,21 +1403,21 @@
                             <ImageButton
                                 android:layout_width="45dp"
                                 android:layout_height="51dp"
-                                android:id="@+id/gb1s3"
+                                android:id="@+id/tb7"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash3" />
 
                             <ImageButton
                                 android:layout_width="49dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/gb2s3"
+                                android:id="@+id/tb8"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash3" />
 
                             <ImageButton
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:id="@+id/gb3s3"
+                                android:id="@+id/tb9"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash3" />
                         </LinearLayout>
@@ -1458,21 +1458,21 @@
                             <ImageButton
                                 android:layout_width="45dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb1s4"
+                                android:id="@+id/cb10"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor"  />
 
                             <ImageButton
                                 android:layout_width="45dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb2s4"
+                                android:id="@+id/cb11"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor"  />
 
                             <ImageButton
                                 android:layout_width="45dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb3s4"
+                                android:id="@+id/cb12"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor"  />
                         </LinearLayout>
@@ -1486,7 +1486,7 @@
                             <ImageButton
                                 android:layout_width="45dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ob1s4"
+                                android:id="@+id/ob7"
                                 android:src="@drawable/abc_btn_check_to_on_mtrl_015"
                                 android:background="@drawable/iconoil4"
                                 android:layout_weight="0.36" />
@@ -1494,7 +1494,7 @@
                             <ImageButton
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ob2s4"
+                                android:id="@+id/ob8"
                                 android:src="@drawable/abc_btn_check_to_on_mtrl_015"
                                 android:background="@drawable/iconoil4"
                                 android:layout_weight="0.72" />
@@ -1502,7 +1502,7 @@
                             <ImageButton
                                 android:layout_width="53dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ub1s4"
+                                android:id="@+id/ub4"
                                 android:src="@android:drawable/menuitem_background"
                                 android:background="@drawable/iconneuclear4"  />
                         </LinearLayout>
@@ -1516,14 +1516,14 @@
                             <ImageButton
                                 android:layout_width="45dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/gb1s4"
+                                android:id="@+id/tb10"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash4" />
 
                             <ImageButton
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/gb2s4"
+                                android:id="@+id/tb11"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash4"
                                 android:layout_weight="0.39" />
@@ -1531,7 +1531,7 @@
                             <ImageButton
                                 android:layout_width="52dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/gb3s4"
+                                android:id="@+id/tb12"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash4" />
                         </LinearLayout>
@@ -1569,21 +1569,21 @@
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb1s5"
+                                android:id="@+id/cb13"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
 
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb2s5"
+                                android:id="@+id/cb14"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
 
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/cb3s5"
+                                android:id="@+id/cb15"
                                 android:src="@color/coalColor"
                                 android:backgroundTint="@color/coalColor" />
                         </LinearLayout>
@@ -1597,7 +1597,7 @@
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ob1s5"
+                                android:id="@+id/ob9"
                                 android:src="@android:drawable/menuitem_background"
                                 android:background="@drawable/iconoil5"
                                 android:layout_weight="0.10" />
@@ -1605,7 +1605,7 @@
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ob2s5"
+                                android:id="@+id/ob10"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/iconoil5"
                                 android:layout_weight="0.19" />
@@ -1613,7 +1613,7 @@
                             <ImageButton
                                 android:layout_width="51dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/ub1s5"
+                                android:id="@+id/ub5"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/iconneuclear5" />
                         </LinearLayout>
@@ -1627,14 +1627,14 @@
                             <ImageButton
                                 android:layout_width="45dp"
                                 android:layout_height="match_parent"
-                                android:id="@+id/gb1s5"
+                                android:id="@+id/tb13"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash5" />
 
                             <ImageButton
                                 android:layout_width="44dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/gb2s5"
+                                android:id="@+id/tb14"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash5"
                                 android:layout_weight="0.15"/>
@@ -1642,7 +1642,7 @@
                             <ImageButton
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/gb3s5"
+                                android:id="@+id/tb15"
                                 android:src="@android:drawable/list_selector_background"
                                 android:background="@drawable/icontrash5"
                                 android:layout_weight="0.29" />
