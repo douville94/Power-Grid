@@ -160,7 +160,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private ImageButton coalButton13;
     private ImageButton coalButton14;
     private ImageButton coalButton15;
-
+    
     private ImageButton oilButton1;
     private ImageButton oilButton2;
     private ImageButton oilButton3;
@@ -340,22 +340,38 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         coalButton14 = (ImageButton)findViewById(R.id.cb14);
         coalButton15 = (ImageButton)findViewById(R.id.cb15);
 
-        coalButton1.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton2.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton3.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton4.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton5.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton6.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton7.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton8.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton9.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton10.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton11.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton12.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton13.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton14.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
-        coalButton15.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton1.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton2.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton3.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton4.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton5.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton6.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton7.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton8.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton9.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton10.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton11.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton12.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton13.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton14.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
+//        coalButton15.setOnClickListener(new CoalButtonListener(moneyTextView, coalNumView));
 
+        coalButton1.setOnClickListener(new CoalButtonListener());
+        coalButton2.setOnClickListener(new CoalButtonListener());
+        coalButton3.setOnClickListener(new CoalButtonListener());
+        coalButton4.setOnClickListener(new CoalButtonListener());
+        coalButton5.setOnClickListener(new CoalButtonListener());
+        coalButton6.setOnClickListener(new CoalButtonListener());
+        coalButton7.setOnClickListener(new CoalButtonListener());
+        coalButton8.setOnClickListener(new CoalButtonListener());
+        coalButton9.setOnClickListener(new CoalButtonListener());
+        coalButton10.setOnClickListener(new CoalButtonListener());
+        coalButton11.setOnClickListener(new CoalButtonListener());
+        coalButton12.setOnClickListener(new CoalButtonListener());
+        coalButton13.setOnClickListener(new CoalButtonListener());
+        coalButton14.setOnClickListener(new CoalButtonListener());
+        coalButton15.setOnClickListener(new CoalButtonListener());
+        
         oilButton1 = (ImageButton)findViewById(R.id.ob1);
         oilButton2 = (ImageButton)findViewById(R.id.ob2);
         oilButton3 = (ImageButton)findViewById(R.id.ob3);
@@ -367,16 +383,27 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         oilButton9 = (ImageButton)findViewById(R.id.ob9);
         oilButton10 = (ImageButton)findViewById(R.id.ob10);
 
-        oilButton1.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton2.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton3.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton4.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton5.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton6.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton7.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton8.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton9.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
-        oilButton10.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton1.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton2.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton3.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton4.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton5.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton6.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton7.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton8.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton9.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+//        oilButton10.setOnClickListener(new OilButtonListener(moneyTextView, oilNumView));
+
+        oilButton1.setOnClickListener(new OilButtonListener());
+        oilButton2.setOnClickListener(new OilButtonListener());
+        oilButton3.setOnClickListener(new OilButtonListener());
+        oilButton4.setOnClickListener(new OilButtonListener());
+        oilButton5.setOnClickListener(new OilButtonListener());
+        oilButton6.setOnClickListener(new OilButtonListener());
+        oilButton7.setOnClickListener(new OilButtonListener());
+        oilButton8.setOnClickListener(new OilButtonListener());
+        oilButton9.setOnClickListener(new OilButtonListener());
+        oilButton10.setOnClickListener(new OilButtonListener());
 
         uraniumButton1 = (ImageButton)findViewById(R.id.ub1);
         uraniumButton2 = (ImageButton)findViewById(R.id.ub2);
@@ -384,11 +411,17 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         uraniumButton4 = (ImageButton)findViewById(R.id.ub4);
         uraniumButton5 = (ImageButton)findViewById(R.id.ub5);
 
-        uraniumButton1.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
-        uraniumButton2.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
-        uraniumButton3.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
-        uraniumButton4.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
-        uraniumButton5.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+//        uraniumButton1.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+//        uraniumButton2.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+//        uraniumButton3.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+//        uraniumButton4.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+//        uraniumButton5.setOnClickListener(new NuclearButtonListener(moneyTextView, nuclearNumView));
+
+        uraniumButton1.setOnClickListener(new NuclearButtonListener());
+        uraniumButton2.setOnClickListener(new NuclearButtonListener());
+        uraniumButton3.setOnClickListener(new NuclearButtonListener());
+        uraniumButton4.setOnClickListener(new NuclearButtonListener());
+        uraniumButton5.setOnClickListener(new NuclearButtonListener());
 
         trashButton1 = (ImageButton)findViewById(R.id.tb1);
         trashButton2 = (ImageButton)findViewById(R.id.tb2);
@@ -406,23 +439,37 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         trashButton14 = (ImageButton)findViewById(R.id.tb14);
         trashButton15 = (ImageButton)findViewById(R.id.tb15);
 
-        trashButton1.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton2.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton3.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton4.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton5.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton6.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton7.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton8.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton9.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton10.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton11.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton12.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton13.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton14.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
-        trashButton15.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton1.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton2.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton3.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton4.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton5.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton6.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton7.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton8.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton9.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton10.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton11.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton12.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton13.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton14.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
+//        trashButton15.setOnClickListener(new TrashButtonListener(moneyTextView, trashNumView));
 
-
+        trashButton1.setOnClickListener(new TrashButtonListener());
+        trashButton2.setOnClickListener(new TrashButtonListener());
+        trashButton3.setOnClickListener(new TrashButtonListener());
+        trashButton4.setOnClickListener(new TrashButtonListener());
+        trashButton5.setOnClickListener(new TrashButtonListener());
+        trashButton6.setOnClickListener(new TrashButtonListener());
+        trashButton7.setOnClickListener(new TrashButtonListener());
+        trashButton8.setOnClickListener(new TrashButtonListener());
+        trashButton9.setOnClickListener(new TrashButtonListener());
+        trashButton10.setOnClickListener(new TrashButtonListener());
+        trashButton11.setOnClickListener(new TrashButtonListener());
+        trashButton12.setOnClickListener(new TrashButtonListener());
+        trashButton13.setOnClickListener(new TrashButtonListener());
+        trashButton14.setOnClickListener(new TrashButtonListener());
+        trashButton15.setOnClickListener(new TrashButtonListener());
 
         //city buttons
         denverBut = (Button) findViewById(R.id.button4);
@@ -495,7 +542,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
      */
     private void setResources(Inventory rsc) {
 
-        ResourceStore rStore = powerState.getAvailableResources();
+//        ResourceStore rStore = powerState.getAvailableResources();
 
         moneyTextView.setText(""+ rsc.getMoney());
         coalNumView.setText(""+ rsc.getCoal());
@@ -513,9 +560,9 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
      */
     private void setPowerPlants(Inventory upp) {
 
-        Powerplant pPlant;
-        ArrayList<Powerplant> pPlantAL = powerState.getAvailPowerplant();
-        powerState.getAvailPowerplant().get(0).getCost();
+//        Powerplant pPlant;
+//        ArrayList<Powerplant> pPlantAL = powerState.getAvailPowerplant();
+//        powerState.getAvailPowerplant().get(0).getCost();
 
         costTextView1.setText("");
         typeTextView1.setText("");
@@ -942,205 +989,295 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     //implements the coal buttons
     public class CoalButtonListener implements View.OnClickListener {
 
-        public CoalButtonListener(TextView initTextView, TextView initCoalNumView) {
-            moneyTextView = initTextView;
-            coalNumView = initCoalNumView;
-
-        }
+//        public CoalButtonListener(TextView initTextView, TextView initCoalNumView) {
+//            moneyTextView = initTextView;
+//            coalNumView = initCoalNumView;
+//
+//        }
 
         @Override
         public void onClick(View view) {
             int viewId = view.getId();
-            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
-            int currCoalVal = Integer.parseInt(coalNumView.getText().toString());
-            int newMoneyVal = currMoneyVal - 1;
-            int newCoalVal = currCoalVal + 1;
+//            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
+//            int currCoalVal = Integer.parseInt(coalNumView.getText().toString());
+//            int newMoneyVal = currMoneyVal - 1;
+//            int newCoalVal = currCoalVal + 1;
 
-            if (viewId == R.id.cb1s1) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
-//            if (viewId == R.id.cb2s1) {
-            if (viewId == R.id.cb1s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
-//            if (viewId == R.id.cb3s1) {
-            if (viewId == R.id.cb1s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
+//            if (viewId == R.id.cb1s1) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
 //            if (viewId == R.id.cb1s2) {
-            if (viewId == R.id.cb2s1) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
-            if (viewId == R.id.cb2s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
-//            if (viewId == R.id.cb3s2) {
-            if (viewId == R.id.cb2s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
 //            if (viewId == R.id.cb1s3) {
-            if (viewId == R.id.cb3s1) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
-
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//            if (viewId == R.id.cb2s1) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//            if (viewId == R.id.cb2s2) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
 //            if (viewId == R.id.cb2s3) {
-            if (viewId == R.id.cb3s1) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//            if (viewId == R.id.cb3s1) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//            if (viewId == R.id.cb3s2) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//            if (viewId == R.id.cb3s3) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.cb1s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.cb2s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.cb3s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.cb1s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.cb2s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.cb3s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                coalNumView.setText("" + newCoalVal);
+//            } else {
+//                return;
+//            }
+
+            if (viewId == R.id.cb1) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,1);
+                game.sendAction(bca);
+            }
+            else if  (viewId == R.id.cb2) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,2);
+                game.sendAction(bca);
+            }
+            else if (viewId == R.id.cb3) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,3);
+                game.sendAction(bca);
+            }
+            else if (viewId == R.id.cb4) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,4);
+                game.sendAction(bca);
+            }
+            else if (viewId == R.id.cb5) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,5);
+                game.sendAction(bca);
+            }
+            else if (viewId == R.id.cb6) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,6);
+                game.sendAction(bca);
+            }
+            else if (viewId == R.id.cb7) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,7);
+                game.sendAction(bca);
             }
 
-            if (viewId == R.id.cb3s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
-            }
 
-            if (viewId == R.id.cb1s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
+            else if (viewId == R.id.cb8) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,8);
+                game.sendAction(bca);
+            else if (viewId == R.id.cb9) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,9);
+                game.sendAction(bca);
             }
-
-            if (viewId == R.id.cb2s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
+            else if (viewId == R.id.cb10) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,10);
+                game.sendAction(bca);
             }
-
-            if (viewId == R.id.cb3s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
+            else if (viewId == R.id.cb11) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,11);
+                game.sendAction(bca);
             }
-
-            if (viewId == R.id.cb1s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
+            else if (viewId == R.id.cb12) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,12);
+                game.sendAction(bca);
             }
-
-            if (viewId == R.id.cb2s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
+            else if (viewId == R.id.cb13) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,13);
+                game.sendAction(bca);
             }
-
-            if (viewId == R.id.cb3s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                coalNumView.setText("" + newCoalVal);
-            } else {
-                return;
+            else if (viewId == R.id.cb14) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,14);
+                game.sendAction(bca);
             }
-
+            else if (viewId == R.id.cb15) {
+                BuyCoalAction bca = new BuyCoalAction(PowerGridHumanPlayer.this,15);
+                game.sendAction(bca);
+            }
         }
     }
 
     //implements the oil buttons
     public class OilButtonListener implements View.OnClickListener {
 
-        public OilButtonListener(TextView initTextView, TextView initOilNumView) {
-            moneyTextView = initTextView;
-            oilNumView = initOilNumView;
-
-        }
+//        public OilButtonListener(TextView initTextView, TextView initOilNumView) {
+//            moneyTextView = initTextView;
+//            oilNumView = initOilNumView;
+//
+//        }
 
         @Override
         public void onClick(View view) {
             int viewId = view.getId();
-            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
-            int currOilVal = Integer.parseInt(oilNumView.getText().toString());
-            int newMoneyVal = currMoneyVal - 3;
-            int newOilVal = currOilVal + 1;
 
-            if (viewId == R.id.ob1s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                oilNumView.setText("" + newOilVal);
-            } else {
-                return;
+//            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
+//            int currOilVal = Integer.parseInt(oilNumView.getText().toString());
+//            int newMoneyVal = currMoneyVal - 3;
+//            int newOilVal = currOilVal + 1;
+//
+//            if (viewId == R.id.ob1s2) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                oilNumView.setText("" + newOilVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ob2s2) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                oilNumView.setText("" + newOilVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ob1s3) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                oilNumView.setText("" + newOilVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ob2s3) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                oilNumView.setText("" + newOilVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ob1s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                oilNumView.setText("" + newOilVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ob2s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                oilNumView.setText("" + newOilVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ob1s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                oilNumView.setText("" + newOilVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ob2s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                oilNumView.setText("" + newOilVal);
+//            } else {
+//                return;
+//            }
+
+
+            if (viewId == R.id.ob1) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,1);
+                game.sendAction(boa);
             }
-
-            if (viewId == R.id.ob2s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                oilNumView.setText("" + newOilVal);
-            } else {
-                return;
+            else if  (viewId == R.id.ob2) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,2);
+                game.sendAction(boa);
             }
-
-            if (viewId == R.id.ob1s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                oilNumView.setText("" + newOilVal);
-            } else {
-                return;
+            else if (viewId == R.id.ob3) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,3);
+                game.sendAction(boa);
             }
-
-            if (viewId == R.id.ob2s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                oilNumView.setText("" + newOilVal);
-            } else {
-                return;
+            else if (viewId == R.id.ob4) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,4);
+                game.sendAction(boa);
             }
-
-            if (viewId == R.id.ob1s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                oilNumView.setText("" + newOilVal);
-            } else {
-                return;
+            else if (viewId == R.id.ob5) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,5);
+                game.sendAction(boa);
             }
-
-            if (viewId == R.id.ob2s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                oilNumView.setText("" + newOilVal);
-            } else {
-                return;
+            else if (viewId == R.id.ob6) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,6);
+                game.sendAction(boa);
             }
-
-            if (viewId == R.id.ob1s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                oilNumView.setText("" + newOilVal);
-            } else {
-                return;
+            else if (viewId == R.id.ob7) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,7);
+                game.sendAction(boa);
             }
-
-            if (viewId == R.id.ob2s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                oilNumView.setText("" + newOilVal);
-            } else {
-                return;
+            else if (viewId == R.id.ob8) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,8);
+                game.sendAction(boa);
+            }
+            else if (viewId == R.id.ob9) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,9);
+                game.sendAction(boa);
+            }
+            else if (viewId == R.id.ob10) {
+                BuyOilAction boa = new BuyOilAction(PowerGridHumanPlayer.this,10);
+                game.sendAction(boa);
             }
         }
     }
@@ -1148,101 +1285,165 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     //implements the trash buttons
     public class TrashButtonListener implements View.OnClickListener {
 
-        public TrashButtonListener(TextView initTextView, TextView initTrashNumView) {
-            moneyTextView = initTextView;
-            trashNumView = initTrashNumView;
+//        public TrashButtonListener(TextView initTextView, TextView initTrashNumView) {
+//            moneyTextView = initTextView;
+//            trashNumView = initTrashNumView;
+//
+//        }
 
-        }
+//        @Override
+//        public void onClick(View view) {
+//            int viewId = view.getId();
+//            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
+//            int currTrashVal = Integer.parseInt(trashNumView.getText().toString());
+//            int newMoneyVal = currMoneyVal - 7;
+//            int newTrashVal = currTrashVal + 1;
+//
+//            if (viewId == R.id.gb1s2) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb2s2) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//            if (viewId == R.id.gb3s2) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb1s3) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb2s3) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb3s3) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb1s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb2s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb3s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb1s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb2s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.gb3s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                trashNumView.setText("" + newTrashVal);
+//            } else {
+//                return;
+//            }
 
         @Override
         public void onClick(View view) {
             int viewId = view.getId();
-            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
-            int currTrashVal = Integer.parseInt(trashNumView.getText().toString());
-            int newMoneyVal = currMoneyVal - 7;
-            int newTrashVal = currTrashVal + 1;
-
-            if (viewId == R.id.gb1s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            if (viewId == R.id.tb1) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,1);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb2s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if  (viewId == R.id.tb2) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,2);
+                game.sendAction(bta);
             }
-            if (viewId == R.id.gb3s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb3) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,3);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb1s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb4) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,4);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb2s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb5) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,5);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb3s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb6) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,6);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb1s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb7) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,7);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb2s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb8) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,8);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb3s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb9) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,9);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb1s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb10) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,10);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb2s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb11) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,11);
+                game.sendAction(bta);
             }
-
-            if (viewId == R.id.gb3s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                trashNumView.setText("" + newTrashVal);
-            } else {
-                return;
+            else if (viewId == R.id.tb12) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,12);
+                game.sendAction(bta);
+            }
+            else if (viewId == R.id.tb13) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,13);
+                game.sendAction(bta);
+            }
+            else if (viewId == R.id.tb14) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,14);
+                game.sendAction(bta);
+            }
+            else if (viewId == R.id.tb15) {
+                BuyTrashAction bta = new BuyTrashAction(PowerGridHumanPlayer.this,15);
+                game.sendAction(bta);
             }
         }
     }
@@ -1250,46 +1451,71 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     //implements the nuclear buttons
     public class NuclearButtonListener implements View.OnClickListener {
 
-        public NuclearButtonListener(TextView initTextView, TextView initNuclearNumView) {
-            moneyTextView = initTextView;
-            nuclearNumView = initNuclearNumView;
+//        public NuclearButtonListener(TextView initTextView, TextView initNuclearNumView) {
+//            moneyTextView = initTextView;
+//            nuclearNumView = initNuclearNumView;
+//
+//        }
 
-        }
+//        @Override
+//        public void onClick(View view) {
+//            int viewId = view.getId();
+//            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
+//            int currNuclearVal = Integer.parseInt(nuclearNumView.getText().toString());
+//            int newMoneyVal = currMoneyVal - 14;
+//            int newNucelarVal = currNuclearVal + 1;
+//
+//            if (viewId == R.id.ub1s2) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                nuclearNumView.setText("" + newNucelarVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ub1s3) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                nuclearNumView.setText("" + newNucelarVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ub1s4) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                nuclearNumView.setText("" + newNucelarVal);
+//            } else {
+//                return;
+//            }
+//
+//            if (viewId == R.id.ub1s5) {
+//                moneyTextView.setText("" + newMoneyVal);
+//                nuclearNumView.setText("" + newNucelarVal);
+//            } else {
+//                return;
+//            }
 
         @Override
         public void onClick(View view) {
             int viewId = view.getId();
-            int currMoneyVal = Integer.parseInt(moneyTextView.getText().toString());
-            int currNuclearVal = Integer.parseInt(nuclearNumView.getText().toString());
-            int newMoneyVal = currMoneyVal - 14;
-            int newNucelarVal = currNuclearVal + 1;
 
-            if (viewId == R.id.ub1s2) {
-                moneyTextView.setText("" + newMoneyVal);
-                nuclearNumView.setText("" + newNucelarVal);
-            } else {
-                return;
+            if (viewId == R.id.ub1) {
+                BuyUraniumAction bua = new BuyUraniumAction(PowerGridHumanPlayer.this,1);
+                game.sendAction(bua);
             }
-
-            if (viewId == R.id.ub1s3) {
-                moneyTextView.setText("" + newMoneyVal);
-                nuclearNumView.setText("" + newNucelarVal);
-            } else {
-                return;
+            else if  (viewId == R.id.ub2) {
+                BuyUraniumAction bua = new BuyUraniumAction(PowerGridHumanPlayer.this,2);
+                game.sendAction(bua);
             }
-
-            if (viewId == R.id.ub1s4) {
-                moneyTextView.setText("" + newMoneyVal);
-                nuclearNumView.setText("" + newNucelarVal);
-            } else {
-                return;
+            else if (viewId == R.id.ub3) {
+                BuyUraniumAction bua = new BuyUraniumAction(PowerGridHumanPlayer.this,3);
+                game.sendAction(bua);
             }
-
-            if (viewId == R.id.ub1s5) {
-                moneyTextView.setText("" + newMoneyVal);
-                nuclearNumView.setText("" + newNucelarVal);
-            } else {
-                return;
+            else if (viewId == R.id.ub4) {
+                BuyUraniumAction bua = new BuyUraniumAction(PowerGridHumanPlayer.this,4);
+                game.sendAction(bua);
+            }
+            else if (viewId == R.id.ub5) {
+                BuyUraniumAction bua = new BuyUraniumAction(PowerGridHumanPlayer.this,5);
+                game.sendAction(bua);
             }
         }
     }
