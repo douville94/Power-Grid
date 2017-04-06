@@ -88,6 +88,7 @@ public class PowerGridLocalGame extends LocalGame{
 
         //BuyCoalAction
         else if(action instanceof BuyCoalAction && playerID == 0) {
+            //determine price of coal
             price = (((BuyCoalAction) action).getCoal()/3+1);
             if (powerGameState.getAvailableResources().coal[((BuyCoalAction) action).getCoal()] && powerGameState.getGameInventories().get(0).getMoney() >= price) {
                 //make that resource unavailable for further purchase
