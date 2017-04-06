@@ -23,10 +23,7 @@ import android.widget.TextView;
 
 public class PowerGridHumanPlayer extends GameHumanPlayer {
 
-    //instance variables
-    //Do we get rid of these and make an instance of the Game state here
-    private Inventory HumanPlayer = new Inventory();
-    private Inventory OpponentPlayer = new Inventory();
+    //instance variables:
 
     //instance of android activity we are running
     private GameMainActivity myActivity;
@@ -39,7 +36,6 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     //GUI features
     private Spinner resourcesSpinner;
     private Spinner powerPlantsSpinner;
-
     private TextView moneyTextView;
     private TextView coalNumView;
     private TextView oilNumView;
@@ -376,10 +372,10 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             //String currVal = resourcesSpinner.getSelectedItem().toString();
             switch (position){
                 case 0:
-                    setResources(HumanPlayer);
+                    setResources(powerState.getGameInventories().get(0));
                     break;
                 case 1:
-                    setResources(OpponentPlayer);
+                    setResources(powerState.getGameInventories().get(1));
                     break;
             }
         }
@@ -401,10 +397,10 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             //String currVal = resourcesSpinner.getSelectedItem().toString();
             switch (position){
                 case 0:
-                    setPowerPlants(HumanPlayer);
+                    setPowerPlants(powerState.getGameInventories().get(0));
                     break;
                 case 1:
-                    setPowerPlants(OpponentPlayer);
+                    setPowerPlants(powerState.getGameInventories().get(1));
                     break;
             }
         }

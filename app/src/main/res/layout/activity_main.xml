@@ -40,7 +40,7 @@
                     android:id="@+id/UserResources">
 
                     <GridLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <TextView
@@ -56,14 +56,14 @@
                             android:layout_width="132dp" />
 
                         <TextView
-                            android:text="  8 "
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/coalNumView"
                             android:layout_row="2"
                             android:layout_column="1"
                             android:layout_columnSpan="1"
                             android:textSize="14sp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:textColor="@android:color/black"
                             android:background="#FF996633" />
 
@@ -80,7 +80,7 @@
                             android:background="#FFa6a6a6" />
 
                         <TextView
-                            android:text="  4"
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/trashNumView"
                             android:layout_row="4"
@@ -104,7 +104,7 @@
                             android:layout_width="132dp" />
 
                         <TextView
-                            android:text="  0"
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/nuclearNumView"
                             android:layout_row="5"
@@ -116,7 +116,7 @@
                             android:layout_width="18dp" />
 
                         <TextView
-                            android:text="155"
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/moneyTextView"
                             android:textSize="14sp"
@@ -140,14 +140,14 @@
                             android:layout_width="132dp" />
 
                         <TextView
-                            android:text="  2 "
+                            android:text="0"
                             android:layout_height="wrap_content"
                             android:id="@+id/oilNumView"
                             android:layout_row="3"
                             android:layout_column="1"
                             android:layout_columnSpan="1"
                             android:textSize="14sp"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:textColor="@android:color/black"
                             android:background="#a6a6a6" />
 
@@ -217,25 +217,25 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:text="25"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp1cValue" />
 
                             <TextView
-                                android:text="Coal"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp1tValue" />
 
                             <TextView
-                                android:text="2"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp1nValue" />
 
                             <TextView
-                                android:text="5"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp1hValue" />
@@ -299,25 +299,25 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:text="29"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp2cValue" />
 
                             <TextView
-                                android:text="Oil"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp2tValue" />
 
                             <TextView
-                                android:text="1"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp2nValue" />
 
                             <TextView
-                                android:text="4"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp2hValue" />
@@ -381,25 +381,25 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:text="27"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp3cValue" />
 
                             <TextView
-                                android:text="Wind"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp3tValue" />
 
                             <TextView
-                                android:text="0"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp3nValue" />
 
                             <TextView
-                                android:text="3"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp3hValue" />
@@ -462,25 +462,25 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:text="38"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp4cValue" />
 
                             <TextView
-                                android:text="Garbage"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp4tValue" />
 
                             <TextView
-                                android:text="3"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp4nValue" />
 
                             <TextView
-                                android:text="7"
+                                android:text="-"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:id="@+id/pp4hValue" />
@@ -815,25 +815,25 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:text="13"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp1cValue" />
 
                                     <TextView
-                                        android:text="Oil"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp1tValue" />
 
                                     <TextView
-                                        android:text="4"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp1nValue" />
 
                                     <TextView
-                                        android:text="6"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp1hValue" />
@@ -888,25 +888,25 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:text="20"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp3cValue" />
 
                                     <TextView
-                                        android:text="Coal"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp3tValue" />
 
                                     <TextView
-                                        android:text="3"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp3nValue" />
 
                                     <TextView
-                                        android:text="2"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp3hValue" />
@@ -974,25 +974,25 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:text="30"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp2cValue" />
 
                                     <TextView
-                                        android:text="Trash"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp2tValue" />
 
                                     <TextView
-                                        android:text="6"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp2nValue" />
 
                                     <TextView
-                                        android:text="10"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp2hValue" />
@@ -1048,25 +1048,25 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:text="19"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp4cValue" />
 
                                     <TextView
-                                        android:text="Coal"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp4tValue" />
 
                                     <TextView
-                                        android:text="7"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp4nValue" />
 
                                     <TextView
-                                        android:text="9"
+                                        android:text="-"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/upp4hValue" />
