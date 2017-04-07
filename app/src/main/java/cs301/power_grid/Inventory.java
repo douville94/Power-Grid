@@ -1,12 +1,15 @@
 package cs301.power_grid;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**@author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  * Created by Computerz on 2/24/2017.
  */
-import java.util.ArrayList;
 
-
-public class Inventory {
+public class Inventory implements Serializable{
+    // to satisfy Serializable interface
+    private static final long serialVersionUID = 448179182969164L;
 
     private int money;
     private int coal;

@@ -1,11 +1,15 @@
 package cs301.power_grid;
 
+import java.io.Serializable;
+
 /**@author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  * Created by Computerz on 2/24/2017.
  */
 //pretty simple class of powerplants each with 4 different attributes
     //there will be an array list of these in the game
-public class Powerplant {
+public class Powerplant implements Serializable{
+    // to satisfy Serializable interface
+    private static final long serialVersionUID = 471138174917169L;
 
     private int cost;
     private int priceToPower;

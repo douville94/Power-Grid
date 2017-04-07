@@ -1,6 +1,6 @@
 package cs301.power_grid;
 
-
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -8,7 +8,9 @@ import java.util.ArrayList;
  * Created by Computerz on 2/24/2017.
  */
 
-public class City {
+public class City implements Serializable{
+    // to satisfy Serializable interface
+    private static final long serialVersionUID = 986136194786931L;
 
     private String name;
     private ArrayList<City> neighborhood = new ArrayList<City>(); //contains a list of all the neighbors of cities this city has
