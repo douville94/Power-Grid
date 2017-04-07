@@ -1,5 +1,6 @@
 package cs301.power_grid;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import game.GamePlayer;
@@ -12,7 +13,9 @@ import game.infoMsg.GameState;
  */
 
 
-public class PowerState extends GameState {
+public class PowerState extends GameState implements Serializable{
+    // to satisfy Serializable interface
+    private static final long serialVersionUID = 736494716938474L;
 
     private int phase;
     private int currentBid;
@@ -43,12 +46,12 @@ public class PowerState extends GameState {
             cities.get(i).setName(original.cities.get(i).getName());
 
             //one by one copies all of the neighbors over to the new copy city
-            for(j = 0; j < original.cities.get(i).getNeighborhood().size(); j++) {
-                cities.get(i).addNeighbor(original.cities.get(i).getNeighborhood().get(j));
-            }
-            for(j = 0; j < original.cities.get(i).getCosts().size(); j++) {
-                cities.get(i).addCost(original.cities.get(i).getCosts().get(j));
-            }
+//            for(j = 0; j < original.cities.get(i).getNeighborhood().size(); j++) {
+//                cities.get(i).addNeighbor(original.cities.get(i).getNeighborhood().get(j));
+//            }
+//            for(j = 0; j < original.cities.get(i).getCosts().size(); j++) {
+//                cities.get(i).addCost(original.cities.get(i).getCosts().get(j));
+//            }
 
         }
 
