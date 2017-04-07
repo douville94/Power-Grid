@@ -6,7 +6,7 @@ import game.actionMsg.GameAction;
  */
 
 
-public class BuyOilAction extends GameAction{
+public class BuyOilAction extends GameAction {
 
     private int oil;
 

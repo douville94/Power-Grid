@@ -6,7 +6,7 @@ import game.actionMsg.GameAction;
  */
 
 
-public class BuyTrashAction extends GameAction{
+public class BuyTrashAction extends GameAction {
 
     private int trash;
 

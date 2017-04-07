@@ -273,9 +273,9 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         int resId = R.id.mapImageView;
 //        map.setImageResource(resId);
 
-        /*None of the following lines of code draw the map.*/
         /*Android Studio keeps saying that it wants a drawable object passed into the setImageResource()*/
         /*method.  But R.id.mapImageView and R.raw.usa_color_map should already be drawables.*/
+        /*But the map displays, so it's not a big deal.  But keep an eye on it.*/
         map.setImageResource(R.id.mapImageView);
 //        map.setImageResource(R.raw.usa_color_map);
 //        map.setImageDrawable(map);
