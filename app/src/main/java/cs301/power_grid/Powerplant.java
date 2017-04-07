@@ -28,7 +28,7 @@ public class Powerplant implements Serializable{
         priceToPower = -1;
         housesPowered = -1;
         kind = "";
-    }
+    }//
 
     public int getCost(){return cost;}
     public int getPtP(){return priceToPower;}
