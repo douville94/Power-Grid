@@ -38,11 +38,64 @@ public class PowerGridLocalGame extends LocalGame{
         }
     }
 
+
+    /**checks to see if the game is over,
+     *
+     * the last round starts when a player owns 10 cities,
+     * whichever player can power the most cities at the
+     * end of this round wins the game
+     */
     @Override
-    //checks to see if the game is over
     protected String checkIfGameOver() {
-        int myOwnedCities = powerState.getGameInventories().get(1).getMyCities().size();
+        ////NEED TO SUBTRACT RESOURCE USED FROM INVENTORY
+        // AND FIND THE MOST EFFICIENT WAY TO POWER THE MOST CITIES
+
+        //see how many cities each player owns
+        int myOwnedCities = powerState.getGameInventories().get(0).getMyCities().size();
         int opponentOwnedCities = powerState.getGameInventories().get(1).getMyCities().size();
+        //see how many power plants each user owns
+        ArrayList<Powerplant> myPowerPlants = powerState.getGameInventories().get(0).getMyPlants();
+        ArrayList<Powerplant> opponentPowerPlants = powerState.getGameInventories().get(0).getMyPlants();
+        int myNumPowerPlants = myPowerPlants.size();
+        int opponentNumPowerPlants = opponentPowerPlants.size();
+        //access inventory to see if user has resources needed
+        Inventory myInventory = powerState.getGameInventories().get(0);
+        Inventory opponentInventory = powerState.getGameInventories().get(0);
+
+        int canPower = 0;
+        //see how many power plants a user can power
+        for (int i = 0; i <= myNumPowerPlants; i++){
+            String kind = myPowerPlants.get(i).getKind();
+            int price =  myPowerPlants.get(i).getPtP();
+            int numPowered = myPowerPlants.get(i).getHp();
+
+            if (kind.equals("Oil")){
+                int myOil = myInventory.getOil();
+                if (myOil >= price){
+                    canPower = canPower + numPowered;
+                }
+            }
+            else if (kind.equals("Coal")){
+                int myCoal = myInventory.getCoal();
+                if (myCoal >= price){
+                    canPower = canPower + numPowered;
+                }
+            }
+            else if (kind.equals("Trash")){
+                int myTrash = myInventory.getTrash();
+                if (myTrash >= price){
+                    canPower = canPower + numPowered;
+                }
+            }
+            else if (kind.equals("Uranium")){
+                int myUranium = myInventory.getUranium();
+                if (myUranium >= price){
+                    canPower = canPower + numPowered;
+                }
+            }
+        }
+
+
 
         if (myOwnedCities >= 10){
             has10Cities = true;
@@ -53,6 +106,7 @@ public class PowerGridLocalGame extends LocalGame{
         if (has10Cities && (powerState.getGamePhase() == 6)){
 
         }
+
         return "";
     }
 
