@@ -1,6 +1,8 @@
 package cs301.power_grid;
 
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,6 +14,7 @@ import game.infoMsg.GameInfo;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -38,28 +41,31 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 //    powerState.getAvailPowerplant();
     /*^This works in onCreate and any other method, just not here.*/
 
-    private Game game;
+    //private Game game;
+    protected Game game;
 
 
     //GUI features
+//    private mapImageView
+    private ImageView map;
     private Spinner resourcesSpinner;
     private Spinner powerPlantsSpinner;
-    private TextView powerPlant1Cost;
-    private TextView powerPlant1Type;
-    private TextView powerPlant1Number;
-    private TextView powerPlant1House;
-    private TextView powerPlant2Cost;
-    private TextView powerPlant2Type;
-    private TextView powerPlant2Number;
-    private TextView powerPlant2House;
-    private TextView powerPlant3Cost;
-    private TextView powerPlant3Type;
-    private TextView powerPlant3Number;
-    private TextView powerPlant3House;
-    private TextView powerPlant4Cost;
-    private TextView powerPlant4Type;
-    private TextView powerPlant4Number;
-    private TextView powerPlant4House;
+//    private TextView powerPlant1Cost;
+//    private TextView powerPlant1Type;
+//    private TextView powerPlant1Number;
+//    private TextView powerPlant1House;
+//    private TextView powerPlant2Cost;
+//    private TextView powerPlant2Type;
+//    private TextView powerPlant2Number;
+//    private TextView powerPlant2House;
+//    private TextView powerPlant3Cost;
+//    private TextView powerPlant3Type;
+//    private TextView powerPlant3Number;
+//    private TextView powerPlant3House;
+//    private TextView powerPlant4Cost;
+//    private TextView powerPlant4Type;
+//    private TextView powerPlant4Number;
+//    private TextView powerPlant4House;
     private TextView moneyTextView;
     private TextView coalNumView;
     private TextView oilNumView;
@@ -81,6 +87,44 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private TextView typeTextView4;
     private TextView numberTextView4;
     private TextView housesTextView4;
+
+    protected TextView powerPlant1Cost;
+    protected TextView powerPlant1Type;
+    protected TextView powerPlant1Number;
+    protected TextView powerPlant1House;
+    protected TextView powerPlant2Cost;
+    protected TextView powerPlant2Type;
+    protected TextView powerPlant2Number;
+    protected TextView powerPlant2House;
+    protected TextView powerPlant3Cost;
+    protected TextView powerPlant3Type;
+    protected TextView powerPlant3Number;
+    protected TextView powerPlant3House;
+    protected TextView powerPlant4Cost;
+    protected TextView powerPlant4Type;
+    protected TextView powerPlant4Number;
+    protected TextView powerPlant4House;
+//    protected TextView moneyTextView;
+//    protected TextView coalNumView;
+//    protected TextView oilNumView;
+//    protected TextView trashNumView;
+//    protected TextView nuclearNumView;
+//    protected TextView costTextView1;
+//    protected TextView typeTextView1;
+//    protected TextView numberTextView1;
+//    protected TextView housesTextView1;
+//    protected TextView costTextView2;
+//    protected TextView typeTextView2;
+//    protected TextView numberTextView2;
+//    protected TextView housesTextView2;
+//    protected TextView costTextView3;
+//    protected TextView typeTextView3;
+//    protected TextView numberTextView3;
+//    protected TextView housesTextView3;
+//    protected TextView costTextView4;
+//    protected TextView typeTextView4;
+//    protected TextView numberTextView4;
+//    protected TextView housesTextView4;
 
     private int basicGray = Color.rgb(214, 215, 215);
     private int prettyBlue = Color.rgb(0, 221, 255);
@@ -259,6 +303,18 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //map
+        /*Taken from the following URL:  http://stackoverflow.com/questions/11734803/load-an-image-from-assets-folder*/
+        map = (ImageView)findViewById(R.id.mapImageView);
+//        int resId = getResources().getIdentifier(map, "usa_color_map", );
+//        int resId = (int)findViewById(R.id.mapImageView);
+        int resId = R.id.mapImageView;
+//        map.setImageResource(resId);
+//        map.setImageResource(R.id.mapImageView);
+//        Drawable d = new Drawable{R.raw.usa_color_map};
+        map.setImageResource(R.raw.usa_color_map);
+//        map.setImageDrawable(map);
 
         //spinners
         resourcesSpinner = (Spinner) findViewById(R.id.UserResourcesSpinner);
