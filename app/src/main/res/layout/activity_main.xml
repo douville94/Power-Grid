@@ -572,6 +572,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:src="@drawable/usa_color_map"
                     app:srcCompat="@raw/usa_color_map"
                     android:id="@+id/mapImageView"
                     android:layout_weight="1"
