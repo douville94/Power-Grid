@@ -1116,7 +1116,7 @@
                 android:weightSum="1"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
-
+                android:layout_marginBottom="44dp"
                 android:id="@+id/rawResources"
                 android:layout_height="200dp">
 
@@ -1179,58 +1179,48 @@
                             android:weightSum="1">
 
                             <ImageButton
-                                android:id="@+id/ob1"
                                 android:layout_width="40dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/ob1"
                                 android:background="@drawable/iconoil1"
-                                android:src="@drawable/abc_btn_check_to_on_mtrl_015"
-                                android:layout_weight="0.25" />
+                                android:src="@drawable/abc_btn_check_to_on_mtrl_015" />
 
                             <ImageButton
                                 android:id="@+id/ob2"
                                 android:layout_width="42dp"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/iconoil1"
-                                android:src="@drawable/abc_btn_check_to_on_mtrl_015"
-                                android:layout_weight="0.22" />
+                                android:src="@drawable/abc_btn_check_to_on_mtrl_015" />
 
                             <ImageButton
-                                android:id="@+id/ub1"
                                 android:layout_width="35dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="0.59"
-                                android:background="@drawable/iconneuclear1"
-                                android:src="@android:drawable/list_selector_background" />
+                                android:id="@+id/ub1"
+                                android:src="@drawable/abc_ic_clear_material" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
-                            android:layout_height="53dp"
-                            android:weightSum="1">
+                            android:layout_height="53dp">
 
                             <ImageButton
-                                android:id="@+id/tb1"
                                 android:layout_width="38dp"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/icontrash1"
-                                android:src="@android:drawable/list_selector_background"
-                                android:layout_weight="0.34" />
+                                android:id="@+id/tb1"
+                                android:src="@android:drawable/btn_star_big_on" />
 
                             <ImageButton
-                                android:id="@+id/tb2"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/icontrash1"
-                                android:src="@android:drawable/list_selector_background"
-                                android:layout_weight="0.25" />
+                                android:id="@+id/tb2"
+                                android:src="@android:drawable/btn_star_big_on" />
 
                             <ImageButton
-                                android:id="@+id/tb3"
                                 android:layout_width="38dp"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/icontrash1"
-                                android:src="@android:drawable/list_selector_background" />
+                                android:id="@+id/tb3"
+                                android:src="@android:drawable/btn_star_big_on" />
                         </LinearLayout>
                     </LinearLayout>
 
