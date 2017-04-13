@@ -11,6 +11,7 @@ import game.infoMsg.GameInfo;
 
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
@@ -81,16 +82,18 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     private Button okayButton;
     private Button passButton;
-    private boolean[] localCities = new localCities[20];
+//    private boolean[] localCities = new localCities[20];
+    private boolean[] localCities = new boolean[20];
     //denver, seattle, sf, la, missoula, boise, phx, omaha, okc, dallas, hou, stlou, chi, mem, new orl, det, atl, miami, bos, nyc
-    private Button[] cityButtons = new cityButtons[20];
+//    private Button[] cityButtons = new cityButtons[20];
+    private Button[] cityButtons = new Button[20];
+
+    private Powerplant pPlantObj = new Powerplant();
 
     private Button selectButton0;
     private Button selectButton1;
     private Button selectButton2;
     private Button selectButton3;
-
-
 
     private ImageButton coalButton1;
     private ImageButton coalButton2;
@@ -535,29 +538,31 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         }
     }
 
-    private class okayButListener implements View.OnClickListener{
+    private class okayButListener implements View.OnClickListener {
         public void onClick(View v){
 
 
-            if(powerState.getTurn() != powerState.getPlayerId()){
-                return;
-            }
+//            if(powerState.getTurn() != powerState.getPlayerId()) {
+//                return;
+//            }
             int phase = powerState.getGamePhase();
             if(phase == 0){
 
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, pPlantObj);
                 game.sendAction(sppa);
 
             }
-            else if (phase == 1 ){
+            else if (phase == 1 ) {
 
                 BidAction ba = new BidAction(PowerGridHumanPlayer.this, bidValue);
                 game.sendAction(ba);
 
             }
-            else if (phase == 2 ){
+            else if (phase == 2 ) {
 
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, pPlantObj);
                 game.sendAction(sppa);
 
             }
@@ -682,18 +687,22 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private class CityButtonListener implements View.OnClickListener {
         public void onClick(View v) {
             for(int i = 0; i < 20; i++) {
-                if (v.getId() == cityButtons[i]){
-
+//                if (v.getId() == cityButtons[i]) {
+                if(v.getId() == cityButtons[i].getId()) {
 
                     cityButtons[i].setBackgroundColor(basicGray);
-                    cityButtons[i] = false;
+//                    cityButtons[i] = false;/*cityButtons is an array of Buttons*/
+                    localCities[i] = false;
+                }
 
-                    else{
+
+                    else {
                         cityButtons[i].setBackgroundColor(prettyBlue);
-                        cityButtons[i] = true;
+//                        cityButtons[i] = true;/*cityButtons is an array of Buttons*/
+                    localCities[i] = true;
                     }
 
-                }
+
             }
         }
     }
@@ -726,12 +735,13 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
             for (int i = 0; i < 15; i++) {
                 if (viewId == idNum[i]) {
-                    if (powerState.getAvailableResources.coal[i]) {
+                    if (powerState.getAvailableResources().coal[i]) {
                         if (localStore.coal[i]) {
                             coalButton1.setBackgroundColor(Color.TRANSPARENT);
                             localStore.coal[i] = false;
                         } else {
-                            coalButton1.setBackgroundColor(Color.OPAQUE);
+//                            coalButton1.setBackgroundColor(Color.OPAQUE);
+                            coalButton1.setBackgroundColor(Color.BLACK);
                             localStore.coal[i] = true;
                         }
                     }
@@ -763,12 +773,13 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
             for (int i = 0; i < 10; i++) {
                 if (viewId == idNum[i]) {
-                    if (powerState.getAvailableResources.oil[i]) {
+                    if (powerState.getAvailableResources().oil[i]) {
                         if (localStore.oil[i]) {
                             oilButton1.setBackgroundColor(Color.TRANSPARENT);
                             localStore.oil[i] = false;
                         } else {
-                            oilButton1.setBackgroundColor(Color.OPAQUE);
+//                            oilButton1.setBackgroundColor(Color.OPAQUE);
+                            oilButton1.setBackgroundColor(Color.BLACK);
                             localStore.oil[i] = true;
                         }
                     }
@@ -804,12 +815,13 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
             for (int i = 0; i < 15; i++) {
                 if (viewId == idNum[i]) {
-                    if (powerState.getAvailableResources.trash[i]) {
+                    if (powerState.getAvailableResources().trash[i]) {
                         if (localStore.trash[i]) {
                             trashButton1.setBackgroundColor(Color.TRANSPARENT);
                             localStore.trash[i] = false;
                         } else {
-                            trashButton1.setBackgroundColor(Color.OPAQUE);
+//                            trashButton1.setBackgroundColor(Color.OPAQUE);
+                            trashButton1.setBackgroundColor(Color.BLACK);
                             localStore.trash[i] = true;
                         }
                     }
@@ -826,22 +838,26 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         public void onClick(View view) {
             int viewId = view.getId();
             int[] idNum = new int[15];
-            idNum[0] = R.id.nb1;
-            idNum[1] = R.id.nb2;
-            idNum[2] = R.id.nb3;
-            idNum[3] = R.id.nb4;
-            idNum[4] = R.id.nb5;
-
-
+//            idNum[0] = R.id.nb1;
+//            idNum[1] = R.id.nb2;
+//            idNum[2] = R.id.nb3;
+//            idNum[3] = R.id.nb4;
+//            idNum[4] = R.id.nb5;
+            idNum[0] = R.id.ub1;
+            idNum[1] = R.id.ub2;
+            idNum[2] = R.id.ub3;
+            idNum[3] = R.id.ub4;
+            idNum[4] = R.id.ub5;
 
             for (int i = 0; i < 5; i++) {
                 if (viewId == idNum[i]) {
-                    if (powerState.getAvailableResources.uranium[i]) {
+                    if (powerState.getAvailableResources().uranium[i]) {
                         if (localStore.uranium[i]) {
                             uraniumButton1.setBackgroundColor(Color.TRANSPARENT);
                             localStore.uranium[i] = false;
                         } else {
-                            uraniumButton1.setBackgroundColor(Color.OPAQUE);
+//                            uraniumButton1.setBackgroundColor(Color.OPAQUE);
+                            uraniumButton1.setBackgroundColor(Color.BLACK);
                             localStore.uranium[i] = true;
                         }
                     }

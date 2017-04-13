@@ -6,7 +6,7 @@ import game.actionMsg.GameAction;
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
  */
 
-public class BidAction extends GameAction{
+public class BidAction extends GameAction {
 
     private int bid;
 

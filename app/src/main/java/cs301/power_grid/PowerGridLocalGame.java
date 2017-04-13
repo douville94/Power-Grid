@@ -44,13 +44,13 @@ public class PowerGridLocalGame extends LocalGame{
         int myOwnedCities = powerState.getGameInventories().get(1).getMyCities().size();
         int opponentOwnedCities = powerState.getGameInventories().get(1).getMyCities().size();
 
-        if (myOwnedCities >= 10){
+        if(myOwnedCities >= 10) {
             has10Cities = true;
         }
-        else if (opponentOwnedCities >= 10){
+        else if(opponentOwnedCities >= 10) {
             has10Cities = true;
         }
-        if (has10Cities && (powerState.getGamePhase() == 6)){
+        if(has10Cities && (powerState.getGamePhase() == 6)) {
 
         }
         return "";
@@ -255,10 +255,8 @@ public class PowerGridLocalGame extends LocalGame{
             powerState.setPlayerId(0);
             return true;
         }
-        else{
+        else {
             return false;
         }
-
-
     }//makeMove
 }

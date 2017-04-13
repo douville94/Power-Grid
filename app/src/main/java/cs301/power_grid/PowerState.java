@@ -13,7 +13,7 @@ import game.infoMsg.GameState;
  */
 
 
-public class PowerState extends GameState implements Serializable{
+public class PowerState extends GameState implements Serializable {
     // to satisfy Serializable interface
     private static final long serialVersionUID = 736494716938474L;
 
