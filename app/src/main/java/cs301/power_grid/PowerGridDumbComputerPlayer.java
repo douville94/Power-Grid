@@ -1,5 +1,8 @@
 package cs301.power_grid;
 
+import android.view.View;
+import android.widget.Button;
+
 import game.GameComputerPlayer;
 import game.infoMsg.GameInfo;
 
@@ -10,6 +13,10 @@ import game.infoMsg.GameInfo;
 
 public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
     PowerState powerState;
+    PowerGridHumanPlayer instanceVariables = new PowerGridHumanPlayer("DumbAI");
+    View v;
+    private Button okayButton;
+    private Button passButton;
 
     /**
      * constructor
@@ -18,6 +25,16 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
      */
     public PowerGridDumbComputerPlayer(String name) {
         super(name);
+    }
+
+    private class okayButListener implements View.OnClickListener {
+        private boolean isClicked;
+        @Override
+        public void onClick(View view) {
+            if(isClicked == true) {
+
+            }
+        }
     }
 
     @Override
@@ -37,6 +54,11 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                 BidAction bid = new BidAction(this, (int)Math.random());
                 bid.getBid();
                 /*If the "OK" or "Pass" button is tapped, update the game phase*/
+//                if(okayButListener.onClick(v)) {
+//                    phase = 2;
+//                    return;
+//                }
+
             } else if(phase == 2) {
                 /*Previous passer chooses a power plant.
                 * "OK" or "Pass" updates phase.*/

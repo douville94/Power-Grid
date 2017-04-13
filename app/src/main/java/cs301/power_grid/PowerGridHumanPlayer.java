@@ -174,25 +174,24 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             if(phase == 0){
 
             }
-            else if (phase == 1 ){
+            else if (phase == 1 ) {
 
             }
-            else if (phase == 2 ){
+            else if (phase == 2 ) {
 
             }
-            else if (phase == 3 ){
+            else if (phase == 3 ) {
 
             }
-            else if (phase == 4 ){
+            else if (phase == 4 ) {
 
             }
-            else if (phase == 5 ){
+            else if (phase == 5 ) {
 
             }
-            else if (phase == 6 ){
+            else if (phase == 6 ) {
 
             }
-
         }
     }
 
@@ -539,14 +538,14 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     }
 
     private class okayButListener implements View.OnClickListener {
-        public void onClick(View v){
+        public void onClick(View v) {
 
 
 //            if(powerState.getTurn() != powerState.getPlayerId()) {
 //                return;
 //            }
             int phase = powerState.getGamePhase();
-            if(phase == 0){
+            if(phase == 0) {
 
 //                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
                 SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, pPlantObj);
@@ -626,10 +625,10 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
                 }
 
             }
-            else if (phase == 5 ){
+            else if (phase == 5 ) {
 
             }
-            else if (phase == 6 ){
+            else if (phase == 6 ) {
 
             }
 
