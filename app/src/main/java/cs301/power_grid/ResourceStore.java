@@ -15,4 +15,17 @@ public class ResourceStore implements Serializable {
     public boolean[] trash = new boolean[15];
     public boolean[] uranium = new boolean[5];
 
+    public ResourceStore(){
+        for(int i = 0; i < 15; i++){
+            coal[i] = true;
+            trash[i] = true;
+            if(i < 5){
+                uranium[i] = true;
+            }
+            if(i < 10){
+                oil[i] = true;
+            }
+        }
+    }
+
 }
