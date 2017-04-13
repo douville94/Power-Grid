@@ -32,6 +32,8 @@ public class PowerState extends GameState implements Serializable{
         initiateCityScape();
         initiatePowerPlants();
         scramblePlants(); //at any given moment, Powerplants 0, 1, 2, 3 are for sale
+        gameInventories.add(0, new Inventory());
+        gameInventories.add(1, new Inventory());
     }
 
     //Copy Constructor
@@ -73,9 +75,10 @@ public class PowerState extends GameState implements Serializable{
             gameInventories.get(m).setOil(original.gameInventories.get(m).getOil());
             gameInventories.get(m).setTrash(original.gameInventories.get(m).getTrash());
 
-            for(n = 0; n < original.gameInventories.get(m).getMyPlants().size(); n++)
+            for(n = 0; n < original.gameInventories.get(m).getMyPlants().size(); n++) {
                 gameInventories.get(m).addMyPlants(original.gameInventories.get(m).getMyPlants().get(n));
-            gameInventories.get(m).addMyCity(original.gameInventories.get(m).getMyCities().get(n));
+                gameInventories.get(m).addMyCity(original.gameInventories.get(m).getMyCities().get(n));
+            }
         }
     }//copyConstructor
 

@@ -29,9 +29,6 @@ import java.util.ArrayList;
 public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     //instance variables
-    //Do we get rid of these and make an instance of the Game state here?
-    private Inventory HumanPlayer = new Inventory();
-    private Inventory OpponentPlayer = new Inventory();
 
     //instance of android activity we are running
     private GameMainActivity myActivity;
@@ -53,18 +50,22 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private TextView oilNumView;
     private TextView trashNumView;
     private TextView nuclearNumView;
+
     private TextView costTextView1;
     private TextView typeTextView1;
     private TextView numberTextView1;
     private TextView housesTextView1;
+
     private TextView costTextView2;
     private TextView typeTextView2;
     private TextView numberTextView2;
     private TextView housesTextView2;
+
     private TextView costTextView3;
     private TextView typeTextView3;
     private TextView numberTextView3;
     private TextView housesTextView3;
+
     private TextView costTextView4;
     private TextView typeTextView4;
     private TextView numberTextView4;
@@ -207,7 +208,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     @Override
     public View getTopView() {
         return (RelativeLayout) findViewById(R.id.activity_main);
-        //return null;
+
     }
 
     @Override
@@ -217,11 +218,16 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         //check if info is a gameState
         if (info instanceof PowerState) {
             powerState = (PowerState) info;
-
             //update GUI -
+            //update user resources and power plants
+            //setResources(((PowerState) info).getGameInventories().get(0));
+            //setPowerPlants(((PowerState) info).getGameInventories().get(0));
+            //setPowerPlants(((PowerState) info).getGameInventories().get(1));
+
             //look at what phase game is in then update accordingly
             int phase = powerState.getGamePhase();
             if (phase == 0) {
+
 
             } else if (phase == 1) {
 
@@ -261,7 +267,6 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -497,6 +502,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         bosBut.setOnClickListener(new bosButListener());
     }
 
+
     /**
      * setResources
      * <p>
@@ -549,13 +555,13 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             numberTextView1.setText("" + upp.getMyPlants().get(0).getPtP());
             housesTextView1.setText("" + upp.getMyPlants().get(0).getHp());
         }
-        if (upp.getMyPlants().size() > 1) {
+        else if (upp.getMyPlants().size() > 1) {
             costTextView2.setText("" + upp.getMyPlants().get(1).getCost());
             typeTextView2.setText("" + upp.getMyPlants().get(1).getKind());
             numberTextView2.setText("" + upp.getMyPlants().get(1).getPtP());
             housesTextView2.setText("" + upp.getMyPlants().get(1).getHp());
         }
-        if (upp.getMyPlants().size() > 2) {
+        else if (upp.getMyPlants().size() > 2) {
             costTextView3.setText("" + upp.getMyPlants().get(2).getCost());
             typeTextView3.setText("" + upp.getMyPlants().get(2).getKind());
             numberTextView3.setText("" + upp.getMyPlants().get(2).getPtP());
