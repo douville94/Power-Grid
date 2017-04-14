@@ -88,7 +88,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 //    private Button[] cityButtons = new cityButtons[20];
     private Button[] cityButtons = new Button[20];
 
-    private Powerplant pPlantObj = new Powerplant();
+    private Powerplant tempPlant = new Powerplant();
 
     private Button selectButton0;
     private Button selectButton1;
@@ -171,26 +171,36 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             //update GUI -
             //look at what phase game is in then update accordingly
             int phase = powerState.getGamePhase();
-            if(phase == 0){
-
+            if(phase == 0) {
+                /*First player chooses a power plant.
+                * "OK" or "Pass" updates phase.*/
             }
             else if (phase == 1 ) {
-
+                /*Bidding on power plant(s).
+                * Bidding or "pass" updates phase.*/
             }
             else if (phase == 2 ) {
-
+                /*Previous passer chooses a power plant.
+                * "OK" or "Pass" updates phase.*/
             }
             else if (phase == 3 ) {
-
+                /*Second player chooses resources.
+                * "OK" or "Pass" updates phase.*/
             }
             else if (phase == 4 ) {
-
+                /*First player chooses resources.
+                * "OK" or "Pass" updates phase.*/
             }
             else if (phase == 5 ) {
-
+                /*Second player chooses cities.
+                * "OK" or "Pass" updates phase.*/
             }
             else if (phase == 6 ) {
-
+                /*First player chooses cities.
+                * "OK" or "Pass" updates phase.*/
+            }
+            else {
+                /*Other cases go here*/
             }
         }
     }
@@ -233,10 +243,10 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         passButton.setOnClickListener(new passButListener());
 
         //select buttons
-        selectButton0 = (Button)findViewById(R.id.select1);
-        selectButton1 = (Button)findViewById(R.id.select2);
-        selectButton2 = (Button)findViewById(R.id.select3);
-        selectButton3 = (Button)findViewById(R.id.select4);
+        selectButton0 = (Button)findViewById(R.id.select0);
+        selectButton1 = (Button)findViewById(R.id.select1);
+        selectButton2 = (Button)findViewById(R.id.select2);
+        selectButton3 = (Button)findViewById(R.id.select3);
 
         //bid edit text
         bidVal = (EditText)findViewById(R.id.bidEditText);
@@ -538,9 +548,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     }
 
     private class okayButListener implements View.OnClickListener {
+        @Override
         public void onClick(View v) {
-
-
 //            if(powerState.getTurn() != powerState.getPlayerId()) {
 //                return;
 //            }
@@ -548,7 +557,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             if(phase == 0) {
 
 //                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, pPlantObj);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, tempPlant);
                 game.sendAction(sppa);
 
             }
@@ -561,7 +570,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             else if (phase == 2 ) {
 
 //                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, pPlantObj);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, tempPlant);
                 game.sendAction(sppa);
 
             }
@@ -636,14 +645,16 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         }
     }
 
-    private class passButListener implements View.OnClickListener{
-        public void onClick(View v){
-
+    private class passButListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            int phase = powerState.getGamePhase();
         }
     }
 
-    private class select0ButListener implements View.OnClickListener{
-        public void onClick(View v){
+    private class select0ButListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
             selectNum = 0;
             selectButton0.setBackgroundColor(Color.YELLOW);
             selectButton1.setBackgroundColor(prettyBlue);
@@ -652,8 +663,9 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         }
     }
 
-    private class select1ButListener implements View.OnClickListener{
-        public void onClick(View v){
+    private class select1ButListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
             selectNum = 1;
             selectButton1.setBackgroundColor(Color.YELLOW);
             selectButton0.setBackgroundColor(prettyBlue);
@@ -662,8 +674,9 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         }
     }
 
-    private class select2ButListener implements View.OnClickListener{
-        public void onClick(View v){
+    private class select2ButListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
             selectNum = 2;
             selectButton2.setBackgroundColor(Color.YELLOW);
             selectButton0.setBackgroundColor(prettyBlue);
@@ -672,7 +685,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         }
     }
 
-    private class select3ButListener implements View.OnClickListener{
+    private class select3ButListener implements View.OnClickListener {
+        @Override
         public void onClick(View v){
             selectNum = 3;
             selectButton3.setBackgroundColor(Color.YELLOW);
@@ -684,6 +698,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
 
     private class CityButtonListener implements View.OnClickListener {
+        @Override
         public void onClick(View v) {
             for(int i = 0; i < 20; i++) {
 //                if (v.getId() == cityButtons[i]) {
@@ -693,15 +708,11 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 //                    cityButtons[i] = false;/*cityButtons is an array of Buttons*/
                     localCities[i] = false;
                 }
-
-
                     else {
                         cityButtons[i].setBackgroundColor(prettyBlue);
 //                        cityButtons[i] = true;/*cityButtons is an array of Buttons*/
                     localCities[i] = true;
-                    }
-
-
+                }
             }
         }
     }

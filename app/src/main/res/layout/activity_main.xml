@@ -243,11 +243,11 @@
                     </LinearLayout>
 
                     <Button
-                        android:text="Select"
+                        android:id="@+id/select0"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/select1"
-                        android:background="@android:color/holo_blue_bright" />
+                        android:background="@android:color/holo_blue_bright"
+                        android:text="Select" />
 
                 </LinearLayout>
 
@@ -325,12 +325,12 @@
                     </LinearLayout>
 
                     <Button
-                        android:text="Select"
+                        android:id="@+id/select1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/select2"
+                        android:layout_weight="0.97"
                         android:background="@android:color/holo_blue_light"
-                        android:layout_weight="0.97" />
+                        android:text="Select" />
 
                 </LinearLayout>
 
@@ -407,11 +407,11 @@
                     </LinearLayout>
 
                     <Button
-                        android:text="Select"
+                        android:id="@+id/select2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/select3"
-                        android:background="@android:color/holo_blue_dark" />
+                        android:background="@android:color/holo_blue_dark"
+                        android:text="Select" />
 
                 </LinearLayout>
 
@@ -488,11 +488,11 @@
                     </LinearLayout>
 
                     <Button
-                        android:text="Select"
+                        android:id="@+id/select3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/select4"
-                        android:background="@android:color/holo_blue_bright" />
+                        android:background="@android:color/holo_blue_bright"
+                        android:text="Select" />
                 </LinearLayout>
 
                 <LinearLayout
