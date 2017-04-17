@@ -10,19 +10,17 @@ import game.actionMsg.GameAction;
 
 public class SelectPowerPlantAction extends GameAction {
 
-    private Powerplant powerplant;
+    private int num;
 
     /**
      * constructor for GameAction
      *
      * @param player the player who created the action
      */
-    public SelectPowerPlantAction(GamePlayer player, Powerplant initPowerPlant) {
+    public SelectPowerPlantAction(GamePlayer player, int initNum) {
         super(player);
-        powerplant = initPowerPlant;
+        num = initNum;
     }
 
-    public Powerplant getPowerplant() {
-        return powerplant;
-    }
+public int getNum(){return num;}
 }

@@ -1,6 +1,7 @@
 package cs301.power_grid;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
@@ -14,6 +15,8 @@ public class ResourceStore implements Serializable {
     public boolean[] oil = new boolean[10];
     public boolean[] trash = new boolean[15];
     public boolean[] uranium = new boolean[5];
+
+
 
     public ResourceStore(){
         for(int i = 0; i < 15; i++){

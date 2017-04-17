@@ -18,9 +18,12 @@ public class PowerState extends GameState implements Serializable {
     private static final long serialVersionUID = 736494716938474L;
 
     private int phase;
+    private int turn;
     private int currentBid;
     private int playerId;
+    private int selectedPlant = -1;
     private ArrayList<City> cities = new ArrayList<City>();
+    private boolean[] boughtCities = new boolean[20];
     private ArrayList<Powerplant> salePlants = new ArrayList<Powerplant>();
     private ArrayList<Inventory> gameInventories = new ArrayList<Inventory>(); //making an array list because we want to leave the option open for more than 2 players for later code
     private ResourceStore availableResources;
@@ -83,14 +86,24 @@ public class PowerState extends GameState implements Serializable {
     }//copyConstructor
 
     //getters
+    public int getTurn() {return turn;}
+    public int getSelectedPlant() {return selectedPlant;}
+    public boolean[] getBoughtCities() {return boughtCities;}
     public int getPlayerId() {return playerId;}
     public int getGamePhase() {return phase;}
     public ArrayList<City> getAvailCities() {return cities;}
     public ArrayList<Powerplant> getAvailPowerplant() {return salePlants;}
     public ArrayList<Inventory> getGameInventories() {return gameInventories;}
     public ResourceStore getAvailableResources() {return availableResources;}
+    public void removePlant(int index){ salePlants.remove(index);}
+
+
 
     //setters
+
+    public void setBoughtCities(boolean[] purchased) {boughtCities = purchased;}
+    public void setSelectedPlant(int index){selectedPlant = index;}
+    public void setBoughtCity(int index){boughtCities[index] = true;}
     public void setPlayerId(int newPlayerId) {playerId = newPlayerId;}
     public void setGamePhase(int refresh) {phase = refresh;}
     public void setAvailCities(ArrayList<City> newCit) {cities = newCit;}
@@ -98,6 +111,9 @@ public class PowerState extends GameState implements Serializable {
     public void setGameInventories(ArrayList<Inventory> newInventory) {gameInventories = newInventory;}
     public void setAvailableResources(ResourceStore newResources) {availableResources = newResources;}
     public void setCurrentBid(int newCurrentBid) {currentBid = newCurrentBid;}
+    public void changeTurn(){
+        turn = (turn + 1) % 2;
+    }
 
     /**
      * initiateCityScape
