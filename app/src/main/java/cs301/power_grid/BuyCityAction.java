@@ -10,18 +10,15 @@ import game.actionMsg.GameAction;
 public class BuyCityAction extends GameAction {
 
     private City city;
-    private int cityIndex;
 
     /**
      * constructor for GameAction
      *
      * @param player the player who created the action
      */
-    public BuyCityAction(GamePlayer player,City initCity, int index) {
+    public BuyCityAction(GamePlayer player,City initCity) {
         super(player);
         city = initCity;
-        cityIndex = index;
     }
     public City getCity(){return city;}
-    public int getCityIndex(){return cityIndex;}
 }

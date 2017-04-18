@@ -1,5 +1,6 @@
 package cs301.power_grid;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+//import java.nio.charset.UnmappableCharacterException;
 
 /**
  * @author Luchini Guilian, Tibbetts Nathan, Douville Luke, Hoang Paul
@@ -31,7 +33,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     //instance of android activity we are running
     private GameMainActivity myActivity;
 
-    private PowerState powerState = new PowerState();
+    private PowerState powerState;// = new PowerState();
 
     private int selectNum = -1;
     private int bidValue = -1;
@@ -77,21 +79,22 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private TextView typeTextView4;
     private TextView numberTextView4;
     private TextView housesTextView4;
-    private TextView previousBid;
     private EditText bidVal;
 
-    private int basicGray = Color.rgb(214, 215, 215);
+    private int basicGray = Color.rgb(214,215,215);
     private int prettyBlue = Color.rgb(0, 221, 255);
+    private boolean isClicked = false;
 
     private Button okayButton;
     private Button passButton;
-
+    //    private boolean[] localCities = new localCities[20];
     private boolean[] localCities = new boolean[20];
     //denver, seattle, sf, la, missoula, boise, phx, omaha, okc, dallas, hou, stlou, chi, mem, new orl, det, atl, miami, bos, nyc
-
+//    private Button[] cityButtons = new cityButtons[20];
     private Button[] cityButtons = new Button[20];
 
-
+    private Powerplant tempPlant;// = new Powerplant();
+//    private ResourceStore tempResources = new ResourceStore();
 
     private Button selectButton0;
     private Button selectButton1;
@@ -148,61 +151,131 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private ImageButton trashButton15;
 
     //Constructor
-    public PowerGridHumanPlayer(String name) {
+    public PowerGridHumanPlayer(String name){
         super(name);
     }
 
     @Override
     public View getTopView() {
-        return (RelativeLayout) findViewById(R.id.activity_main);
+        return (RelativeLayout)findViewById(R.id.activity_main);
     }
 
     @Override
     public void receiveInfo(GameInfo info) {
-        if (powerState == null){return;}
-        if (moneyTextView == null){return;}
-        //color of computer cities
-        //resource disappears when comp buys
+        //if (powerState == null){return;}
 
+//       /*Create available resources, cities, and power plants.*/
+//        powerState.initiateCityScape();
+//        powerState.initiatePowerPlants();
+
+
+        //update GUI - //update user resources and power plants 
+
+
+        /*Try-catch statement?*/
+//        try {
+//            setResources(((PowerState) info).getGameInventories().get(0));
+//        } catch(UnmappableCharacterException) {
+//
+//        }
+
+//        PowerGridHumanPlayer.this. = setResources(((PowerState)info).getGameInventories().get(0));//Error:(163, 72) error: illegal character: '\u2028' .  '\u2028' is the newline character.
+        if(((PowerState)info).getPlayerId() == 0) {
+            for(tempResources : (((PowerState)info).getGameInventories().get(0))) {
+//                tempResources = setResources(((PowerState) info).getGameInventories().get(0));
+                setResources(((PowerState)info).getGameInventories().get(0));
+            }
+        }
+//        PowerGridDumbComputerPlayer comp = new PowerGridDumbComputerPlayer("Easy Computer Player");
+//        comp.receiveInfo(info);
+        if(((PowerState)info).getPlayerId() == 1) {
+            for(tempResources : (((PowerState)info).getGameInventories().get(1))) {
+//                tempResources = setResources(((PowerState) info).getGameInventories().get(1));
+                setResources(((PowerState) info).getGameInventories().get(1));
+            }
+        }
+
+
+        /*Try-catch statement?*/
+//        try {
+//            setPowerPlantsInventory(((PowerState) info).getGameInventories().get(0)); 
+//        } catch(UnmappableCharacterException) {
+//
+//        }
+//        setPowerPlantsInventory(((PowerState)info).getGameInventories().get(0)); //Error:(163, 72) error: illegal character: '\u2028' .  '\u2028' is the newline character.
+//        setPowerPlantsInventory(((PowerState)info).getGameInventories().get(1));
+        /*Go through the array list.*/
+//        while(((PowerState)info).getPlayerId() == 0)
+        if(((PowerState)info).getPlayerId() == 0) {
+            for(tempPlant : ((PowerState)info).getGameInventories().get(0).getMyPlants()) {//.get(0)) {
+                Inventory tempInv;
+//                tempInv = setPowerPlantsInventory(((PowerState)info).getGameInventories().get(0).get);
+                setPowerPlantsInventory(((PowerState)info).getGameInventories().get(0));
+            }
+//            setPowerPlantsInventory((((PowerState)info).getGameInventories().get(0)).getMyPlants());
+        }
+        else if(((PowerState)info).getPlayerId() == 1) {
+            for(tempPlant : ((PowerState)info).getGameInventories().get(1).getMyPlants()) {
+//                tempPlant = setPowerPlantsInventory(((PowerState)info).getGameInventories().get(1));
+                setPowerPlantsInventory(((PowerState)info).getGameInventories().get(1));
+            }
+        }
         //check if info is a gameState
         if (info instanceof PowerState){
-            PowerState powerState = (PowerState) info;
-            //update GUI - //update user resources and power plants 
-            setResources((powerState.getGameInventories().get(0)));
-            setPowerPlants((powerState.getGameInventories().get(0)));
+
+//            PowerState powerState = (PowerState) info;
+            powerState = (PowerState) info;
 
             //update GUI -
             //look at what phase game is in then update accordingly
             int phase = powerState.getGamePhase();
-            if (phase == 0) {
+            if(phase == 0) {
                 /*First player chooses a power plant.
                 * "OK" or "Pass" updates phase.*/
-                //GUI updates handled by button listener
+                switch(selectNum) {
+                    case 1: selectNum = 0;
+                        selectButton0.setOnClickListener(new select0ButListener());
+                    case 2: selectNum = 1;
+                        selectButton1.setOnClickListener(new select1ButListener());
+                    case 3: selectNum = 2;
+                        selectButton2.setOnClickListener(new select2ButListener());
+                    case 4: selectNum = 3;
+                        selectButton3.setOnClickListener(new select3ButListener());
+                }
+                int randOKPass = (int)(Math.random() * 2);
+//                int randPPlantToBidOn = (int)(Math.random() * 42);
+                /*okayButListener and passButtonListener objects are already created in onCreate().*/
+                switch(randOKPass) {
+                    case 1: randOKPass = 0;
+                        okayButton.setOnClickListener(new okayButListener());
+                    case 2: randOKPass = 1;
+                        passButton.setOnClickListener(new passButListener());
+                }
             }
             else if (phase == 1 ) {
                 /*Bidding on power plant(s).
                 * Bidding or "pass" updates phase.*/
-                int bid = powerState.getCurrentBid();
-                previousBid.setText("" + bid);
-
             }
             else if (phase == 2 ) {
                 /*Previous passer chooses a power plant.
                 * "OK" or "Pass" updates phase.*/
-                //GUI updates handled by button listener
             }
-            else if (phase == 3 || phase == 4) {
+            else if (phase == 3 ) {
                 /*Second player chooses resources.
                 * "OK" or "Pass" updates phase.*/
-                //GUI updates handled by button listener, look if computer has bought any resources
-
             }
-            else if (phase == 5 || phase == 6) {
+            else if (phase == 4 ) {
+                /*First player chooses resources.
+                * "OK" or "Pass" updates phase.*/
+            }
+            else if (phase == 5 ) {
                 /*Second player chooses cities.
                 * "OK" or "Pass" updates phase.*/
-                //GUI updates handled by button listener, look if computer has bought any cities
             }
-
+            else if (phase == 6 ) {
+                /*First player chooses cities.
+                * "OK" or "Pass" updates phase.*/
+            }
             else {
                 /*Other cases go here*/
             }
@@ -221,7 +294,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 
     /**************************
      * onCreate
-     * <p>
+     *
      * initializes buttons and registers them to listeners
      *
      * @param savedInstanceState
@@ -232,96 +305,99 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*Create available resources, cities, and power plants.*/
+        powerState.initiateCityScape();
+        powerState.initiatePowerPlants();
+
         //spinners
-        resourcesSpinner = (Spinner) findViewById(R.id.UserResourcesSpinner);
+        resourcesSpinner =(Spinner)findViewById(R.id.UserResourcesSpinner);
         resourcesSpinner.setOnItemSelectedListener(new resourcesSpinListener());
 
-        powerPlantsSpinner = (Spinner) findViewById(R.id.userPowerPlantsSpinner);
+        powerPlantsSpinner =(Spinner)findViewById(R.id.userPowerPlantsSpinner);
         powerPlantsSpinner.setOnItemSelectedListener(new powerPlantsSpinListener());
 
         //okay and pass buttons
-        okayButton = (Button) findViewById(R.id.okButton);
+        okayButton = (Button)findViewById(R.id.okButton);
         okayButton.setOnClickListener(new okayButListener());
 
-        passButton = (Button) findViewById(R.id.passButton);
+        passButton = (Button)findViewById(R.id.passButton);
         passButton.setOnClickListener(new passButListener());
 
         //select buttons
-        selectButton0 = (Button) findViewById(R.id.select0);
-        selectButton1 = (Button) findViewById(R.id.select1);
-        selectButton2 = (Button) findViewById(R.id.select2);
-        selectButton3 = (Button) findViewById(R.id.select3);
+        selectButton0 = (Button)findViewById(R.id.select0);
+        selectButton1 = (Button)findViewById(R.id.select1);
+        selectButton2 = (Button)findViewById(R.id.select2);
+        selectButton3 = (Button)findViewById(R.id.select3);
 
-        //bid views
-        previousBid = (TextView) findViewById(R.id.previousBidTV);
+        //bid edit text
         bidVal = (EditText)findViewById(R.id.bidEditText);
         bidValue = Integer.parseInt(bidVal.getText().toString());
 
         //sale power plants
-        powerPlant1Cost = (TextView) findViewById(R.id.pp1cValue);
-        powerPlant1Type = (TextView) findViewById(R.id.pp1tValue);
-        powerPlant1Number = (TextView) findViewById(R.id.pp1nValue);
-        powerPlant1House = (TextView) findViewById(R.id.pp1hValue);
+        powerPlant1Cost = (TextView)findViewById(R.id.pp1cValue);
+        powerPlant1Type = (TextView)findViewById(R.id.pp1tValue);
+        powerPlant1Number = (TextView)findViewById(R.id.pp1nValue);
+        powerPlant1House = (TextView)findViewById(R.id.pp1hValue);
 
-        powerPlant2Cost = (TextView) findViewById(R.id.pp2cValue);
-        powerPlant2Type = (TextView) findViewById(R.id.pp2tValue);
-        powerPlant2Number = (TextView) findViewById(R.id.pp2nValue);
-        powerPlant2House = (TextView) findViewById(R.id.pp2hValue);
+        powerPlant2Cost = (TextView)findViewById(R.id.pp2cValue);
+        powerPlant2Type = (TextView)findViewById(R.id.pp2tValue);
+        powerPlant2Number = (TextView)findViewById(R.id.pp2nValue);
+        powerPlant2House = (TextView)findViewById(R.id.pp2hValue);
 
-        powerPlant3Cost = (TextView) findViewById(R.id.pp3cValue);
-        powerPlant3Type = (TextView) findViewById(R.id.pp3tValue);
-        powerPlant3Number = (TextView) findViewById(R.id.pp3nValue);
-        powerPlant3House = (TextView) findViewById(R.id.pp3hValue);
+        powerPlant3Cost = (TextView)findViewById(R.id.pp3cValue);
+        powerPlant3Type = (TextView)findViewById(R.id.pp3tValue);
+        powerPlant3Number = (TextView)findViewById(R.id.pp3nValue);
+        powerPlant3House = (TextView)findViewById(R.id.pp3hValue);
 
-        powerPlant4Cost = (TextView) findViewById(R.id.pp4cValue);
-        powerPlant4Type = (TextView) findViewById(R.id.pp4tValue);
-        powerPlant4Number = (TextView) findViewById(R.id.pp4nValue);
-        powerPlant4House = (TextView) findViewById(R.id.pp4hValue);
+        powerPlant4Cost = (TextView)findViewById(R.id.pp4cValue);
+        powerPlant4Type = (TextView)findViewById(R.id.pp4tValue);
+        powerPlant4Number = (TextView)findViewById(R.id.pp4nValue);
+        powerPlant4House = (TextView)findViewById(R.id.pp4hValue);
 
         //owned resources and cash
-        moneyTextView = (TextView) findViewById(R.id.moneyTextView);
-        coalNumView = (TextView) findViewById(R.id.coalNumView);
-        oilNumView = (TextView) findViewById(R.id.oilNumView);
-        trashNumView = (TextView) findViewById(R.id.trashNumView);
-        nuclearNumView = (TextView) findViewById(R.id.nuclearTextView);
+        moneyTextView = (TextView)findViewById(R.id.moneyTextView);
+        coalNumView =(TextView)findViewById(R.id.coalNumView);
+        oilNumView =(TextView)findViewById(R.id.oilNumView);
+        trashNumView =(TextView)findViewById(R.id.trashNumView);
+        nuclearNumView=(TextView)findViewById(R.id.nuclearTextView);
 
         //owned power plant grid
-        costTextView1 = (TextView) findViewById(R.id.upp1cValue);
-        typeTextView1 = (TextView) findViewById(R.id.upp1tValue);
-        numberTextView1 = (TextView) findViewById(R.id.upp1nValue);
-        housesTextView1 = (TextView) findViewById(R.id.upp1hValue);
+        costTextView1 = (TextView)findViewById(R.id.upp1cValue);
+        typeTextView1 = (TextView)findViewById(R.id.upp1tValue);
+        numberTextView1 = (TextView)findViewById(R.id.upp1nValue);
+        housesTextView1 = (TextView)findViewById(R.id.upp1hValue);
 
-        costTextView2 = (TextView) findViewById(R.id.upp2cValue);
-        typeTextView2 = (TextView) findViewById(R.id.upp2tValue);
-        numberTextView2 = (TextView) findViewById(R.id.upp2nValue);
-        housesTextView2 = (TextView) findViewById(R.id.upp2hValue);
+        costTextView2 = (TextView)findViewById(R.id.upp2cValue);
+        typeTextView2 = (TextView)findViewById(R.id.upp2tValue);
+        numberTextView2 = (TextView)findViewById(R.id.upp2nValue);
+        housesTextView2 = (TextView)findViewById(R.id.upp2hValue);
 
-        costTextView3 = (TextView) findViewById(R.id.upp3cValue);
-        typeTextView3 = (TextView) findViewById(R.id.upp3tValue);
-        numberTextView3 = (TextView) findViewById(R.id.upp3nValue);
-        housesTextView3 = (TextView) findViewById(R.id.upp3hValue);
+        costTextView3 = (TextView)findViewById(R.id.upp3cValue);
+        typeTextView3 = (TextView)findViewById(R.id.upp3tValue);
+        numberTextView3 = (TextView)findViewById(R.id.upp3nValue);
+        housesTextView3 = (TextView)findViewById(R.id.upp3hValue);
 
-        costTextView4 = (TextView) findViewById(R.id.upp4cValue);
-        typeTextView4 = (TextView) findViewById(R.id.upp4tValue);
-        numberTextView4 = (TextView) findViewById(R.id.upp4nValue);
-        housesTextView4 = (TextView) findViewById(R.id.upp4hValue);
+        costTextView4 = (TextView)findViewById(R.id.upp4cValue);
+        typeTextView4 = (TextView)findViewById(R.id.upp4tValue);
+        numberTextView4 = (TextView)findViewById(R.id.upp4nValue);
+        housesTextView4 = (TextView)findViewById(R.id.upp4hValue);
 
         //resource buttons
-        coalButton1 = (ImageButton) findViewById(R.id.cb1);
-        coalButton2 = (ImageButton) findViewById(R.id.cb2);
-        coalButton3 = (ImageButton) findViewById(R.id.cb3);
-        coalButton4 = (ImageButton) findViewById(R.id.cb4);
-        coalButton5 = (ImageButton) findViewById(R.id.cb5);
-        coalButton6 = (ImageButton) findViewById(R.id.cb6);
-        coalButton7 = (ImageButton) findViewById(R.id.cb7);
-        coalButton8 = (ImageButton) findViewById(R.id.cb8);
-        coalButton9 = (ImageButton) findViewById(R.id.cb9);
-        coalButton10 = (ImageButton) findViewById(R.id.cb10);
-        coalButton11 = (ImageButton) findViewById(R.id.cb11);
-        coalButton12 = (ImageButton) findViewById(R.id.cb12);
-        coalButton13 = (ImageButton) findViewById(R.id.cb13);
-        coalButton14 = (ImageButton) findViewById(R.id.cb14);
-        coalButton15 = (ImageButton) findViewById(R.id.cb15);
+        coalButton1 = (ImageButton)findViewById(R.id.cb1);
+        coalButton2 = (ImageButton)findViewById(R.id.cb2);
+        coalButton3 = (ImageButton)findViewById(R.id.cb3);
+        coalButton4 = (ImageButton)findViewById(R.id.cb4);
+        coalButton5 = (ImageButton)findViewById(R.id.cb5);
+        coalButton6 = (ImageButton)findViewById(R.id.cb6);
+        coalButton7 = (ImageButton)findViewById(R.id.cb7);
+        coalButton8 = (ImageButton)findViewById(R.id.cb8);
+        coalButton9 = (ImageButton)findViewById(R.id.cb9);
+        coalButton10 = (ImageButton)findViewById(R.id.cb10);
+        coalButton11 = (ImageButton)findViewById(R.id.cb11);
+        coalButton12 = (ImageButton)findViewById(R.id.cb12);
+        coalButton13 = (ImageButton)findViewById(R.id.cb13);
+        coalButton14 = (ImageButton)findViewById(R.id.cb14);
+        coalButton15 = (ImageButton)findViewById(R.id.cb15);
 
         coalButton1.setOnClickListener(new CoalButtonListener());
         coalButton2.setOnClickListener(new CoalButtonListener());
@@ -455,7 +531,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
      *
      * @param upp //userPowerPlant
      */
-    private void setPowerPlants(Inventory upp) {
+    private void setPowerPlantsInventory(Inventory upp) {
         costTextView1.setText("");
         typeTextView1.setText("");
         numberTextView1.setText("");
@@ -539,10 +615,10 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             //String currVal = resourcesSpinner.getSelectedItem().toString();
             switch (position){
                 case 0:
-                    setPowerPlants(powerState.getGameInventories().get(0));
+                    setPowerPlantsInventory(powerState.getGameInventories().get(0));
                     break;
                 case 1:
-                    setPowerPlants(powerState.getGameInventories().get(1));
+                    setPowerPlantsInventory(powerState.getGameInventories().get(1));
                     break;
             }
         }
@@ -561,8 +637,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             int phase = powerState.getGamePhase();
             if(phase == 0) {
 
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
-
+//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, tempPlant);
                 game.sendAction(sppa);
 
             }
@@ -574,7 +650,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             }
             else if (phase == 2 ) {
 
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, tempPlant);
                 game.sendAction(sppa);
 
             }
@@ -607,10 +684,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
                         game.sendAction(boa);
                         return;
                     }
-
                 }
-
-
             }
             else if (phase == 4 ){
                 for(int i = 0; i < 15; i++){
@@ -636,7 +710,6 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
                         }
                     }
                 }
-
             }
             else if (phase == 5 ) {
 
@@ -644,8 +717,6 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             else if (phase == 6 ) {
 
             }
-
-
         }
     }
 
@@ -712,8 +783,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 //                    cityButtons[i] = false;/*cityButtons is an array of Buttons*/
                     localCities[i] = false;
                 }
-                    else {
-                        cityButtons[i].setBackgroundColor(prettyBlue);
+                else {
+                    cityButtons[i].setBackgroundColor(prettyBlue);
 //                        cityButtons[i] = true;/*cityButtons is an array of Buttons*/
                     localCities[i] = true;
                 }
@@ -784,20 +855,21 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             idNum[9] = R.id.ob10;
 
 
-                for (int i = 0; i < 10; i++) {
-                    if (viewId == idNum[i]) {
-                        if (powerState.getAvailableResources().oil[i]) {
-                            if (localStore.oil[i]) {
-                                oilButton1.setBackgroundColor(Color.TRANSPARENT);
-                                localStore.oil[i] = false;
-                            } else {
 
-                                oilButton1.setBackgroundColor(Color.BLACK);
-                                localStore.oil[i] = true;
-                            }
+            for (int i = 0; i < 10; i++) {
+                if (viewId == idNum[i]) {
+                    if (powerState.getAvailableResources().oil[i]) {
+                        if (localStore.oil[i]) {
+                            oilButton1.setBackgroundColor(Color.TRANSPARENT);
+                            localStore.oil[i] = false;
+                        } else {
+//                            oilButton1.setBackgroundColor(Color.OPAQUE);
+                            oilButton1.setBackgroundColor(Color.BLACK);
+                            localStore.oil[i] = true;
                         }
                     }
                 }
+            }
 
         }
     }
@@ -847,16 +919,20 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     //implements the nuclear buttons
     public class NuclearButtonListener implements View.OnClickListener {
 
-            @Override
-            public void onClick(View view) {
-                int viewId = view.getId();
-                int[] idNum = new int[15];
-
-                idNum[0] = R.id.ub1;
-                idNum[1] = R.id.ub2;
-                idNum[2] = R.id.ub3;
-                idNum[3] = R.id.ub4;
-                idNum[4] = R.id.ub5;
+        @Override
+        public void onClick(View view) {
+            int viewId = view.getId();
+            int[] idNum = new int[15];
+//            idNum[0] = R.id.nb1;
+//            idNum[1] = R.id.nb2;
+//            idNum[2] = R.id.nb3;
+//            idNum[3] = R.id.nb4;
+//            idNum[4] = R.id.nb5;
+            idNum[0] = R.id.ub1;
+            idNum[1] = R.id.ub2;
+            idNum[2] = R.id.ub3;
+            idNum[3] = R.id.ub4;
+            idNum[4] = R.id.ub5;
 
             for (int i = 0; i < 5; i++) {
                 if (viewId == idNum[i]) {
@@ -873,20 +949,6 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
                 }
             }
 
-        }
-        public boolean isArrayFalse(boolean[] array){
-            for(int i = 0; i < array.length; i++ ){
-                if(array[i] = true) return false;
-            }
-            return true;
-        }
-        //helper method that returns every index in an array that is true
-        public ArrayList<Integer> trueIndexes(boolean[] array){
-            ArrayList<Integer> indexArray = new ArrayList<Integer>();
-            for(int i = 0; i< array.length; i++){
-                if(array[i]) indexArray.add(i);
-            }
-            return indexArray;
         }
     }
 

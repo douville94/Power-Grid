@@ -19,9 +19,11 @@ public class PassAction extends GameAction{
     public PassAction(GamePlayer player, Powerplant initPowerPlant) {
         super(player);
         pass = true;
-
+        powerplant = initPowerPlant;
 
     }
 
-
+    public Powerplant getPowerplant() {
+        return powerplant;
+    }
 }

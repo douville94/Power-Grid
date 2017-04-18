@@ -42,19 +42,5 @@ public class City implements Serializable{
     public void addNeighbor(City n){neighborhood.add(n);} //add neighbors to the list
     public void setName(String n){name = n;} //cities are identified by name
     public void addCost(int n){costs.add(n);}
-
-    public boolean isNeighbor(City possibleNeighbor){
-        for(int i = 0; i < neighborhood.size(); i++){
-            if(neighborhood.get(i).equals(possibleNeighbor)) return true;
-        }
-        return false;
-    }
-
-    public boolean containsNeighbor(ArrayList<City> possibleNeighbors) {
-        for (int i = 0; i < possibleNeighbors.size(); i++) {
-            if (isNeighbor(possibleNeighbors.get(i))) return true;
-        }
-        return false;
-    }
 }
 
