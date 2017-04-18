@@ -26,6 +26,7 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 
     private int selectNum = -1;
     private int bidValue = -1;
+    private boolean isClicked = false;
     private ResourceStore localStore = new ResourceStore();
     View v;
     /*Copy over all GUI elements from PowerGridHumanPlayer?*/
@@ -42,7 +43,6 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
     private int basicGray = Color.rgb(214,215,215);
     private int prettyBlue = Color.rgb(0, 221, 255);
 
-    private boolean isClicked = false;
 
 //    private GamePlayer tempPlayer;
 
@@ -91,7 +91,7 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 //                return;
 //            }
 
-            if(phase == 0) {
+//            if(phase == 0) {
                 /*First player chooses a power plant.
                 * "OK" or "Pass" updates phase.*/
                 /*Set all the variables of a Powerplant object here.*/
@@ -104,25 +104,27 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 //                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridDumbComputerPlayer.this, selectNum);
 //                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridDumbComputerPlayer.this, selectedPowerPlant);
 //                game.sendAction(sppa);
-                return;
-            }
-            else if (phase == 1 ) {
-                /*Bidding on power plant(s).
-                * Bidding or "pass" updates phase.*/
+//                return;
+//            }
+//            else if (phase == 1 ) {
+//                /*Bidding on power plant(s).
+//                * Bidding or "pass" updates phase.*/
 //                BidAction ba = new BidAction(PowerGridDumbComputerPlayer.this, bidValue);
 //                game.sendAction(ba);
-            }
-            else if (phase == 2 ) {
+//            return;
+//            }
+//            else if (phase == 2 ) {
                 /*Previous passer chooses a power plant.
                 * "OK" or "Pass" updates phase.*/
 //                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridDumbComputerPlayer.this, selectNum);
 //                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridDumbComputerPlayer.this, selectedPowerPlant);
 //                game.sendAction(sppa);
-            }
+//            return;
+//            }
             //if phase ==3 and we haven't gone through the whole resource store, we gotta keep sending actions
             //only one can be sent at a time, hence the returns.
             //work on this.
-            else if (phase == 3 ) {
+//            else if (phase == 3 ) {
                 /*Second player chooses resources.
                 * "OK" or "Pass" updates phase.*/
 //                for(int i = 0; i < 15; i++){
@@ -152,8 +154,9 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 //                    }
 //
 //                }
-            }
-            else if (phase == 4 ) {
+//                return;
+//            }
+//            else if (phase == 4 ) {
                 /*First player chooses resources.
                 * "OK" or "Pass" updates phase.*/
 //                for(int i = 0; i < 15; i++){
@@ -179,18 +182,18 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 //                        }
 //                    }
 //                }
-            }
-            else if (phase == 5 ) {
-                /*Second player chooses cities.
-                * "OK" or "Pass" updates phase.*/
-            }
-            else if (phase == 6 ) {
-                /*First player chooses cities.
-                * "OK" or "Pass" updates phase.*/
-            }
-            else {
-                /*Other cases go here.*/
-            }
+//            }
+//            else if (phase == 5 ) {
+//                /*Second player chooses cities.
+//                * "OK" or "Pass" updates phase.*/
+//            }
+//            else if (phase == 6 ) {
+//                /*First player chooses cities.
+//                * "OK" or "Pass" updates phase.*/
+//            }
+//            else {
+//                /*Other cases go here.*/
+//            }
         }
     }
 
@@ -280,9 +283,9 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                 * "OK" or "Pass" updates phase.*/
 
                 /*Use a random integer because this is the dumb AI.*/
-                int randOKPass = (int)(Math.random()*2);
-                int randPPlantToBidOnIndex = ((int)Math.random())*42;
-//                int rand1 = ((int)Math.random())*4;
+                int randOKPass = (int)(Math.random() * 2);
+                int randPPlantToBidOnIndex = (int)(Math.random() * 42);
+//                int rand1 = (int)(Math.random() * 4);
 
                 powerState.initiatePowerPlants();
                 selectedPowerPlant = powerState.getAvailPowerplant().get(randPPlantToBidOnIndex);
@@ -292,9 +295,9 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 //                passButtonListener pbl = new passButtonListener();
 //                passButton.setOnClickListener(pbl);
                 switch(randOKPass) {
-                    case 1: randOKPass = 1;
+                    case 1: randOKPass = 0;
                         okayButton.setOnClickListener(new okayButtonListener());
-                    case 2: randOKPass = 2;
+                    case 2: randOKPass = 1;
                         passButton.setOnClickListener(new passButtonListener());
                 }
 //                okayButton.setOnClickListener(new okayButtonListener());
@@ -361,11 +364,11 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 //                BidAction bid = new BidAction(this, (int)Math.random()*20);
 //                bid.getBid();
 //                bidVal.setOnKeyListener(new bidEditTextListener());
-                int randOKPass = (int)(Math.random()*2);
+                int randOKPass = (int)(Math.random() * 2);
                 switch(randOKPass) {
-                    case 1: randOKPass = 1;
+                    case 1: randOKPass = 0;
                         okayButton.setOnClickListener(new okayButtonListener());
-                    case 2: randOKPass = 2;
+                    case 2: randOKPass = 1;
                         passButton.setOnClickListener(new passButtonListener());
                 }
 //                okayButton.setOnClickListener(new okayButtonListener());
@@ -420,8 +423,8 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                 * "OK" or "Pass" updates phase.*
                 * Same as when phase is 0 b/c same logic.
                 * We don't determine who the previous passer was in this if statement.*/
-                int randOKPass = (int)(Math.random()*2);
-                int randPPlantToBidOn = (int)(Math.random()*42);
+                int randOKPass = (int)(Math.random() * 2);
+                int randPPlantToBidOn = (int)(Math.random() * 42);
                 selectedPowerPlant.setCost(powerState.getAvailPowerplant().get(randPPlantToBidOn).getCost());
                 selectedPowerPlant.setPtP(powerState.getAvailPowerplant().get(randPPlantToBidOn).getPtP());
                 selectedPowerPlant.setHp(powerState.getAvailPowerplant().get(randPPlantToBidOn).getHp());
@@ -429,9 +432,9 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 //                okayButton.setOnClickListener(new okayButtonListener());
 //                passButton.setOnClickListener(new passButtonListener());
                 switch(randOKPass) {
-                    case 1: randOKPass = 1;
+                    case 1: randOKPass = 0;
                         okayButton.setOnClickListener(new okayButtonListener());
-                    case 2: randOKPass = 2;
+                    case 2: randOKPass = 1;
                         passButton.setOnClickListener(new okayButtonListener());
                 }
                 /*You could just put this in an else statement after evaluating randOKPass below.*/
@@ -455,10 +458,10 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                 int randOKPass = (int)(Math.random() * 2);
                 switch (randOKPass) {
                     case 1:
-                        randOKPass = 1;
+                        randOKPass = 0;
                         okayButton.setOnClickListener(new okayButtonListener());
                     case 2:
-                        randOKPass = 2;
+                        randOKPass = 1;
                         passButton.setOnClickListener(new okayButtonListener());
                 }
                 /*You could just put this in an else statement after evaluating randOKPass below.*/
@@ -511,10 +514,10 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                 int randOKPass = (int)(Math.random() * 2);
                 switch (randOKPass) {
                     case 1:
-                        randOKPass = 1;
+                        randOKPass = 0;
                         okayButton.setOnClickListener(new okayButtonListener());
                     case 2:
-                        randOKPass = 2;
+                        randOKPass = 1;
                         passButton.setOnClickListener(new okayButtonListener());
                 }
                 /*You could just put this in an else statement after evaluating randOKPass below.*/
@@ -524,7 +527,7 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                     game.sendAction(upa);
 //                    return;
                 }
-                if (randOKPass == 1) {
+                if (randOKPass == 0) {
 //                    phase = 4;
 //                    SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridDumbComputerPlayer.this, selectedPowerPlant);
 //                    game.sendAction(sppa);
@@ -564,9 +567,9 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                 selectedCity = powerState.getAvailCities().get(randCityToBidOnIndex);
                 int randOKPass = (int)(Math.random() * 2);
                 switch(randOKPass) {
-                    case 1: randOKPass = 1;
+                    case 1: randOKPass = 0;
                         okayButton.setOnClickListener(new okayButtonListener());
-                    case 2: randOKPass = 2;
+                    case 2: randOKPass = 1;
                         passButton.setOnClickListener(new passButtonListener());
                 }
                 if(isClicked == true) {
@@ -588,9 +591,9 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                 selectedCity = powerState.getAvailCities().get(randCityToBidOnIndex);
                 int randOKPass = (int)(Math.random() * 2);
                 switch(randOKPass) {
-                    case 1: randOKPass = 1;
+                    case 1: randOKPass = 0;
                         okayButton.setOnClickListener(new okayButtonListener());
-                    case 2: randOKPass = 2;
+                    case 2: randOKPass = 1;
                         passButton.setOnClickListener(new passButtonListener());
                 }
                 if(isClicked == true) {

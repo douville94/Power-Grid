@@ -91,16 +91,15 @@ public class PowerState extends GameState implements Serializable {
     public boolean[] getBoughtCities() {return boughtCities;}
     public int getPlayerId() {return playerId;}
     public int getGamePhase() {return phase;}
+    public int getCurrentBid() {return currentBid;}
     public ArrayList<City> getAvailCities() {return cities;}
     public ArrayList<Powerplant> getAvailPowerplant() {return salePlants;}
     public ArrayList<Inventory> getGameInventories() {return gameInventories;}
     public ResourceStore getAvailableResources() {return availableResources;}
-    public void removePlant(int index){ salePlants.remove(index);}
-
+    public void removePlant(int index) {salePlants.remove(index);}
 
 
     //setters
-
     public void setBoughtCities(boolean[] purchased) {boughtCities = purchased;}
     public void setSelectedPlant(int index){selectedPlant = index;}
     public void setBoughtCity(int index){boughtCities[index] = true;}
@@ -111,7 +110,7 @@ public class PowerState extends GameState implements Serializable {
     public void setGameInventories(ArrayList<Inventory> newInventory) {gameInventories = newInventory;}
     public void setAvailableResources(ResourceStore newResources) {availableResources = newResources;}
     public void setCurrentBid(int newCurrentBid) {currentBid = newCurrentBid;}
-    public void changeTurn(){
+    public void changeTurn() {
         turn = (turn + 1) % 2;
     }
 

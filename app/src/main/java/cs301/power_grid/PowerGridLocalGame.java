@@ -91,13 +91,11 @@ public class PowerGridLocalGame extends LocalGame{
         else if (action instanceof BuyCityAction && playerID == 0) {
             boolean didithappen = powerState.getGameInventories().get(0).addMyCity(((BuyCityAction) action).getCity());
             if(!didithappen){} //vibrate screen
-            powerState.setBoughtCity(((BuyCityAction) action).getCityIndex());
             return true;
         }
         else if (action instanceof BuyCityAction && playerID == 1) {
             boolean didithappen = powerState.getGameInventories().get(1).addMyCity(((BuyCityAction) action).getCity());
             if(!didithappen){} //vibrate screen
-            powerState.setBoughtCity(((BuyCityAction) action).getCityIndex());
             return true;
         }
 
@@ -110,8 +108,8 @@ public class PowerGridLocalGame extends LocalGame{
                 powerState.getAvailableResources().coal[((BuyCoalAction) action).getCoal()] = false;
                 //take money from user
                 powerState.getGameInventories().get(0).setMoney(powerState.getGameInventories().get(0).getMoney() - price);
-                //add coal to inventory
-                powerState.getGameInventories().get(0).setCoal(powerState.getGameInventories().get(0).getCoal() + 1);
+                //add oil to inventory
+                powerState.getGameInventories().get(0).setOil(powerState.getGameInventories().get(0).getCoal() + 1);
             }
                 return true;
         }
@@ -122,8 +120,8 @@ public class PowerGridLocalGame extends LocalGame{
                 powerState.getAvailableResources().coal[((BuyCoalAction) action).getCoal()] = false;
                 //take money from user
                 powerState.getGameInventories().get(1).setMoney(powerState.getGameInventories().get(1).getMoney() - price);
-                //add coal to inventory
-                powerState.getGameInventories().get(1).setCoal(powerState.getGameInventories().get(1).getCoal() + 1);
+                //add oil to inventory
+                powerState.getGameInventories().get(1).setOil(powerState.getGameInventories().get(1).getCoal() + 1);
             }
                     return true;
         }
@@ -189,7 +187,7 @@ public class PowerGridLocalGame extends LocalGame{
                 //take money from user
                 powerState.getGameInventories().get(0).setMoney(powerState.getGameInventories().get(0).getMoney() - price);
                 //add oil to inventory
-                powerState.getGameInventories().get(0).setUranium(powerState.getGameInventories().get(0).getUranium() + 1);
+                powerState.getGameInventories().get(0).setTrash(powerState.getGameInventories().get(0).getUranium() + 1);
             }
             return true;
         }
@@ -201,12 +199,12 @@ public class PowerGridLocalGame extends LocalGame{
                 //take money from user
                 powerState.getGameInventories().get(1).setMoney(powerState.getGameInventories().get(1).getMoney() - price);
                 //add oil to inventory
-                powerState.getGameInventories().get(1).setUranium(powerState.getGameInventories().get(1).getUranium() + 1);
+                powerState.getGameInventories().get(1).setTrash(powerState.getGameInventories().get(1).getUranium() + 1);
             }
             return true;
         }
 
-       /* //DiscardPowerPlantAction
+        //DiscardPowerPlantAction
         else if(action instanceof DiscardPowerPlantAction && playerID == 0) {
             //find index of powerplant to be discarded
             Powerplant discard = ((DiscardPowerPlantAction) action).getPowerplant();
@@ -222,14 +220,13 @@ public class PowerGridLocalGame extends LocalGame{
             //remove indicated powerplant
             powerState.getGameInventories().get(1).getMyPlants().remove(ppIndex);
             return true;
-        }*/
+        }
 
         //PassAction
         else if(action instanceof PassAction && playerID == 0) {
             //if user0 passes on a bid, user1 gets the selected power plant
-
-            powerState.getGameInventories().get(1).addMyPlants(powerState.getAvailPowerplant().get(powerState.getSelectedPlant()));
-            powerState.removePlant(powerState.getSelectedPlant());
+            Powerplant passedOn = ((PassAction) action).getPowerplant();
+            powerState.getGameInventories().get(1).addMyPlants(passedOn);
             //change player
             powerState.setPlayerId(1);
             return true;
@@ -237,8 +234,8 @@ public class PowerGridLocalGame extends LocalGame{
 
         else if(action instanceof PassAction && playerID == 1) {
             //if user1 passes on a bid, user0 gets the selected power plant
-            powerState.getGameInventories().get(1).addMyPlants(powerState.getAvailPowerplant().get(powerState.getSelectedPlant()));
-            powerState.removePlant(powerState.getSelectedPlant());
+            Powerplant passedOn = ((PassAction) action).getPowerplant();
+            powerState.getGameInventories().get(0).addMyPlants(passedOn);
             //change player
             powerState.setPlayerId(0);
             return true;
@@ -249,14 +246,12 @@ public class PowerGridLocalGame extends LocalGame{
             //user0 selects a powerplant and presses confirm which will start the bidding process with user1
             //highlight on GUI for humanplayer
             //change player
-            powerState.setSelectedPlant(((SelectPowerPlantAction) action).getNum());
             powerState.setPlayerId(1);
             return true;
         }
         else if(action instanceof SelectPowerPlantAction && playerID == 1) {
             //user1 selects a powerplant and presses confirm which will start the bidding process with user0
             //change player
-            powerState.setSelectedPlant(((SelectPowerPlantAction) action).getNum());
             powerState.setPlayerId(0);
             return true;
         }
