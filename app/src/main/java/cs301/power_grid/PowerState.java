@@ -91,6 +91,7 @@ public class PowerState extends GameState implements Serializable {
     public boolean[] getBoughtCities() {return boughtCities;}
     public int getPlayerId() {return playerId;}
     public int getGamePhase() {return phase;}
+    public int getCurrentBid() {return currentBid;}
     public ArrayList<City> getAvailCities() {return cities;}
     public ArrayList<Powerplant> getAvailPowerplant() {return salePlants;}
     public ArrayList<Inventory> getGameInventories() {return gameInventories;}
