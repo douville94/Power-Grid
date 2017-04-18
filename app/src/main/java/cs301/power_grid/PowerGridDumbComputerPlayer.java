@@ -291,12 +291,12 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
 //                okayButton.setOnClickListener(obl);
 //                passButtonListener pbl = new passButtonListener();
 //                passButton.setOnClickListener(pbl);
-                switch(randOKPass) {
-                    case 1: randOKPass = 1;
-                        okayButton.setOnClickListener(new okayButtonListener());
-                    case 2: randOKPass = 2;
-                        passButton.setOnClickListener(new passButtonListener());
-                }
+//                switch(randOKPass) {
+//                    case 1: randOKPass = 1;
+//                        okayButton.setOnClickListener(new okayButtonListener());
+//                    case 2: randOKPass = 2;
+//                        passButton.setOnClickListener(new passButtonListener());
+//                }
 //                okayButton.setOnClickListener(new okayButtonListener());
 //                passButton.setOnClickListener(new passButtonListener());
 
