@@ -98,7 +98,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private Button[] cityButtons = new Button[20];
 
     private Powerplant tempPlant;// = new Powerplant();
-//    private ResourceStore tempResources = new ResourceStore();
+    private ResourceStore tempResources = new ResourceStore();
 
     private Button selectButton0;
     private Button selectButton1;
@@ -189,6 +189,7 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 //        PowerGridHumanPlayer.this. = setResources(((PowerState)info).getGameInventories().get(0));//Error:(163, 72) error: illegal character: '\u2028' .  '\u2028' is the newline character.
         if(((PowerState)info).getPlayerId() == 0) {
             for(tempResources : (((PowerState)info).getGameInventories().get(0))) {
+//            for(tempResources) {
 //                tempResources = setResources(((PowerState) info).getGameInventories().get(0));
                 setResources(((PowerState)info).getGameInventories().get(0));
             }
