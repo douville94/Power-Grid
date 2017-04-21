@@ -92,52 +92,24 @@ public class PowerGridDumbComputerPlayer extends GameComputerPlayer {
                 * "OK" or "Pass" updates phase.*/
                 /*Unnecessary since you're just making it pass.*/
                 /*You could just put this in an else statement after evaluating randOKPass below.*/
-                UpdatePhaseAction upa = new UpdatePhaseAction(PowerGridDumbComputerPlayer.this, phase);
-                game.sendAction(upa);
-
                 PassAction pa = new PassAction(PowerGridDumbComputerPlayer.this);
             /*Pass*/
             } else if(phase == 4) {
                 /*First player chooses resources.
                 * "OK" or "Pass" updates phase.*/
-
                 PassAction pa = new PassAction(PowerGridDumbComputerPlayer.this);
                 /*Pass*/
             } else if(phase == 5) {
                 /*Second player chooses cities.
                 * "OK" or "Pass" updates phase.*/
-                City selectedCity;
-                int randCityToBidOnIndex = (int)(Math.random() * 20);
-                selectedCity = powerState.getAvailCities().get(randCityToBidOnIndex);
-                int randOKPass = (int)(Math.random() * 2);
-
-
-                phase = 6;
-                UpdatePhaseAction upa = new UpdatePhaseAction(PowerGridDumbComputerPlayer.this, phase);
-                game.sendAction(upa);
-
-                BuyCityAction bca = new BuyCityAction(PowerGridDumbComputerPlayer.this, selectedCity);
-                game.sendAction(bca);
+                PassAction pa = new PassAction(PowerGridDumbComputerPlayer.this);
+                game.sendAction(pa);
             /*Pass*/
             } else if(phase == 6) {
                 /*First player chooses cities.
                 * "OK" or "Pass" updates phase.*/
-                City selectedCity;
-                int randCityToBidOnIndex = (int)(Math.random() * 20);
-                selectedCity = powerState.getAvailCities().get(randCityToBidOnIndex);
-                int randOKPass = (int)(Math.random() * 2);
-
-                isClicked = true;
-                if(isClicked == true) {
-                    phase = 6;
-                    UpdatePhaseAction upa = new UpdatePhaseAction(PowerGridDumbComputerPlayer.this, phase);
-                    game.sendAction(upa);
-                }
-                if(randOKPass == 1) {
-                    BuyCityAction bca = new BuyCityAction(PowerGridDumbComputerPlayer.this, selectedCity);
-                    game.sendAction(bca);
-                    return;
-                }
+                PassAction pa = new PassAction(PowerGridDumbComputerPlayer.this);
+                game.sendAction(pa);
             } else {
                 /*Other cases go here.*/
             }
