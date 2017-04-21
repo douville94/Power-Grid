@@ -16,10 +16,10 @@ public class PassAction extends GameAction{
      *
      * @param player the player who created the action
      */
-    public PassAction(GamePlayer player, Powerplant initPowerPlant) {
+    public PassAction(GamePlayer player) {//}}, Powerplant initPowerPlant) {
         super(player);
         pass = true;
-        powerplant = initPowerPlant;
+//        powerplant = initPowerPlant;
 
     }
 

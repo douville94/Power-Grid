@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.nio.charset.UnmappableCharacterException;
 import java.util.ArrayList;
 //import java.nio.charset.UnmappableCharacterException;
 
@@ -154,6 +155,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
     private ImageButton trashButton14;
     private ImageButton trashButton15;
 
+    UnmappableCharacterException uce;// = new UnmappableCharacterException();
+
     //Constructor
     public PowerGridHumanPlayer(String name) {
         super(name);
@@ -189,9 +192,12 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
 //        PowerGridHumanPlayer.this. = setResources(((PowerState)info).getGameInventories().get(0));//Error:(163, 72) error: illegal character: '\u2028' .  '\u2028' is the newline character.
         if(((PowerState)info).getPlayerId() == 0) {
             for(tempResources : (((PowerState)info).getGameInventories().get(0))) {
-//            for(tempResources) {
 //                tempResources = setResources(((PowerState) info).getGameInventories().get(0));
-                setResources(((PowerState)info).getGameInventories().get(0));
+                try {
+                    setResources(((PowerState) info).getGameInventories().get(0));
+                } catch(uce) {
+
+                }
             }
         }
 //        PowerGridDumbComputerPlayer comp = new PowerGridDumbComputerPlayer("Easy Computer Player");
@@ -662,9 +668,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             int phase = powerState.getGamePhase();
             if(phase == 0) {
 
-//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectedPowerPlant);
-
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectedPowerPlant);
                 game.sendAction(sppa);
 
             }
@@ -676,8 +681,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             }
             else if (phase == 2 ) {
 
-//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectedPowerPlant);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectedPowerPlant);
                 game.sendAction(sppa);
 
             }
@@ -752,8 +757,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             int phase = powerState.getGamePhase();
             if(phase == 0) {
 
-//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectedPowerPlant);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectedPowerPlant);
 
                 game.sendAction(sppa);
 
@@ -766,8 +771,8 @@ public class PowerGridHumanPlayer extends GameHumanPlayer {
             }
             else if (phase == 2 ) {
 
-//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
-                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectedPowerPlant);
+                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectNum);
+//                SelectPowerPlantAction sppa = new SelectPowerPlantAction(PowerGridHumanPlayer.this, selectedPowerPlant);
                 game.sendAction(sppa);
 
             }
